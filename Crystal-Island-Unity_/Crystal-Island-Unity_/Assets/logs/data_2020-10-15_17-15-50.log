@@ -1,0 +1,17 @@
+Logfile created: 2020/10/15 17:15:50
+Setting the device to never fall asleep.
+Opening the panel
+Starting panel animation
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/eng.xml'
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/deu.xml'
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/spa.xml'
+Panel animation complete
+Opening the panel is complete
+No entry for 'IDontKnowTag' in 'deu'. Cannot display text.
+No entry for 'IDontKnowTag' in 'spa'. Cannot display text.
+OnApplicationFocus(False) started
+OnApplicationPause(True) started
+OnApplicationPause(False) started
+OnApplicationFocus(True) started
+OnApplicationFocus(False) started
+OnApplicationQuit() called

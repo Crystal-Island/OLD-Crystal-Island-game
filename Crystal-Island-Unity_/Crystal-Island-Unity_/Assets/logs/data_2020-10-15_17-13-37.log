@@ -1,0 +1,16 @@
+Logfile created: 2020/10/15 17:13:37
+Setting the device to never fall asleep.
+Opening the panel
+Starting panel animation
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/eng.xml'
+OnApplicationFocus(False) started
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/deu.xml'
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/spa.xml'
+Panel animation complete
+Opening the panel is complete
+OnApplicationPause(True) started
+OnApplicationPause(False) started
+OnApplicationFocus(True) started
+No entry for 'DemoTextId' in 'deu'. Cannot display text.
+OnApplicationFocus(False) started
+OnApplicationQuit() called

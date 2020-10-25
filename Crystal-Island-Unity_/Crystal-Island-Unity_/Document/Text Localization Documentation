@@ -1,0 +1,64 @@
+Text Localization:
+
+Scene: Lobby
+Heirarchy Object: Persistent Objects>Localization
+Script: "Localization", Localisation Reader XML"
+Folder Location: "Assets>streamingassests>lang"
+
+
+------------General Text Access----------------
+Any text text object should contant the script LocaliseElementUIText.
+Referencing back to the text component for "GUI text Componenet" variable.
+And with a unique TextID preferably somewhat related to its function.
+
+In the lang folder there will be one XML file for each supported language.
+
+"Language Selection" will call "Localization" with the text ID.
+"Localization" with search the active language for the given textID and return that value to "Language Selection".
+"Lanaguage Selection will then update the text it dispays to the user.
+A listener to the "Localisation.instance.elanguageChanged" is set up to trigger and update the text any time the active language changes.
+This is why the text update can be seen immediately when updated.
+
+Example:
+Heirarchy Object: DontDestroyOnLoad>NetworkManager>Canvas>PreLobby>Inner>Vertical Grouping>Overview
+Script: LocaliseElementUIText
+textID: startInfo
+
+This text ID maps to eng and ger file in lang folder.
+
+ENG-<textline uid="startInfo">
+<p>You can either host your own multiplayer game, or you can join any of the available games listed below. Note to always make sure that you and your friends are on the same local network.</p>
+</textline>
+DEU-<textline uid="startInfo">
+<p>Du kannst entweder dein eigenes Mehrspieler-Spiel ausrichten oder an einem der unten aufgeführten Spiele teilnehmen. Beachte, dass du und Deine Freunde immer im selben lokalen Netzwerk sind.</p>
+</textline>
+
+This means there are simple steps to adding text while maintaining localization:
+1. Choose a textID and created the <textline> block like in the above examples. (do this for all languages you wish to update) (using DemoTextId)
+2. Create a new text obect in your scene dropdown GameObject>UI>Text
+3. With your new text object selected in the heigharchy tab, look to the inspector tab and click "add Component"
+4. add the LocaliseElementUIText script component
+5. in this new component add your textID to the Text ID field exactly the same. (DemoTextId)
+6. lastly, from the heigharchy tab click and drag the text object across to drop on the "Gui TextComponenet" variable.
+7. run your tests and you should see the text update for all languages you updated.
+
+
+------------Language Select--------------------
+scene: Lobby
+Heirarchy Object: NewworkManager>Canvas>GameCreation>Language Selection
+Script: LocalisationSelectLanguage
+
+
+Here a drop down object is referenced to select and update the activelanguage locationition in the localization script.
+This is dynamically populated based the languages.xml file and any assocaited xml file for a particular language (i.e. eng.xml for english)
+
+This means new languages can be added really easily with the following steps:
+
+1. Edit Languages.xml to add a new like that matches this struture 
+  <language uid="eng"/>
+  2. change the uid in step one to somethin unique for the new language.  I used spa in this example (Spanish).
+  3. Copy the eng.xml file and rename it accordingly
+  4.Update the language line in the file to match the uid set up in step 2 and add a full name for the language <language ISO6393="spa">Spanish</language>
+  5. update all text to their localized counterparts. (or just 1 to test it initially)
+  
+  That is it, run the game and you will see an new option added to the drop down.

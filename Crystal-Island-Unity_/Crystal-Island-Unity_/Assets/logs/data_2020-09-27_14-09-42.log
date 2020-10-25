@@ -1,0 +1,707 @@
+Logfile created: 2020/09/27 14:09:42
+Setting the device to never fall asleep.
+Opening the panel
+Starting panel animation
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/eng.xml'
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/deu.xml'
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+OnStartHost()
+Server: Setting broadcast data to 'PolymoneyGame::192.168.0.218:20120'
+OnLobbyStartHost()
+OnStartServer()
+OnLobbyStartServer()
+Server: A new client has connected.
+OnStartClient(client=UnityEngine.Networking.LocalClient) for server at 
+OnLobbyStartClient(client=UnityEngine.Networking.LocalClient)
+OnClientConnect(conn=hostId: -1 connectionId: 0 isReady: False channel count: 0)
+OnLobbyClientConnect(conn=hostId: -1 connectionId: 0 isReady: False channel count: 0) with address localServer)
+Opening the panel
+Starting panel animation
+Closing the panel
+Starting panel animation
+Server: A player was added.
+OnLobbyServerCreateLobbyPlayer(conn=hostId: -1 connectionId: 0 isReady: True channel count: 0, controllerId=0)
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+OnLobbyServerPlayersReady()
+OnClientNotReady(conn=hostId: -1 connectionId: 0 isReady: True channel count: 0)
+The initial state will be 'FlowPhase(0x1, INTRO_WORLD)'
+OnLobbyServerCreateGamePlayer(conn=hostId: -1 connectionId: 0 isReady: False channel count: 0, controllerId=0)
+The player Player would like to run for mayor.
+Game unpaused
+Player 'Player' (netid: 2) was registered
+The authoritative player's name is 'Player'
+Closing the panel
+Starting panel animation
+Building 'Industrial' (netid: 3) was registered
+The luminance was changed to 1
+Building 'Lake' (netid: 4) was registered
+The luminance was changed to 1
+Building 'Building (7)' (netid: 5) was registered
+The luminance was changed to 1
+Building 'Tree' (netid: 6) was registered
+The luminance was changed to 1
+Building 'Administration' (netid: 8) was registered
+The luminance was changed to 1
+Building 'Garden' (netid: 9) was registered
+The luminance was changed to 1
+Building 'Building (9)' (netid: 10) was registered
+The luminance was changed to 1
+Building 'Villa' (netid: 11) was registered
+The luminance was changed to 1
+Building 'Park' (netid: 12) was registered
+The luminance was changed to 1
+Building 'School' (netid: 13) was registered
+The luminance was changed to 1
+Building 'Building (5)' (netid: 14) was registered
+The luminance was changed to 1
+Building 'Offices' (netid: 15) was registered
+The luminance was changed to 1
+Building 'Building (2)' (netid: 16) was registered
+The luminance was changed to 1
+Building 'City Hall' (netid: 17) was registered
+The luminance was changed to 0.1
+Building 'Building (3)' (netid: 18) was registered
+The luminance was changed to 1
+Building 'Building (4)' (netid: 19) was registered
+The luminance was changed to 1
+Server: Adding myself as exit condition to the state 'PLAYER_EVENTS'
+Server: Adding myself as exit condition to the state 'INTRO_WORLD'
+Server: Adding myself as exit condition to the state 'PLAYER_TRADE'
+Server: Adding myself as exit condition to the state 'END_MONTH_DISPLAY'
+Server: Adding myself as exit condition to the state 'Q_INTRODUCTION'
+Server: Adding myself as exit condition to the state 'MOVEMENT_TUTO'
+Server: Adding myself as exit condition to the state 'Q_MARKET'
+Server: Adding myself as exit condition to the state 'PLAYER_INTRODUCTION'
+Server: Adding myself as exit condition to the state 'END'
+Server: Adding myself as exit condition to the state 'GAMEOVER'
+Server: Adding myself as exit condition to the state 'SUMMARY'
+Comparing new value: 100 with the current value 0
+Opening the panel
+Starting panel animation
+Loaded level data from leveldata.json
+Rpc: Set Guid of Offer 'IndustrialBuildingDeed' to 'e7cc69d6-edef-4c0f-aaf6-0fec6732b010'
+Rpc: Set Guid of Offer 'VillaDeed' to '54b8a1db-8bd9-41bc-a98d-a92a6887f713'
+Rpc: Set Guid of Offer 'ParkDeed' to 'bb61daea-c8d8-4ead-98a3-51f3de4a4aaa'
+Rpc: Set Guid of Offer 'LakeDeed' to '282f40b7-a562-4eca-9d12-64bbfa7fd1d5'
+Rpc: Set Guid of Offer 'TreeDeed' to '82469174-ee24-4378-9467-8ec2fc8b8c37'
+Rpc: Set Guid of Offer 'GardenDeed' to '78a0288b-47f2-4eb8-80bf-83ce36c22f68'
+All player objects are initialized on this client and the level data is available
+Cmd: A client has completed loading the player objects.
+Rpc: All clients have completed loading their player objects.
+Server: Running character generation
+Closing the panel
+Starting panel animation
+Found NetworkIdentity NLobbyPlayer(Clone) - 1
+Found NetworkIdentity Player - 2
+Found NetworkIdentity Industrial - 3
+Found NetworkIdentity Lake - 4
+Found NetworkIdentity Building (7) - 5
+Found NetworkIdentity Tree - 6
+Found NetworkIdentity Summary - 7
+Found NetworkIdentity Administration - 8
+Found NetworkIdentity Garden - 9
+Found NetworkIdentity Building (9) - 10
+Found NetworkIdentity Villa - 11
+Found NetworkIdentity Park - 12
+Found NetworkIdentity School - 13
+Found NetworkIdentity Building (5) - 14
+Found NetworkIdentity Offices - 15
+Found NetworkIdentity Building (2) - 16
+Found NetworkIdentity City Hall - 17
+Found NetworkIdentity Building (3) - 18
+Found NetworkIdentity Building (4) - 19
+Found NetworkIdentity NLevel - 20
+Rpc: The player (netid: 2) is now called 'Player'.
+Comparing new value: 100 with the current value 100
+Rpc: The player (netid: 2) is now mayor: True
+Comparing new value: 100 with the current value 100
+Rpc: The player 'Player' (netid: 2) now has the person Person(i=0, t=mayorPerson0Name).
+Comparing new value: 100 with the current value 100
+Rpc: The player 'Player' (netid: 2) now has the home Home(i=0, t=mayorHome0Title, r=0).
+Comparing new value: 100 with the current value 100
+Rpc: The player 'Player' (netid: 2) now has the job Job(i=0, t=mayorJob0Title, s=0).
+Comparing new value: 100 with the current value 100
+Rpc: Adding a talent: Talent(i=0, t=mayorTalent0Title, d=mayorTalent0Description, ty=mayorTalent0Type, tags=[Infrastructure]) (json: {"title":"mayorTalent0Title","description":"mayorTalent0Description","id":0,"type":"mayorTalent0Type","tags":["Infrastructure"]})
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Rpc: Market c9759091-32b6-4e55-9e29-e8f1cc12b78b has a new seller: Player.
+Rpc: The player Player now owns the marketplace c9759091-32b6-4e55-9e29-e8f1cc12b78b.
+Rpc: Market 04d14802-8ec9-4355-ac84-0670ca377631 has a new seller: Player.
+Loading the character model for player 'Player' (netid: 2, mayor: True).
+started for major
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x4, PLAYER_INTRODUCTION)
+Server: Resetting the end-turn flow condition
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x2000, MOVEMENT_TUTO)
+Server: Resetting the end-turn flow condition
+movement start
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+check movement
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x8, BEGIN_MONTH)
+Server: Adding recurrent incidents to each player
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+Server: Resetting the end-turn flow condition
+movement end
+maintenance start
+Rpc: Adding an incident: Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=307e3295-26f8-4117-ab2d-4b4054c3bbb5) (json: {"instanceId":{"Value":"307e3295-26f8-4117-ab2d-4b4054c3bbb5"},"id":33,"title":"incident33Title","description":"incident33Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["A","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=307e3295-26f8-4117-ab2d-4b4054c3bbb5) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=422451a7-cba8-4824-a492-9fcc90d356e8) (json: {"instanceId":{"Value":"422451a7-cba8-4824-a492-9fcc90d356e8"},"id":34,"title":"incident34Title","description":"incident34Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["B","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=422451a7-cba8-4824-a492-9fcc90d356e8) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=0feb5b79-675b-4085-8a40-f2c44c7d2f52) (json: {"instanceId":{"Value":"0feb5b79-675b-4085-8a40-f2c44c7d2f52"},"id":35,"title":"incident35Title","description":"incident35Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["C","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=0feb5b79-675b-4085-8a40-f2c44c7d2f52) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=0328b1d9-0ff4-4211-8927-646f72f34a9b) (json: {"instanceId":{"Value":"0328b1d9-0ff4-4211-8927-646f72f34a9b"},"id":36,"title":"incident36Title","description":"incident36Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["D","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=0328b1d9-0ff4-4211-8927-646f72f34a9b) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=a299df34-2f88-4af1-824d-42bdedcf4b10) (json: {"instanceId":{"Value":"a299df34-2f88-4af1-824d-42bdedcf4b10"},"id":37,"title":"incident37Title","description":"incident37Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["E","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=a299df34-2f88-4af1-824d-42bdedcf4b10) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=26b607d1-322a-4237-9a28-918eed40776d) (json: {"instanceId":{"Value":"26b607d1-322a-4237-9a28-918eed40776d"},"id":38,"title":"incident38Title","description":"incident38Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["F","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=26b607d1-322a-4237-9a28-918eed40776d) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=114d27f6-fd91-4757-8b84-00fabb756797) (json: {"instanceId":{"Value":"114d27f6-fd91-4757-8b84-00fabb756797"},"id":39,"title":"incident39Title","description":"incident39Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["G","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=114d27f6-fd91-4757-8b84-00fabb756797) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=a3c36b68-6c6d-4678-9078-2ada57eaf007) (json: {"instanceId":{"Value":"a3c36b68-6c6d-4678-9078-2ada57eaf007"},"id":40,"title":"incident40Title","description":"incident40Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["H","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=a3c36b68-6c6d-4678-9078-2ada57eaf007) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=fb48576c-816a-4666-9f94-88d97236d7ad) (json: {"instanceId":{"Value":"fb48576c-816a-4666-9f94-88d97236d7ad"},"id":41,"title":"incident41Title","description":"incident41Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["I","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=fb48576c-816a-4666-9f94-88d97236d7ad) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Exit flow state to: FlowPhase(0x10, PLAYER_EVENTS)
+Opening the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+The mayor will not receive any events this month and thus completes their turn.
+The mayor will not receive any events this month and thus completes their turn.
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x20, PLAYER_TRADE)
+Closing the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+Opening the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident33Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=307e3295-26f8-4117-ab2d-4b4054c3bbb5) to player Player (Polymoney.Player)
+Mayor Cost: 0
+Mayor Money: 1000
+Cmd: The player Player requests to apply the incident Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=307e3295-26f8-4117-ab2d-4b4054c3bbb5).
+Server: Repairing the building
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident41Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=fb48576c-816a-4666-9f94-88d97236d7ad) to player Player (Polymoney.Player)
+Mayor Cost: 0
+Mayor Money: 1000
+Cmd: The player Player requests to apply the incident Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=fb48576c-816a-4666-9f94-88d97236d7ad).
+Server: Repairing the building
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident40Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=a3c36b68-6c6d-4678-9078-2ada57eaf007) to player Player (Polymoney.Player)
+Mayor Cost: 0
+Mayor Money: 1000
+Cmd: The player Player requests to apply the incident Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=a3c36b68-6c6d-4678-9078-2ada57eaf007).
+Server: Repairing the building
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident35Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=0feb5b79-675b-4085-8a40-f2c44c7d2f52) to player Player (Polymoney.Player)
+Mayor Cost: 0
+Mayor Money: 1000
+Cmd: The player Player requests to apply the incident Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=0feb5b79-675b-4085-8a40-f2c44c7d2f52).
+Server: Repairing the building
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident39Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=114d27f6-fd91-4757-8b84-00fabb756797) to player Player (Polymoney.Player)
+Mayor Cost: 0
+Mayor Money: 1000
+Cmd: The player Player requests to apply the incident Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=114d27f6-fd91-4757-8b84-00fabb756797).
+Server: Repairing the building
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident38Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=26b607d1-322a-4237-9a28-918eed40776d) to player Player (Polymoney.Player)
+Mayor Cost: 0
+Mayor Money: 1000
+Cmd: The player Player requests to apply the incident Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=26b607d1-322a-4237-9a28-918eed40776d).
+Server: Repairing the building
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident34Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=422451a7-cba8-4824-a492-9fcc90d356e8) to player Player (Polymoney.Player)
+Mayor Cost: 0
+Mayor Money: 1000
+Cmd: The player Player requests to apply the incident Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=422451a7-cba8-4824-a492-9fcc90d356e8).
+Server: Repairing the building
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident37Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=a299df34-2f88-4af1-824d-42bdedcf4b10) to player Player (Polymoney.Player)
+Mayor Cost: 0
+Mayor Money: 1000
+Cmd: The player Player requests to apply the incident Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=a299df34-2f88-4af1-824d-42bdedcf4b10).
+Server: Repairing the building
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident36Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=0328b1d9-0ff4-4211-8927-646f72f34a9b) to player Player (Polymoney.Player)
+Mayor Cost: 0
+Mayor Money: 1000
+Cmd: The player Player requests to apply the incident Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=0328b1d9-0ff4-4211-8927-646f72f34a9b).
+Server: Repairing the building
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Cannot open the marketplace, because no seller is set
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x40, END_MONTH)
+Server: Applying each player's incidents, resetting their time, luminance and offers
+update critical player mayorPerson0Name with fiat: 1000 and mayor: True and citystate: 1
+Incrementing the month counter
+Server: Resetting the end-turn flow condition
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Exit flow state to: FlowPhase(0x20000, END_MONTH_DISPLAY)
+Opening the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+[ENDMONTH] Enable Endturn
+Panel animation complete
+Opening the panel is complete
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x200, FAIRYDUST_SHARING)
+Closing the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+Exit flow state to: FlowPhase(0x8, BEGIN_MONTH)
+Server: Adding recurrent incidents to each player
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+1 * 0 * 50 * 0.2
+Server: Resetting the end-turn flow condition
+Rpc: Adding an incident: Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=3b1f107c-1b33-488c-b80d-2117a898553b) (json: {"instanceId":{"Value":"3b1f107c-1b33-488c-b80d-2117a898553b"},"id":33,"title":"incident33Title","description":"incident33Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["A","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=3b1f107c-1b33-488c-b80d-2117a898553b) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=3b884e1b-935c-44af-ba53-9c898190ed55) (json: {"instanceId":{"Value":"3b884e1b-935c-44af-ba53-9c898190ed55"},"id":34,"title":"incident34Title","description":"incident34Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["B","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=3b884e1b-935c-44af-ba53-9c898190ed55) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=4933b857-bcef-4b98-83d0-1e40a8c85dbb) (json: {"instanceId":{"Value":"4933b857-bcef-4b98-83d0-1e40a8c85dbb"},"id":35,"title":"incident35Title","description":"incident35Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["C","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=4933b857-bcef-4b98-83d0-1e40a8c85dbb) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=fbfa2a5f-275c-4060-9042-34d13cc55240) (json: {"instanceId":{"Value":"fbfa2a5f-275c-4060-9042-34d13cc55240"},"id":36,"title":"incident36Title","description":"incident36Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["D","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=fbfa2a5f-275c-4060-9042-34d13cc55240) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=1a58f909-df69-45d4-a49b-e738452831c9) (json: {"instanceId":{"Value":"1a58f909-df69-45d4-a49b-e738452831c9"},"id":37,"title":"incident37Title","description":"incident37Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["E","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=1a58f909-df69-45d4-a49b-e738452831c9) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=5b530586-9b68-40d2-8b8d-5c5f5656bfca) (json: {"instanceId":{"Value":"5b530586-9b68-40d2-8b8d-5c5f5656bfca"},"id":38,"title":"incident38Title","description":"incident38Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["F","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=5b530586-9b68-40d2-8b8d-5c5f5656bfca) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=fd6ff485-cc7b-4ebc-9c29-6efb4dc36f31) (json: {"instanceId":{"Value":"fd6ff485-cc7b-4ebc-9c29-6efb4dc36f31"},"id":39,"title":"incident39Title","description":"incident39Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["G","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=fd6ff485-cc7b-4ebc-9c29-6efb4dc36f31) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=44935457-32c8-4530-8a0c-14be6fb63aaa) (json: {"instanceId":{"Value":"44935457-32c8-4530-8a0c-14be6fb63aaa"},"id":40,"title":"incident40Title","description":"incident40Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["H","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=44935457-32c8-4530-8a0c-14be6fb63aaa) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=b2efacc9-15ec-4946-851f-242d7f8e8ba6) (json: {"instanceId":{"Value":"b2efacc9-15ec-4946-851f-242d7f8e8ba6"},"id":41,"title":"incident41Title","description":"incident41Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["I","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=b2efacc9-15ec-4946-851f-242d7f8e8ba6) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Exit flow state to: FlowPhase(0x10, PLAYER_EVENTS)
+Opening the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+The mayor will not receive any events this month and thus completes their turn.
+The mayor will not receive any events this month and thus completes their turn.
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x20, PLAYER_TRADE)
+Closing the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Closing the panel is complete
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x40, END_MONTH)
+Server: Applying each player's incidents, resetting their time, luminance and offers
+Server: Breaking the building
+The luminance was changed to 0
+Server: Breaking the building
+The luminance was changed to 0
+Server: Breaking the building
+The luminance was changed to 0
+Server: Breaking the building
+The luminance was changed to 0
+Server: Breaking the building
+The luminance was changed to 0
+Server: Breaking the building
+The luminance was changed to 0
+Server: Breaking the building
+The luminance was changed to 0
+Server: Breaking the building
+The luminance was changed to 0
+Server: Breaking the building
+The luminance was changed to 0
+update critical player mayorPerson0Name with fiat: 1000 and mayor: True and citystate: 0
+add player to critical
+Incrementing the month counter
+Server: Resetting the end-turn flow condition
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Exit flow state to: FlowPhase(0x20000, END_MONTH_DISPLAY)
+Opening the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+[ENDMONTH] Enable Endturn
+Opening the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x200, FAIRYDUST_SHARING)
+Closing the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+Opening the panel
+Starting panel animation
+Closing the panel
+Starting panel animation
+Exit flow state to: FlowPhase(0x8, BEGIN_MONTH)
+Server: Adding recurrent incidents to each player
+2 * 0 * 50 * 0.2
+2 * 0 * 50 * 0.2
+2 * 0 * 50 * 0.2
+2 * 0 * 50 * 0.2
+2 * 0 * 50 * 0.2
+2 * 0 * 50 * 0.2
+2 * 0 * 50 * 0.2
+2 * 0 * 50 * 0.2
+2 * 0 * 50 * 0.2
+Server: Resetting the end-turn flow condition
+Rpc: Adding an incident: Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=becf2fba-2a10-4d4d-b270-fb074db7887a) (json: {"instanceId":{"Value":"becf2fba-2a10-4d4d-b270-fb074db7887a"},"id":33,"title":"incident33Title","description":"incident33Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["A","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=becf2fba-2a10-4d4d-b270-fb074db7887a) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=ea20c304-1704-4956-b31e-a96d43d69788) (json: {"instanceId":{"Value":"ea20c304-1704-4956-b31e-a96d43d69788"},"id":34,"title":"incident34Title","description":"incident34Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["B","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=ea20c304-1704-4956-b31e-a96d43d69788) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=deebfcd9-a9fa-4e75-a5ba-45dd4c2a7c2e) (json: {"instanceId":{"Value":"deebfcd9-a9fa-4e75-a5ba-45dd4c2a7c2e"},"id":35,"title":"incident35Title","description":"incident35Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["C","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=deebfcd9-a9fa-4e75-a5ba-45dd4c2a7c2e) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=64433aa3-6a7f-4ca8-8571-526724788dce) (json: {"instanceId":{"Value":"64433aa3-6a7f-4ca8-8571-526724788dce"},"id":36,"title":"incident36Title","description":"incident36Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["D","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=64433aa3-6a7f-4ca8-8571-526724788dce) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=f2ffd12b-0ba8-4f6f-a327-7d7a741e97ad) (json: {"instanceId":{"Value":"f2ffd12b-0ba8-4f6f-a327-7d7a741e97ad"},"id":37,"title":"incident37Title","description":"incident37Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["E","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=f2ffd12b-0ba8-4f6f-a327-7d7a741e97ad) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=50ddce67-b1ad-44f3-be87-5a3349fdc78f) (json: {"instanceId":{"Value":"50ddce67-b1ad-44f3-be87-5a3349fdc78f"},"id":38,"title":"incident38Title","description":"incident38Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["F","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=50ddce67-b1ad-44f3-be87-5a3349fdc78f) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=c82fb912-a8f7-4f6b-a9bb-57df3e44c7cd) (json: {"instanceId":{"Value":"c82fb912-a8f7-4f6b-a9bb-57df3e44c7cd"},"id":39,"title":"incident39Title","description":"incident39Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["G","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=c82fb912-a8f7-4f6b-a9bb-57df3e44c7cd) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=d9eaf43e-d135-4d8b-a0f2-b224c09bbc17) (json: {"instanceId":{"Value":"d9eaf43e-d135-4d8b-a0f2-b224c09bbc17"},"id":40,"title":"incident40Title","description":"incident40Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["H","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=d9eaf43e-d135-4d8b-a0f2-b224c09bbc17) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=24772ced-93c2-4630-9c5d-36ab89e73434) (json: {"instanceId":{"Value":"24772ced-93c2-4630-9c5d-36ab89e73434"},"id":41,"title":"incident41Title","description":"incident41Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["I","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":0}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Linking the incident Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=24772ced-93c2-4630-9c5d-36ab89e73434) to the building
+Cmd: The player Player requests to update an incident.
+Comparing new value: 100 with the current value 100
+Exit flow state to: FlowPhase(0x10, PLAYER_EVENTS)
+Opening the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+The mayor will not receive any events this month and thus completes their turn.
+The mayor will not receive any events this month and thus completes their turn.
+Server: A player has completed their turn
+Server: All players have completed their turn
+Exit flow state to: FlowPhase(0x20, PLAYER_TRADE)
+Closing the panel
+Starting panel animation
+Server: Resetting the end-turn flow condition
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+Received message from client: NSM(source=CLIENT, event=FOCUS, status=False) (from: hostId: -1 connectionId: 0 isReady: True channel count: 0)
+All clients are available; the game may unpause.
+Received message from server: NSM(source=SERVER, event=BLOCK_SCREEN, status=False)
+The block-screen status for this client has changed to False
+Game unpaused
+OnApplicationQuit() called
+OnApplicationQuit() called on a client
+Received message from client: NSM(source=CLIENT, event=QUIT, status=True) (from: hostId: -1 connectionId: 0 isReady: True channel count: 0)
+Player 'Player' (netid: 2) was unregistered

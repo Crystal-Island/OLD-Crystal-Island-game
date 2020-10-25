@@ -1,0 +1,189 @@
+Logfile created: 2019/04/02 12:55:41
+Setting the device to never fall asleep.
+Opening the panel
+Starting panel animation
+Reading XML file at 'C:/Users/Ryan/Desktop/PM-Game Basedata/polymoney_src/Assets/StreamingAssets\lang/eng.xml'
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+OnStartHost()
+Server: Setting broadcast data to 'PolymoneyGame::192.168.251.22:20120'
+OnLobbyStartHost()
+OnStartServer()
+OnLobbyStartServer()
+Server: A new client has connected.
+OnStartClient(client=UnityEngine.Networking.LocalClient) for server at 
+OnLobbyStartClient(client=UnityEngine.Networking.LocalClient)
+OnClientConnect(conn=hostId: -1 connectionId: 0 isReady: False channel count: 0)
+OnLobbyClientConnect(conn=hostId: -1 connectionId: 0 isReady: False channel count: 0) with address localServer)
+Opening the panel
+Starting panel animation
+Closing the panel
+Starting panel animation
+Server: A player was added.
+OnLobbyServerCreateLobbyPlayer(conn=hostId: -1 connectionId: 0 isReady: True channel count: 0, controllerId=0)
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+OnLobbyServerPlayersReady()
+OnClientNotReady(conn=hostId: -1 connectionId: 0 isReady: True channel count: 0)
+The initial state will be 'FlowPhase(0x1, INTRO_WORLD)'
+OnLobbyServerCreateGamePlayer(conn=hostId: -1 connectionId: 0 isReady: False channel count: 0, controllerId=0)
+The player Player would like to run for mayor.
+Game unpaused
+Player 'Player' (netid: 2) was registered
+The authoritative player's name is 'Player'
+Closing the panel
+Starting panel animation
+Building 'Industrial' (netid: 3) was registered
+The luminance was changed to 0.3
+Building 'Lake' (netid: 4) was registered
+The luminance was changed to 0.3
+Building 'Building (7)' (netid: 5) was registered
+The luminance was changed to 0.2
+Building 'Tree' (netid: 6) was registered
+The luminance was changed to 0.3
+Building 'Administration' (netid: 7) was registered
+The luminance was changed to 0.7
+Building 'Garden' (netid: 8) was registered
+The luminance was changed to 0.3
+Building 'Building (9)' (netid: 9) was registered
+The luminance was changed to 0.2
+Building 'Villa' (netid: 10) was registered
+The luminance was changed to 0.3
+Building 'Park' (netid: 11) was registered
+The luminance was changed to 0.3
+Building 'School' (netid: 12) was registered
+The luminance was changed to 0.7
+Building 'Building (5)' (netid: 13) was registered
+The luminance was changed to 0.2
+Building 'Offices' (netid: 14) was registered
+The luminance was changed to 0.7
+Building 'Building (2)' (netid: 15) was registered
+The luminance was changed to 0.2
+Building 'City Hall' (netid: 16) was registered
+The luminance was changed to 0.1
+Building 'Building (3)' (netid: 17) was registered
+The luminance was changed to 0.2
+Building 'Building (4)' (netid: 18) was registered
+The luminance was changed to 0.2
+Server: Adding myself as exit condition to the state 'PLAYER_EVENTS'
+Server: Adding myself as exit condition to the state 'INTRO_WORLD'
+Server: Adding myself as exit condition to the state 'PLAYER_TRADE'
+Server: Adding myself as exit condition to the state 'END_MONTH_DISPLAY'
+Server: Adding myself as exit condition to the state 'Q_INTRODUCTION'
+Server: Adding myself as exit condition to the state 'MOVEMENT_TUTO'
+Server: Adding myself as exit condition to the state 'Q_MARKET'
+Server: Adding myself as exit condition to the state 'PLAYER_INTRODUCTION'
+Server: Adding myself as exit condition to the state 'END'
+Server: Adding myself as exit condition to the state 'GAMEOVER'
+Server: Adding myself as exit condition to the state 'SUMMARY'
+Opening the panel
+Starting panel animation
+Loaded level data from leveldata.json
+Rpc: Set Guid of Offer 'IndustrialBuildingDeed' to 'e764cd50-ae2c-409e-8f1b-c3ada4794418'
+Rpc: Set Guid of Offer 'VillaDeed' to 'e0642098-34b0-4e5b-bd46-bebac43aa919'
+Rpc: Set Guid of Offer 'ParkDeed' to '8dd6b306-2807-461d-9c59-c5267bf45b30'
+Rpc: Set Guid of Offer 'LakeDeed' to 'abd4b82e-a407-40fb-9456-6e022205b707'
+Rpc: Set Guid of Offer 'TreeDeed' to 'af89eddd-0bad-4089-8e65-5ec4a21c82e7'
+Rpc: Set Guid of Offer 'GardenDeed' to '206e1e56-dd4b-49f6-b786-68f08dd162bd'
+All player objects are initialized on this client and the level data is available
+Cmd: A client has completed loading the player objects.
+Rpc: All clients have completed loading their player objects.
+Server: Running character generation
+Closing the panel
+Starting panel animation
+Found NetworkIdentity NLobbyPlayer(Clone) - 1
+Found NetworkIdentity Player - 2
+Found NetworkIdentity Industrial - 3
+Found NetworkIdentity Lake - 4
+Found NetworkIdentity Building (7) - 5
+Found NetworkIdentity Tree - 6
+Found NetworkIdentity Administration - 7
+Found NetworkIdentity Garden - 8
+Found NetworkIdentity Building (9) - 9
+Found NetworkIdentity Villa - 10
+Found NetworkIdentity Park - 11
+Found NetworkIdentity School - 12
+Found NetworkIdentity Building (5) - 13
+Found NetworkIdentity Offices - 14
+Found NetworkIdentity Building (2) - 15
+Found NetworkIdentity City Hall - 16
+Found NetworkIdentity Building (3) - 17
+Found NetworkIdentity Building (4) - 18
+Found NetworkIdentity NLevel - 19
+Rpc: The player (netid: 2) is now called 'Player'.
+Rpc: The player (netid: 2) is now mayor: True
+Rpc: The player 'Player' (netid: 2) now has the person Person(i=0, t=mayorPerson0Name).
+Rpc: The player 'Player' (netid: 2) now has the home Home(i=0, t=mayorHome0Title, r=0).
+Rpc: The player 'Player' (netid: 2) now has the job Job(i=0, t=mayorJob0Title, s=0).
+Rpc: Adding a talent: Talent(i=0, t=mayorTalent0Title, d=mayorTalent0Description, ty=mayorTalent0Type, tags=[Infrastructure]) (json: {"title":"mayorTalent0Title","description":"mayorTalent0Description","id":0,"type":"mayorTalent0Type","tags":["Infrastructure"]})
+Rpc: Market 435a42f4-a619-4075-8316-0ab12108dd47 has a new seller: Player.
+Rpc: The player Player now owns the marketplace 435a42f4-a619-4075-8316-0ab12108dd47.
+Rpc: Market 31735ad4-1b79-45d3-b4ab-df81e2a953f9 has a new seller: Player.
+Loading the character model for player 'Player' (netid: 2, mayor: True).
+started for major
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+Received message from client: NSM(source=CLIENT, event=FOCUS, status=False) (from: hostId: -1 connectionId: 0 isReady: True channel count: 0)
+All clients are available; the game may unpause.
+Received message from server: NSM(source=SERVER, event=BLOCK_SCREEN, status=False)
+The block-screen status for this client has changed to False
+Game unpaused
+OnApplicationQuit() called
+OnApplicationQuit() called on a client
+Received message from client: NSM(source=CLIENT, event=QUIT, status=True) (from: hostId: -1 connectionId: 0 isReady: True channel count: 0)

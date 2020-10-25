@@ -1,0 +1,31 @@
+Logfile created: 2019/11/21 16:32:37
+Setting the device to never fall asleep.
+Opening the panel
+Starting panel animation
+OnApplicationFocus(True) started
+Reading XML file at 'C:/Users/cup2f/OneDrive/Documents/Polymoney/Assets/StreamingAssets\lang/eng.xml'
+OnApplicationFocus(False) started
+OnApplicationPause(True) started
+Reading XML file at 'C:/Users/cup2f/OneDrive/Documents/Polymoney/Assets/StreamingAssets\lang/deu.xml'
+OnApplicationPause(False) started
+OnApplicationFocus(True) started
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+Opening the panel
+Starting panel animation
+Closing the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationQuit() called

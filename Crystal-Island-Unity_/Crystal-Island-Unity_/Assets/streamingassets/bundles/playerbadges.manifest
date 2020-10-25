@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 596617624
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 05e740e23cf9e83ed167b1a19facedc6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 460b4f5d62b6facbccf7c01637df8f00
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Badges/Mayor_of_Commons.png
+- Assets/Resources/Badges/Mayor_of_Light.png
+- Assets/Resources/Badges/Citizen_Trade_Maker.png
+- Assets/Resources/Badges/Citizen_Resource_Explorer.png
+- Assets/Resources/Badges/Mayor_of_Compassion.png
+- Assets/Resources/Badges/Citizen_Talent_Shaper.png
+- Assets/Resources/Badges/Citizen_Crystal_Guardian.png
+- Assets/Resources/Badges/Citizen_Resource_Explorer_2.png
+- Assets/Resources/Badges/Mayor_Lonely_Heart.png
+Dependencies: []

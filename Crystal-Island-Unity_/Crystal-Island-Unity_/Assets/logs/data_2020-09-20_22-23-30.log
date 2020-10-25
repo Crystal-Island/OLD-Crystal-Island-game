@@ -1,0 +1,27 @@
+Logfile created: 2020/09/20 22:23:30
+Setting the device to never fall asleep.
+Opening the panel
+Starting panel animation
+OnApplicationFocus(True) started
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/eng.xml'
+Reading XML file at 'C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/deu.xml'
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+Opening the panel
+Starting panel animation
+Closing the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationQuit() called

@@ -1,0 +1,58 @@
+Logfile created: 2019/12/05 12:28:01
+Setting the device to never fall asleep.
+Opening the panel
+Starting panel animation
+OnApplicationFocus(True) started
+Reading XML file at 'C:/Users/cup2f/OneDrive/Documents/Polymoney/Assets/StreamingAssets\lang/eng.xml'
+Reading XML file at 'C:/Users/cup2f/OneDrive/Documents/Polymoney/Assets/StreamingAssets\lang/deu.xml'
+Panel animation complete
+Opening the panel is complete
+No entry for 'water5' in 'deu'. Cannot display text.
+No entry for 'water3' in 'deu'. Cannot display text.
+No entry for 'water4' in 'deu'. Cannot display text.
+No entry for 'water2' in 'deu'. Cannot display text.
+No entry for 'water1' in 'deu'. Cannot display text.
+No entry for 'dash2' in 'deu'. Cannot display text.
+No entry for 'dash1' in 'deu'. Cannot display text.
+No entry for 'maint2' in 'deu'. Cannot display text.
+No entry for 'maint1' in 'deu'. Cannot display text.
+No entry for 'taxOp4' in 'deu'. Cannot display text.
+No entry for 'taxOp5' in 'deu'. Cannot display text.
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+OnStartHost()
+Server: Setting broadcast data to 'PolymoneyGame::192.168.1.2:20120'
+OnLobbyStartHost()
+OnStartServer()
+OnLobbyStartServer()
+Server: A new client has connected.
+OnStartClient(client=UnityEngine.Networking.LocalClient) for server at 
+OnLobbyStartClient(client=UnityEngine.Networking.LocalClient)
+OnClientConnect(conn=hostId: -1 connectionId: 0 isReady: False channel count: 0)
+OnLobbyClientConnect(conn=hostId: -1 connectionId: 0 isReady: False channel count: 0) with address localServer)
+Opening the panel
+Starting panel animation
+Closing the panel
+Starting panel animation
+Server: A player was added.
+OnLobbyServerCreateLobbyPlayer(conn=hostId: -1 connectionId: 0 isReady: True channel count: 0, controllerId=0)
+Setting the language to: German
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+Received message from client: NSM(source=CLIENT, event=FOCUS, status=False) (from: hostId: -1 connectionId: 0 isReady: True channel count: 0)
+All clients are available; the game may unpause.
+Received message from server: NSM(source=SERVER, event=BLOCK_SCREEN, status=False)
+The block-screen status for this client has changed to False
+OnApplicationQuit() called
+OnApplicationQuit() called on a client
+Received message from client: NSM(source=CLIENT, event=QUIT, status=True) (from: hostId: -1 connectionId: 0 isReady: True channel count: 0)
