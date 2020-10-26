@@ -1590,7 +1590,7 @@
             <p>Du kannst keine Angebote auf Inselgebäuden entfernen.</p>
         </textline>
         <textline uid="specialBuildingOwnerTitle">
-            <p>Behütet von {0}.</p>
+            <p>TRANSLATION NEEDED {0}.</p>
         </textline>
         <textline uid="timeCost">
             <p>% deiner Zeit.</p>

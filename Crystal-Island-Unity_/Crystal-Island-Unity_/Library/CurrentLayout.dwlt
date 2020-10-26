@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 2560
     height: 1357
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -106,7 +106,7 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1307
-  m_MinSize: {x: 683, y: 492}
+  m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 9
@@ -130,7 +130,7 @@ MonoBehaviour:
     y: 0
     width: 1892
     height: 1307
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 10
@@ -154,8 +154,8 @@ MonoBehaviour:
     y: 0
     width: 1892
     height: 696
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 11
 --- !u!114 &8
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 732
     height: 696
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -368,28 +368,28 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f6010000
-    m_LastClickedID: 0
-    m_ExpandedIDs: a0fbffff00000000
+    m_SelectedIDs: da770100
+    m_LastClickedID: 96218
+    m_ExpandedIDs: 8490fcfff612fdff40bdfdff3a69feffd292feff8e93feff3497feffbea6feffcaa6feff66a7feff6aa7feff7ea7feffe0a7feff42a8feff4ea8feff56a8feff5aa8feff5ea8feff62a8feff66a8feff6aa8feff96a8feff9ca8feffa0a8feffb2a8feff4ea9feff5aa9feff36bbfeff0ebcfeff78bcfeff8cc2feff8287ffffd888ffff928dffff328effff368efffff890ffff7496ffff6898ffff9498ffff82a4ffffa8a5ffff3ec0ffff42c0ffff98fbffff9afbffffa0fbfffff4ffffff00000000e4470000aaa900007caa0000e8aa000080ab0000a2ab000068ac00000cae000016af000016b00000bcb0000010b50000c8c20000c4cb0000a6e50000bae50000f0e5000006e6000012e6000056e6000094e60000aae60000b4e60000c8e6000066e700009ee70000d4e7000044e800008ce80000a4e80000e8e80000fce800001ee900008ee90000f8e900006aea00008aea0000baea000076eb00001aec000048ec000054ec000086ec0000beec0000dcec00003aed000020ee000036ee0000fcee000022ef0000a4ef0000e8ef000022f0000040f000002cf100009ef1000002f2000034f200003cf2000064f200008af20000cef30000aef4000016f6000028f70000f4f7000054f9000082f900008ef9000068fb00005cfd00003cff0000486d01005e6d01007e6d0100946d0100c06d0100ce6d0100e46d0100226e0100386e0100426e0100566e0100e06e0100026f01002c6f0100d26f01001a70010032700100767001008a700100f8700100047101001c7101003c7101005e710100867101002672010060720100e2730100fc730100147401006a7401007e740100ee7401005475010092750100ae750100727601009e760100b0760100f6760100327701005a7701005e77010076770100b0770100da770100fa7701009e780100be7801003079010094790100c8790100ce790100f6790100187a0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Incident Symbol
+      m_OriginalName: Incident Symbol
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 96414
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - lobby
+  - game
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -421,14 +421,14 @@ MonoBehaviour:
     height: 675
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 4041.2975595
-  m_2DMode: 1
+  lastFramingTime: 5098.0173999
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 609.94946, y: 517.7972, z: -7.471786}
+    m_Target: {x: 3.178063, y: 15.787855, z: 111.92353}
     speed: 2
-    m_Value: {x: 609.94946, y: 517.7972, z: -7.471786}
+    m_Value: {x: 3.178063, y: 15.787855, z: 111.92353}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -444,25 +444,25 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 0
-      speed: 2
-      m_Value: 0
-    zGrid:
       m_Target: 1
       speed: 2
       m_Value: 1
+    zGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: -0.020157197, y: -0.9620371, z: 0.07404296, w: -0.26190832}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.020157197, y: -0.9620371, z: 0.07404296, w: -0.26190832}
   m_Size:
-    m_Target: 1093.5842
+    m_Target: 33.890682
     speed: 2
-    m_Value: 1093.5842
+    m_Value: 33.890682
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_ShowGlobalGrid: 1
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
@@ -536,19 +536,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/2_scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/2_scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\15208\Documents\GitHub\Crystal-Island-game\Crystal-Island-Unity_\Crystal-Island-Unity_
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: f62d0000
-    m_LastClickedID: 11766
-    m_ExpandedIDs: 00000000f62d0000062f0000cc300000d833000004350000063700009a380000843b00001a3c0000f23e0000324100009443000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 39}
+    m_SelectedIDs: 3c360000
+    m_LastClickedID: 13884
+    m_ExpandedIDs: 00000000f62d0000062f0000d833000004350000063700001a3c0000f23e00009443000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -685,7 +685,7 @@ MonoBehaviour:
     width: 666
     height: 1286
   m_PersistentViewDataDictionary: {fileID: 0}
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 24.955078}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160
