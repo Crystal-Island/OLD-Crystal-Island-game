@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 2560
     height: 1357
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1307
-  m_MinSize: {x: 681, y: 492}
+  m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 2548
+  controlID: 9
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1892
     height: 1307
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 2549
+  controlID: 10
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1892
     height: 696
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 2550
+  controlID: 11
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -284,10 +284,10 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 368
+    x: 734
     y: 92
-    width: 576
-    height: 291
+    width: 1156
+    height: 675
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
@@ -317,25 +317,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 576
-      height: 274
-    m_Scale: {x: 0.35677084, y: 0.35677084}
-    m_Translation: {x: 288, y: 137}
+      width: 1156
+      height: 658
+    m_Scale: {x: 0.8567708, y: 0.8567708}
+    m_Translation: {x: 578, y: 329}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -807.24084
+      x: -674.62616
       y: -384
-      width: 1614.4817
+      width: 1349.2523
       height: 768
     m_MinimalGUI: 1
-  m_defaultScale: 0.35677084
+  m_defaultScale: 0.8567708
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 576, y: 291}
+  m_LastWindowPixelSize: {x: 1156, y: 675}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -368,9 +368,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6e00fcff
-    m_LastClickedID: -262034
-    m_ExpandedIDs: 24a0fcff36a0fcff62a0fcff64a0fcff6aa0fcffe44ffffff04ffffffa4fffff1e50ffff2850ffff3850ffff86f9ffff8cf9ffffbaf9ffffc2f9ffffc4f9ffffe4f9ffffe6f9ffff4afbffff5cfbffff8afbffff8cfbffff92fbfffff4ffffff00000000c4460000d646000040470000604700006647000092470000c0470000c64700002c48000048480000944800003049000054490000764a0000d04a0000e24a0000f64a0000fe4a00001a4b00003c4b0000b24b0000ce4b00002c4c0000344c0000224d0000aa4d0000ae4d0000364e0000504e0000704e00006a4f000030430100
+    m_SelectedIDs: f6010000
+    m_LastClickedID: 0
+    m_ExpandedIDs: a0fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -536,19 +536,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/streamingassets/lang
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/streamingassets/lang
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\15208\Documents\Unity Projects\Crystal-Island-Unity_\Crystal-Island-Unity_
+  m_LastProjectPath: C:\Users\15208\Documents\GitHub\Crystal-Island-game\Crystal-Island-Unity_\Crystal-Island-Unity_
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 788}
-    m_SelectedIDs: 623d0000
-    m_LastClickedID: 15714
-    m_ExpandedIDs: 00000000002e00000e2f0000d4300000da33000004350000fc3600008c3800006e3b0000023c0000d43e0000124100007043000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: f62d0000
+    m_LastClickedID: 11766
+    m_ExpandedIDs: 00000000f62d0000062f0000cc300000d833000004350000063700009a380000843b00001a3c0000f23e0000324100009443000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -576,7 +576,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000002e0000d4300000da330000b23600008c3800009e3a00006e3b0000d43e00001241000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000f62d0000062f0000cc300000d833000004350000063700009a380000843b00001a3c0000f23e00003241000094430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,7 +603,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

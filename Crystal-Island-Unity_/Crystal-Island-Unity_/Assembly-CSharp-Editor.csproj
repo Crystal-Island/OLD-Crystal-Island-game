@@ -352,25 +352,25 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="JMOAssets">
- <HintPath>C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/jmo assets/Editor/JMOAssets.dll</HintPath>
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/jmo assets/Editor/JMOAssets.dll</HintPath>
  </Reference>
  <Reference Include="System.Drawing">
- <HintPath>C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/koboldtools/GraphicsImporter/Editor/System.Drawing.dll</HintPath>
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/koboldtools/GraphicsImporter/Editor/System.Drawing.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/koboldtools/plugins/JsonDotNet/assemblies/AOT/Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/koboldtools/plugins/JsonDotNet/assemblies/AOT/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="VacuumShaders">
- <HintPath>C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/Editor/VacuumShaders.dll</HintPath>
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/Editor/VacuumShaders.dll</HintPath>
  </Reference>
  <Reference Include="VacuumShaders.TerrainToMeshVC">
- <HintPath>C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/terrain to mesh/Editor/VacuumShaders.TerrainToMeshVC.dll</HintPath>
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/terrain to mesh/Editor/VacuumShaders.TerrainToMeshVC.dll</HintPath>
  </Reference>
  <Reference Include="VacuumShaders.TerrainToMesh_Editor">
- <HintPath>C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/terrain to mesh/Editor/VacuumShaders.TerrainToMesh_Editor.dll</HintPath>
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/terrain to mesh/Editor/VacuumShaders.TerrainToMesh_Editor.dll</HintPath>
  </Reference>
  <Reference Include="VacuumShaders.TerrainToMesh">
- <HintPath>C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/terrain to mesh/Scripts/VacuumShaders.TerrainToMesh.dll</HintPath>
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/terrain to mesh/Scripts/VacuumShaders.TerrainToMesh.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/15208/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>

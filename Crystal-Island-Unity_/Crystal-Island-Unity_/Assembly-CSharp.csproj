@@ -705,10 +705,10 @@
  <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/koboldtools/plugins/JsonDotNet/assemblies/AOT/Newtonsoft.Json.dll</HintPath>
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/koboldtools/plugins/JsonDotNet/assemblies/AOT/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="VacuumShaders.TerrainToMesh">
- <HintPath>C:/Users/15208/Documents/Unity Projects/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/terrain to mesh/Scripts/VacuumShaders.TerrainToMesh.dll</HintPath>
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/terrain to mesh/Scripts/VacuumShaders.TerrainToMesh.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/15208/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
