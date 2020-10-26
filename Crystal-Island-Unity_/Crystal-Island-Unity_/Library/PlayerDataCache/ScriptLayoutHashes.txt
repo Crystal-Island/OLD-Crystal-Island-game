@@ -1,6 +1,6 @@
-iOS
+WindowsStandalone
 PlayerPath?
-/Users/melwymore/PlayTest/Crystal-Island-iOS-130820B
+C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Builds/testBuild0.001.exe
 SceneListBegin?
 Assets/2_scenes/lobby.unity
 Assets/2_scenes/game.unity
@@ -231,6 +231,7 @@ c3b726e1ef77ecefcf78c4586a6bf32e Assembly-CSharp.dll:Cinemachine.CinemachineTrac
 05fbe8731c2ca2855883afcd59275bb5 Assembly-CSharp.dll:Polymoney.LevelGenerateCharacter
 b45aae850d79e7a552d3b050a73309d2 Assembly-CSharp.dll:Polymoney.LevelInput
 d38315809edff4bad1c072f046f1bef7 Assembly-CSharp.dll:Polymoney.AnalyticsManagerSummaryDisplay
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SetMinimumUpkeep
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Cinemachine.CinemachinePipeline
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:SA.Analytics.Google.UseExample
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:KoboldTools.Cleanup
@@ -353,7 +354,9 @@ f53b4f997151f96a1f63cb758d9ababb Assembly-CSharp.dll:KoboldTools.Logging.LoggerW
 86a3fd892076c4c832c4ee49173973e7 Assembly-CSharp.dll:Polymoney.PlayerTutorial
 fba6f80d0269868b8b5f0a3552d32d97 Assembly-CSharp.dll:Polymoney.PlayerDisplayBalanceSheet
 bde70fbf1583ac44795b1de9a22a82da Assembly-CSharp.dll:Polymoney.PlayerLoadCharacter
+70237f0bfa0c1324ed8aff3e1806a371 Assembly-CSharp.dll:.PersistentOptionSettings
 00060032a89069fd5263f05c11d6acd4 Assembly-CSharp.dll:Polymoney.ButtonDisplayTurnCompletion
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GetBuildingUpkeepRequirement
 751efb25c80dc42c96b7ec863414e2eb Assembly-CSharp.dll:KoboldTools.SkipController
 d0516a7ee002335bb8141a46ac649d9a Assembly-CSharp.dll:Polymoney.ButtonOpenMarketplace
 6fb7e1be716963a0c08757e17b011a9d Assembly-CSharp.dll:.CFX_Demo_RandomDirectionTranslate

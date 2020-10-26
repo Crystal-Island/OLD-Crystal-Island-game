@@ -1,0 +1,485 @@
+Logfile created: 2020/10/25 22:47:57
+Setting the device to never fall asleep.
+Opening the panel
+Starting panel animation
+Reading XML file at 'C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/eng.xml'
+OnApplicationFocus(False) started
+OnApplicationPause(True) started
+Reading XML file at 'C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/deu.xml'
+OnApplicationPause(False) started
+OnApplicationFocus(True) started
+Reading XML file at 'C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/StreamingAssets\lang/spa.xml'
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+Opening the panel
+Starting panel animation
+Closing the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+Trying to connect to 192.168.0.218:20120
+OnStartClient(client=UnityEngine.Networking.NetworkClient) for server at 
+OnLobbyStartClient(client=UnityEngine.Networking.NetworkClient)
+OnClientConnect(conn=hostId: 1 connectionId: 1 isReady: False channel count: 3)
+OnLobbyClientConnect(conn=hostId: 1 connectionId: 1 isReady: False channel count: 3) with address 192.168.0.218)
+Opening the panel
+Starting panel animation
+Closing the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+Received message from server: NSM(source=SERVER, event=BLOCK_SCREEN, status=False)
+The block-screen status for this client has changed to False
+OnClientNotReady(conn=hostId: 1 connectionId: 1 isReady: True channel count: 3)
+The initial state will be 'FlowPhase(0x1, INTRO_WORLD)'
+Game unpaused
+Closing the panel
+Starting panel animation
+Player 'Player(Clone)' (netid: 3) was registered
+Building 'Industrial' (netid: 4) was registered
+Building 'Lake' (netid: 5) was registered
+Building 'Building (7)' (netid: 6) was registered
+Building 'Tree' (netid: 7) was registered
+Building 'Administration' (netid: 9) was registered
+Building 'Garden' (netid: 10) was registered
+Building 'Building (9)' (netid: 11) was registered
+Building 'Villa' (netid: 12) was registered
+Building 'Park' (netid: 13) was registered
+Building 'School' (netid: 14) was registered
+Building 'Building (5)' (netid: 15) was registered
+Building 'Offices' (netid: 16) was registered
+Building 'Building (2)' (netid: 17) was registered
+Building 'City Hall' (netid: 18) was registered
+Building 'Building (3)' (netid: 19) was registered
+Building 'Building (4)' (netid: 20) was registered
+Loaded level data from leveldata.json
+Player 'Player(Clone)' (netid: 22) was registered
+The authoritative player's name is 'Player(Clone)'
+Comparing new value: 100 with the current value 0
+Opening the panel
+Starting panel animation
+Rpc: Set Guid of Offer 'IndustrialBuildingDeed' to 'a0551ae4-50dc-482d-b61b-ec6c4c9fcf1a'
+Rpc: Set Guid of Offer 'VillaDeed' to '514e530c-9bc9-4784-b893-434316367485'
+Rpc: Set Guid of Offer 'ParkDeed' to 'f0fb5013-66e2-479f-be24-b6dd8ee740f0'
+Rpc: Set Guid of Offer 'LakeDeed' to 'f509b023-fcbe-4840-8ccd-4b4473e50fbe'
+Rpc: Set Guid of Offer 'TreeDeed' to '55224f08-3fe9-4fa4-a46e-686f3039565d'
+Rpc: Set Guid of Offer 'GardenDeed' to '96d744be-edce-42c3-b0f9-3fe41b9d912a'
+All player objects are initialized on this client and the level data is available
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+Rpc: All clients have completed loading their player objects.
+Closing the panel
+Starting panel animation
+Found NetworkIdentity NLobbyPlayer(Clone) - 1
+Found NetworkIdentity NLobbyPlayer(Clone) - 2
+Found NetworkIdentity Player(Clone) - 3
+Found NetworkIdentity Industrial - 4
+Found NetworkIdentity Lake - 5
+Found NetworkIdentity Building (7) - 6
+Found NetworkIdentity Tree - 7
+Found NetworkIdentity Summary - 8
+Found NetworkIdentity Administration - 9
+Found NetworkIdentity Garden - 10
+Found NetworkIdentity Building (9) - 11
+Found NetworkIdentity Villa - 12
+Found NetworkIdentity Park - 13
+Found NetworkIdentity School - 14
+Found NetworkIdentity Building (5) - 15
+Found NetworkIdentity Offices - 16
+Found NetworkIdentity Building (2) - 17
+Found NetworkIdentity City Hall - 18
+Found NetworkIdentity Building (3) - 19
+Found NetworkIdentity Building (4) - 20
+Found NetworkIdentity NLevel - 21
+Found NetworkIdentity Player(Clone) - 22
+Rpc: The player (netid: 3) is now called 'Player'.
+Rpc: The player (netid: 22) is now called 'Player'.
+Comparing new value: 100 with the current value 100
+Rpc: The player (netid: 3) is now mayor: True
+Rpc: The player 'Player' (netid: 3) now has the person Person(i=0, t=mayorPerson0Name).
+Rpc: The player 'Player' (netid: 3) now has the home Home(i=0, t=mayorHome0Title, r=0).
+Rpc: The player 'Player' (netid: 3) now has the job Job(i=0, t=mayorJob0Title, s=0).
+Rpc: Adding a talent: Talent(i=0, t=mayorTalent0Title, d=mayorTalent0Description, ty=mayorTalent0Type, tags=[Infrastructure]) (json: {"title":"mayorTalent0Title","description":"mayorTalent0Description","id":0,"type":"mayorTalent0Type","tags":["Infrastructure"]})
+Rpc: Market ab31a58a-67cc-4e41-8157-1fd1c62e0410 has a new seller: Player.
+Rpc: The player Player now owns the marketplace ab31a58a-67cc-4e41-8157-1fd1c62e0410.
+Rpc: Market 9173c935-c49f-4ea6-aa1c-b7668849409a has a new seller: Player.
+Rpc: The player 'Player' (netid: 22) now has the person Person(i=3, t=person3Name).
+Comparing new value: 100 with the current value 100
+Rpc: The player 'Player' (netid: 22) now has the home Home(i=1, t=home1Title, r=500).
+Comparing new value: 100 with the current value 100
+Rpc: The player 'Player' (netid: 22) now has the job Job(i=0, t=unemployed0Title, s=0).
+Comparing new value: 100 with the current value 100
+Rpc: Adding a talent: Talent(i=4, t=talent4Title, d=talent4Description, ty=talent4Type, tags=[Entertain]) (json: {"title":"talent4Title","description":"talent4Description","id":4,"type":"talent4Type","tags":["Entertain"]})
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Rpc: Market 985c38cb-6e75-4e57-842e-6f84489469d3 has a new seller: Player.
+Rpc: The player Player now owns the marketplace 985c38cb-6e75-4e57-842e-6f84489469d3.
+Rpc: Adding a talent: Talent(i=5, t=talent5Title, d=talent5Description, ty=talent5Type, tags=[Food]) (json: {"title":"talent5Title","description":"talent5Description","id":5,"type":"talent5Type","tags":["Food"]})
+Comparing new value: 100 with the current value 100
+Loading the character model for player 'Player' (netid: 3, mayor: True).
+started for player
+Loading the character model for player 'Player' (netid: 22, mayor: False).
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Opening the panel
+Closing the panel
+Starting panel animation
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+Closing the panel
+Starting panel animation
+movement start
+Opening the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Panel animation complete
+Opening the panel is complete
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+check movement
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+Rpc: Adding an incident: Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=98e7de8f-7df4-4eab-8936-68d29566fca7) (json: {"instanceId":{"Value":"98e7de8f-7df4-4eab-8936-68d29566fca7"},"id":33,"title":"incident33Title","description":"incident33Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["A","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Rpc: Adding an incident: Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=4a8e66f9-30bb-4061-b02a-3aa39e49a362) (json: {"instanceId":{"Value":"4a8e66f9-30bb-4061-b02a-3aa39e49a362"},"id":34,"title":"incident34Title","description":"incident34Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["B","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Rpc: Adding an incident: Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=c1a3da10-851f-41ee-abbb-554d148119f2) (json: {"instanceId":{"Value":"c1a3da10-851f-41ee-abbb-554d148119f2"},"id":35,"title":"incident35Title","description":"incident35Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["C","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Rpc: Adding an incident: Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=c69acf44-67d0-491f-97ab-97f27a01776c) (json: {"instanceId":{"Value":"c69acf44-67d0-491f-97ab-97f27a01776c"},"id":36,"title":"incident36Title","description":"incident36Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["D","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Rpc: Adding an incident: Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=83dd8e40-e5c9-4ee0-bd98-f5428ea15114) (json: {"instanceId":{"Value":"83dd8e40-e5c9-4ee0-bd98-f5428ea15114"},"id":37,"title":"incident37Title","description":"incident37Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["E","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Rpc: Adding an incident: Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=01db7b33-cad6-4b4e-a376-e8edd9a56c52) (json: {"instanceId":{"Value":"01db7b33-cad6-4b4e-a376-e8edd9a56c52"},"id":38,"title":"incident38Title","description":"incident38Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["F","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Rpc: Adding an incident: Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=60ec29ec-ab71-4e38-aa58-7c684f02a83d) (json: {"instanceId":{"Value":"60ec29ec-ab71-4e38-aa58-7c684f02a83d"},"id":39,"title":"incident39Title","description":"incident39Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["G","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Rpc: Adding an incident: Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=1b94c4e2-7af0-424a-8cfd-070894bd23c9) (json: {"instanceId":{"Value":"1b94c4e2-7af0-424a-8cfd-070894bd23c9"},"id":40,"title":"incident40Title","description":"incident40Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["H","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Rpc: Adding an incident: Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=743cfe5e-0bf9-47db-88f0-2ed0713d98dd) (json: {"instanceId":{"Value":"743cfe5e-0bf9-47db-88f0-2ed0713d98dd"},"id":41,"title":"incident41Title","description":"incident41Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["I","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Rpc: Adding an incident: Incident(id=3, title='incident3Title', state=UNTOUCHED, instanceId=b526ca72-62cb-43f0-866f-64e180dfc165) (json: {"instanceId":{"Value":"b526ca72-62cb-43f0-866f-64e180dfc165"},"id":3,"title":"incident3Title","description":"incident3Description","state":0,"ignorable":false,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"Recurrent","tags":["Taxes"],"addSerializedOffer":"{\"_guid\":{\"Value\":\"4c7827fb-b346-4d32-901f-b5acc65248e8\"},\"_persistent\":false,\"_essential\":false,\"_visibleToMayor\":true,\"_tags\":[\"Taxes\"],\"_creationCost\":{\"expenses\":[],\"breakBuilding\":4294967295,\"time\":0},\"_creationBenefit\":{\"removeIncident\":[],\"addTalent\":[],\"fairyDust\":0,\"income\":[],\"repairBuilding\":4294967295},\"_sellingCost\":{\"expenses\":[],\"breakBuilding\":4294967295,\"time\":0},\"_buyingCost\":{\"expenses\":[],\"breakBuilding\":4294967295,\"time\":0},\"_buyingBenefit\":{\"removeIncident\":[],\"addTalent\":[],\"fairyDust\":0,\"income\":[{\"currency\":\"FIAT\",\"value\":100}],\"repairBuilding\":4294967295},\"_sellingBenefit\":{\"removeIncident\":[],\"addTalent\":[],\"fairyDust\":0,\"income\":[],\"repairBuilding\":4294967295},\"_itemTitle\":\"Taxes\",\"_itemDescription\":\"You can collect taxes from this player.\"}","applicationCost":{"expenses":[{"currency":"FIAT","value":100}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=4, title='incident4Title', state=UNTOUCHED, instanceId=0803da47-ef83-448f-a093-091c40a37b80) (json: {"instanceId":{"Value":"0803da47-ef83-448f-a093-091c40a37b80"},"id":4,"title":"incident4Title","description":"incident4Description","state":0,"ignorable":false,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"Recurrent","tags":["Food"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":200}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=5, title='incident5Title', state=UNTOUCHED, instanceId=5d354ed6-6c9e-4aab-a461-a7b918e0cdfe) (json: {"instanceId":{"Value":"5d354ed6-6c9e-4aab-a461-a7b918e0cdfe"},"id":5,"title":"incident5Title","description":"incident5Description","state":0,"ignorable":false,"immediate":false,"influenceable":false,"pickPoolSize":0,"month":0,"type":"Recurrent","tags":["Salary"],"addSerializedOffer":"","applicationCost":{"expenses":[],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[{"currency":"FIAT","value":0}],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Comparing new value: 100 with the current value 100
+Rpc: Adding an incident: Incident(id=6, title='incident6Title', state=UNTOUCHED, instanceId=feafaeb2-880a-4321-bbc1-a77bf87a89da) (json: {"instanceId":{"Value":"feafaeb2-880a-4321-bbc1-a77bf87a89da"},"id":6,"title":"incident6Title","description":"incident6Description","state":0,"ignorable":false,"immediate":false,"influenceable":false,"pickPoolSize":0,"month":0,"type":"Recurrent","tags":["Rent"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":500}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Comparing new value: 100 with the current value 100
+movement end
+good incidents start
+Rpc: Updating an incident: Incident(id=33, title='incident33Title', state=UNTOUCHED, instanceId=98e7de8f-7df4-4eab-8936-68d29566fca7) (json: {"instanceId":{"Value":"98e7de8f-7df4-4eab-8936-68d29566fca7"},"id":33,"title":"incident33Title","description":"incident33Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["A","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":16},"ignoranceCost":{"expenses":[],"breakBuilding":16,"time":0}})
+Rpc: Updating an incident: Incident(id=34, title='incident34Title', state=UNTOUCHED, instanceId=4a8e66f9-30bb-4061-b02a-3aa39e49a362) (json: {"instanceId":{"Value":"4a8e66f9-30bb-4061-b02a-3aa39e49a362"},"id":34,"title":"incident34Title","description":"incident34Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["B","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":9},"ignoranceCost":{"expenses":[],"breakBuilding":9,"time":0}})
+Rpc: Updating an incident: Incident(id=35, title='incident35Title', state=UNTOUCHED, instanceId=c1a3da10-851f-41ee-abbb-554d148119f2) (json: {"instanceId":{"Value":"c1a3da10-851f-41ee-abbb-554d148119f2"},"id":35,"title":"incident35Title","description":"incident35Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["C","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":14},"ignoranceCost":{"expenses":[],"breakBuilding":14,"time":0}})
+Rpc: Updating an incident: Incident(id=36, title='incident36Title', state=UNTOUCHED, instanceId=c69acf44-67d0-491f-97ab-97f27a01776c) (json: {"instanceId":{"Value":"c69acf44-67d0-491f-97ab-97f27a01776c"},"id":36,"title":"incident36Title","description":"incident36Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["D","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":13},"ignoranceCost":{"expenses":[],"breakBuilding":13,"time":0}})
+Rpc: Updating an incident: Incident(id=37, title='incident37Title', state=UNTOUCHED, instanceId=83dd8e40-e5c9-4ee0-bd98-f5428ea15114) (json: {"instanceId":{"Value":"83dd8e40-e5c9-4ee0-bd98-f5428ea15114"},"id":37,"title":"incident37Title","description":"incident37Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["E","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":5},"ignoranceCost":{"expenses":[],"breakBuilding":5,"time":0}})
+Rpc: Updating an incident: Incident(id=38, title='incident38Title', state=UNTOUCHED, instanceId=01db7b33-cad6-4b4e-a376-e8edd9a56c52) (json: {"instanceId":{"Value":"01db7b33-cad6-4b4e-a376-e8edd9a56c52"},"id":38,"title":"incident38Title","description":"incident38Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["F","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":12},"ignoranceCost":{"expenses":[],"breakBuilding":12,"time":0}})
+Rpc: Updating an incident: Incident(id=39, title='incident39Title', state=UNTOUCHED, instanceId=60ec29ec-ab71-4e38-aa58-7c684f02a83d) (json: {"instanceId":{"Value":"60ec29ec-ab71-4e38-aa58-7c684f02a83d"},"id":39,"title":"incident39Title","description":"incident39Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["G","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":7},"ignoranceCost":{"expenses":[],"breakBuilding":7,"time":0}})
+Rpc: Updating an incident: Incident(id=40, title='incident40Title', state=UNTOUCHED, instanceId=1b94c4e2-7af0-424a-8cfd-070894bd23c9) (json: {"instanceId":{"Value":"1b94c4e2-7af0-424a-8cfd-070894bd23c9"},"id":40,"title":"incident40Title","description":"incident40Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["H","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4},"ignoranceCost":{"expenses":[],"breakBuilding":4,"time":0}})
+Rpc: Updating an incident: Incident(id=41, title='incident41Title', state=UNTOUCHED, instanceId=743cfe5e-0bf9-47db-88f0-2ed0713d98dd) (json: {"instanceId":{"Value":"743cfe5e-0bf9-47db-88f0-2ed0713d98dd"},"id":41,"title":"incident41Title","description":"incident41Description","state":0,"ignorable":true,"immediate":false,"influenceable":true,"pickPoolSize":0,"month":0,"type":"RecurrentCity","tags":["I","Recurrent","City","Infrastructure"],"addSerializedOffer":"","applicationCost":{"expenses":[{"currency":"FIAT","value":50}],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":10},"ignoranceCost":{"expenses":[],"breakBuilding":10,"time":0}})
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Opening the panel
+Starting panel animation
+Rpc: Adding an incident: Incident(id=1, title='incident1Title', state=UNTOUCHED, instanceId=24839731-6dc8-47e8-abf4-c40a910efb9a) (json: {"instanceId":{"Value":"24839731-6dc8-47e8-abf4-c40a910efb9a"},"id":1,"title":"incident1Title","description":"incident1Description","state":0,"ignorable":false,"immediate":false,"influenceable":false,"pickPoolSize":1,"month":0,"type":"Luck","tags":["Gift"],"addSerializedOffer":"","applicationCost":{"expenses":[],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":[],"addTalent":[],"fairyDust":0,"income":[{"currency":"FIAT","value":250}],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Opening the panel is complete
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Rpc: Adding an incident: Incident(id=10, title='incident10Title', state=UNTOUCHED, instanceId=b928a0fb-46f5-4548-a023-39668e5fe2b3) (json: {"instanceId":{"Value":"b928a0fb-46f5-4548-a023-39668e5fe2b3"},"id":10,"title":"incident10Title","description":"incident10Description","state":0,"ignorable":false,"immediate":false,"influenceable":false,"pickPoolSize":1,"month":0,"type":"Luck","tags":["Bonus","Food"],"addSerializedOffer":"","applicationCost":{"expenses":[],"breakBuilding":4294967295,"time":0},"applicationBenefit":{"removeIncident":["Food"],"addTalent":[],"fairyDust":0,"income":[],"repairBuilding":4294967295},"ignoranceCost":{"expenses":[],"breakBuilding":4294967295,"time":0}})
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+The player has seen all wheel incidents and thus completes their turn.
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+good incidents end
+endturn start
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+The entry for key 'incident3Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=3, title='incident3Title', state=UNTOUCHED, instanceId=b526ca72-62cb-43f0-866f-64e180dfc165) to player Player (Polymoney.Player)
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=1, title='incident1Title', state=UNTOUCHED, instanceId=24839731-6dc8-47e8-abf4-c40a910efb9a) to player Player (Polymoney.Player)
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=10, title='incident10Title', state=UNTOUCHED, instanceId=b928a0fb-46f5-4548-a023-39668e5fe2b3) to player Player (Polymoney.Player)
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident5Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=5, title='incident5Title', state=UNTOUCHED, instanceId=5d354ed6-6c9e-4aab-a461-a7b918e0cdfe) to player Player (Polymoney.Player)
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Panel animation complete
+Closing the panel is complete
+The entry for key 'incident6Description' in 'eng' is empty. Consider adding text.
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Applying the incident Incident(id=6, title='incident6Title', state=UNTOUCHED, instanceId=feafaeb2-880a-4321-bbc1-a77bf87a89da) to player Player (Polymoney.Player)
+Closing the panel
+Starting panel animation
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+An offer was applied!
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Rpc: Player 'Player' (netid: 22) now has 100 % of their time left.
+Comparing new value: 100 with the current value 100
+endturn end
+bad incidents start
+Opening the panel
+Starting panel animation
+[ENDMONTH] Enable Endturn
+Panel animation complete
+Opening the panel is complete
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+Closing the panel
+Starting panel animation
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+onModelChanged called
+Adding the model to the carousel
+Initialising the carousel
+Opening the panel
+Carousel: 6 models, 6 panels, 1 panels open, 5 panels closed, 1 transitioning panels
+Opening the panel
+Starting panel animation
+Buy button Enabled
+Buy button Enabled
+Buy button Enabled
+Buy button Enabled
+Buy button Enabled
+Buy button Enabled
+Panel animation complete
+Opening the panel is complete
+Applying an offer that gives players a marketplace.
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Comparing new value: 100 with the current value 100
+Rpc: Market a32507c9-7604-44be-81dd-52deb8a5602b has a new seller: Player.
+Seller changed
+Has real seller Industrial (Polymoney.Building)
+removedOffer(Offer(t=bIndustrialTitle, p=False, e=True, v=False, g=a0551ae4-50dc-482d-b61b-ec6c4c9fcf1a)) called
+Initialising the carousel
+Buy button Enabled
+Buy button Enabled
+Buy button Enabled
+Buy button Enabled
+Buy button Enabled
+Carousel: 5 models, 5 panels, 1 panels open, 4 panels closed, 1 transitioning panels
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+Opening the panel
+Starting panel animation
+Panel animation complete
+Opening the panel is complete
+Closing the panel
+Starting panel animation
+Panel animation complete
+Closing the panel is complete
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+OnApplicationFocus(True) started
+OnApplicationFocus(True) called on a client
+OnApplicationFocus(False) started
+OnApplicationFocus(False) called on a client
+OnApplicationQuit() called
+OnApplicationQuit() called on a client
+Player 'Player' (netid: 22) was unregistered

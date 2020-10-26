@@ -1593,7 +1593,7 @@
             <p>You can't remove offers from Community Facilities.</p>
         </textline>
         <textline uid="specialBuildingOwnerTitle">
-            <p>Programmed by {0}.</p>
+            <p>Adoted by {0}.</p>
         </textline>
         <textline uid="timeCost">
             <p>% of your time.</p>
