@@ -60,28 +60,13 @@ namespace Polymoney
             if(model.authoritativePlayer.Mayor)
                 //Play Audio Clip
                 _Narrator.Play();
+
             while (Alert.open)
                 yield return null;
             if(model.authoritativePlayer.Mayor)
                 //Stop playing the intro AudioClip
                 _Narrator.Stop();
 
-            /*
-            if (model.authoritativePlayer.Mayor)
-            {
-                //introduction for mayor
-                Alert.info("tutoMWelcome", new Alert.AlertParams { useLocalization = true, title = "tutoMWelcomeTitle", closeText = "btnOk" });
-                while (Alert.open)
-                    yield return null;
-                Alert.info("tutoMSurvive", new Alert.AlertParams { useLocalization = true, title = "tutoMSurviveTitle", closeText = "btnOk" });
-                while (Alert.open)
-                    yield return null;
-            }
-            else
-            {
-               
-            }
-            */
             model.authoritativePlayer.ClientEndTurn();
         }
     }

@@ -30,8 +30,8 @@ namespace Polymoney
                 {
                     //Q is introduced when major has less than base starting balance AND it is not already introduced
                     major.Pocket.TryGetBalance(Currency.FIAT, out balance);
-                    if (!model.PolymoneyIntroduced && ((balance < model.MayorBaseStartingMoney && !Options_Controller.manualIntroWater) 
-                        || (Options_Controller.manualIntroWater && Level.instance.months >= Options_Controller.waterIntroTurn)))
+                    if ((!model.PolymoneyIntroduced && ((balance < model.MayorBaseStartingMoney && !Options_Controller.manualIntroWater) 
+                        || (Options_Controller.manualIntroWater && Level.instance.months >= Options_Controller.waterIntroTurn))))
                     {
                         return true;
                     }
@@ -83,16 +83,9 @@ namespace Polymoney
 
         private IEnumerator introductionRoutine()
         {
-            //Vector2 alertSize = new Vector2(Screen.width, Screen.height);
             Vector2 alertSize = new Vector2(800, 600);
             Vector2 alertBigSize = new Vector2(1200, 900);
 
-            /*
-            All players recieve facilitator messages
-            Alert.info("tutoF1", new Alert.AlertParams { title = "tutoFTitle", useLocalization = true, closeText = "btnOk", size = alertSize }, alertSkin);
-            while (Alert.open)
-                yield return null;
-            */
             Alert.info("tutoQBegin", new Alert.AlertParams { title = "tutoQBeginHeader", useLocalization = true, hideCloseButton = false, closeText = "btnOk" }, alertSkin);
             while (Alert.open)
                 yield return null;
@@ -100,11 +93,7 @@ namespace Polymoney
             while (repeat)
             {
                 repeat = false;
-                /*
-                Alert.tutorial("tutoMQWhat", new Alert.AlertParams { title = "tutoMQWhatTitle", useLocalization = true, closeText = "btnOk", size = alertBigSize }, alertSkin);
-                while (Alert.open)
-                    yield return null;
-                    */
+              
                 Alert.tutorial("tutoMQWhat", new Alert.AlertParams { title = "tutoMQWhatTitle", useLocalization = true, closeText = "everyoneReady", size = alertBigSize, sprite = spriteQBuilding, callbacks = new Alert.AlertCallback[] { new Alert.AlertCallback { buttonText = "tellMeAgain", callback = () => { repeat = true; Alert.close(); } } } }, alertSkin);
                 while (Alert.open)
                     yield return null;

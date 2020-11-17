@@ -23,7 +23,7 @@ namespace Polymoney
         /// <summary>
         /// The month increment per two turns.
         /// </summary>
-        public float monthIncrement = 1.0f;
+        public int monthIncrement = 1;
         /// <summary>
         /// The template for the tax offer.
         /// </summary>
@@ -308,7 +308,7 @@ namespace Polymoney
             }
         }
         [ClientRpc]
-        private void RpcSyncLevelMonths(float months)
+        private void RpcSyncLevelMonths(int months)
         {
             Level.instance.months = months;
         }

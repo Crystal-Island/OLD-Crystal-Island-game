@@ -19,7 +19,7 @@ namespace Polymoney
         /// Holds the current number of in-game months.
         /// </summary>
         /// <value>The new number of months.</value>
-        float months { get; set; }
+        int months { get; set; }
         /// <summary>
         /// Determines the maximum duration of the game in months.
         /// </summary>
@@ -118,7 +118,7 @@ namespace Polymoney
         };
 
         [SerializeField]
-        private float _months = 1f;
+        private int _months = 1;
         [SerializeField]
         private int _maximumMonths = 12;
         [SerializeField]
@@ -154,7 +154,7 @@ namespace Polymoney
             }
         }
 
-        public float months
+        public int months
         {
             get
             {

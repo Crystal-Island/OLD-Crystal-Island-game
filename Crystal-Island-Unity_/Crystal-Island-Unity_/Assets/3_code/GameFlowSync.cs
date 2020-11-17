@@ -30,17 +30,17 @@ namespace Polymoney
             //grab flow from children
             this.flow = GameFlow.instance;
 
+
             //only run flow on server
             this.flow.running = this.isServer;
-
             //add listener for changes on server
             if (isServer)
             {
                 this.flow.changeState.AddListener(flowStateChanged);
+                //initial sync
+                this.flowStateChanged(flow.currentState, flow.currentState);
             }
 
-            //initial sync
-            this.flowStateChanged(flow.currentState, flow.currentState);
         }
 
         private void flowStateChanged(int oldState, int newState)

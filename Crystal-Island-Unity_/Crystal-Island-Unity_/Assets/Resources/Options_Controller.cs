@@ -61,8 +61,8 @@ public class Options_Controller : NetworkBehaviour
 
     //The base income for water crystals
     public static int baseWaterIncome = 10;
-    public static bool manualIntroWater = false;
-    public static int waterIntroTurn = 1;
+    public static bool manualIntroWater = true;
+    public static int waterIntroTurn = 3;
 
     //Severity of the disaster low .5, med 1, high 2
     public static float severityFactor = 1;
