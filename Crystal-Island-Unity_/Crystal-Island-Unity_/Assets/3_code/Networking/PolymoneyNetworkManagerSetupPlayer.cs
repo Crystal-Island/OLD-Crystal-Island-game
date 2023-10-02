@@ -1,26 +1,20 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.Networking;
-using Prototype.NetworkLobby;
-using KoboldTools.Logging;
+﻿using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using PhotonHashtable = ExitGames.Client.Photon.Hashtable;
 
-namespace Polymoney
+public class PolymoneyNetworkManagerSetupPlayer : MonoBehaviourPunCallbacks
 {
-
-    public class PolymoneyNetworkManagerSetupPlayer : MonoBehaviour
+    public void OnLobbyServerSceneLoadedForPlayer(GameObject lobbyPlayerObj, GameObject gamePlayerObj)
     {
-        public void OnLobbyServerSceneLoadedForPlayer(GameObject lobbyPlayerObj, GameObject gamePlayerObj)
-        {
-            LobbyPlayer playerLobby = lobbyPlayerObj.GetComponent<LobbyPlayer>();
-            Player playerGame = gamePlayerObj.GetComponentInChildren<Player>();
+        LobbyPlayer playerLobby = lobbyPlayerObj.GetComponent<LobbyPlayer>();
+        Player playerGame = gamePlayerObj.GetComponentInChildren<Player>();
 
-            playerGame.name = playerLobby.name;
-            if (playerLobby.runsForMayor)
-            {
-                RootLogger.Info(this, "The player {0} would like to run for mayor.", playerLobby.name);
-                playerGame.RunsForMayor = true;
-            }
+        playerGame.name = playerLobby.name;
 
-        }
+        // Use Photon's custom properties to set RunsForMayor
+        PhotonHashtable customProperties = new PhotonHashtable();
+        customProperties["RunsForMayor"] = playerLobby.runsForMayor;
+        PhotonNetwork.LocalPlayer.SetCustomProperties(customProperties);
     }
 }
