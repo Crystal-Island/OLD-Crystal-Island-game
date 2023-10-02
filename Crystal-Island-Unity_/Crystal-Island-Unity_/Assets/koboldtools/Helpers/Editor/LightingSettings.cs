@@ -16,15 +16,15 @@ public class LightingSettings : ScriptableObject {
     public void CopySettings()
     {
         UnityEngine.Object lightmapSettings;
-        if (!TryGetSettings<LightmapEditorSettings>("GetLightmapSettings", out lightmapSettings))
-            return;
+        //if (!TryGetSettings<LightmapEditorSettings>("GetLightmapSettings", out lightmapSettings))
+        //    return;
 
         UnityEngine.Object renderSettings;
-        if (!TryGetSettings<RenderSettings>("GetRenderSettings", out renderSettings))
-            return;
+        //if (!TryGetSettings<RenderSettings>("GetRenderSettings", out renderSettings))
+        //    return;
 
-        s_sourceLightmapSettings = new SerializedObject(lightmapSettings);
-        s_sourceRenderSettings = new SerializedObject(renderSettings);
+        //s_sourceLightmapSettings = new SerializedObject(lightmapSettings);
+        //s_sourceRenderSettings = new SerializedObject(renderSettings);
     }
 
     [ContextMenu("Apply Settings to Current")]
@@ -33,15 +33,15 @@ public class LightingSettings : ScriptableObject {
         if (s_sourceLightmapSettings != null && s_sourceRenderSettings != null)
         {
             UnityEngine.Object lightmapSettings;
-            if (!TryGetSettings<LightmapEditorSettings>("GetLightmapSettings", out lightmapSettings))
-                return;
+            //if (!TryGetSettings<LightmapEditorSettings>("GetLightmapSettings", out lightmapSettings))
+            //    return;
 
-            UnityEngine.Object renderSettings;
-            if (!TryGetSettings<RenderSettings>("GetRenderSettings", out renderSettings))
-                return;
+            //UnityEngine.Object renderSettings;
+            //if (!TryGetSettings<RenderSettings>("GetRenderSettings", out renderSettings))
+            //    return;
 
-            CopyInternal(s_sourceLightmapSettings, new SerializedObject(lightmapSettings));
-            CopyInternal(s_sourceRenderSettings, new SerializedObject(renderSettings));
+            //CopyInternal(s_sourceLightmapSettings, new SerializedObject(lightmapSettings));
+            //CopyInternal(s_sourceRenderSettings, new SerializedObject(renderSettings));
 
             UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
         }

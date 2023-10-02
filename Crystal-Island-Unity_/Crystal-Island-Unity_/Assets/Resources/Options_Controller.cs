@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine;
+using System.Net;
+using System.Net.Sockets;
 
 public class Options_Controller : NetworkBehaviour
 {
+    NetworkIdentity m_Identity;
     public Button preset1, preset2, preset3;
     public Toggle preset1Toggle, preset2Toggle, preset3Toggle;
     public static bool presetFlag1, presetFlag2, presetFlag3;
@@ -110,7 +113,7 @@ public class Options_Controller : NetworkBehaviour
     public Button panelButton;
 
     //============================================================
-
+    
 
     // Use this for initialization
     void Start ()
@@ -476,7 +479,8 @@ public class Options_Controller : NetworkBehaviour
     //Close the Option menu
     private void ClosePanel()
     {
-        if(Network.connections.Length > 1)
+        
+        if (m_Identity.connectionToClient.connectionId > 1)
         {
             //Send the settings to the clients
             RpcUpdateSettings();
@@ -508,7 +512,7 @@ public class Options_Controller : NetworkBehaviour
         presetFlag1 = true;
         presetFlag2 = false;
         presetFlag3 = false;
-        if (Network.connections.Length > 1)
+        if (m_Identity.connectionToClient.connectionId > 1)
         {
             RpcApplyPreset1();
         }
@@ -530,7 +534,7 @@ public class Options_Controller : NetworkBehaviour
         presetFlag2 = true;
         presetFlag1 = false;
         presetFlag3 = false;
-        if (Network.connections.Length > 1)
+        if (m_Identity.connectionToClient.connectionId > 1)
         {
             RpcApplyPreset2();
         }
@@ -552,7 +556,7 @@ public class Options_Controller : NetworkBehaviour
         presetFlag3 = true;
         presetFlag1 = false;
         presetFlag2 = false;
-        if (Network.connections.Length > 1)
+        if (m_Identity.connectionToClient.connectionId > 1)
         {
             RpcApplyPreset3();
         }

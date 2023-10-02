@@ -15,30 +15,30 @@ static class CopyLightingSettings
     static void CopySettings()
     {
         UnityEngine.Object lightmapSettings;
-        if (!TryGetSettings<LightmapEditorSettings>("GetLightmapSettings", out lightmapSettings))
-            return;
+        //if (!TryGetSettings<LightmapEditorSettings>("GetLightmapSettings", out lightmapSettings))
+        //    return;
 
-        UnityEngine.Object renderSettings;
-        if (!TryGetSettings<RenderSettings>("GetRenderSettings", out renderSettings))
-            return;
+        //UnityEngine.Object renderSettings;
+        //if (!TryGetSettings<RenderSettings>("GetRenderSettings", out renderSettings))
+        //    return;
 
-        s_sourceLightmapSettings = new SerializedObject(lightmapSettings);
-        s_sourceRenderSettings = new SerializedObject(renderSettings);
+        //s_sourceLightmapSettings = new SerializedObject(lightmapSettings);
+        //s_sourceRenderSettings = new SerializedObject(renderSettings);
     }
 
     [MenuItem("Window/Lighting/Paste Settings", priority = 201)]
     static void PasteSettings()
     {
         UnityEngine.Object lightmapSettings;
-        if (!TryGetSettings<LightmapEditorSettings>("GetLightmapSettings", out lightmapSettings))
-            return;
+        //if (!TryGetSettings<LightmapEditorSettings>("GetLightmapSettings", out lightmapSettings))
+        //    return;
 
-        UnityEngine.Object renderSettings;
-        if (!TryGetSettings<RenderSettings>("GetRenderSettings", out renderSettings))
-            return;
+        //UnityEngine.Object renderSettings;
+        //if (!TryGetSettings<RenderSettings>("GetRenderSettings", out renderSettings))
+        //    return;
 
-        CopyInternal(s_sourceLightmapSettings, new SerializedObject(lightmapSettings));
-        CopyInternal(s_sourceRenderSettings, new SerializedObject(renderSettings));
+        //CopyInternal(s_sourceLightmapSettings, new SerializedObject(lightmapSettings));
+        //CopyInternal(s_sourceRenderSettings, new SerializedObject(renderSettings));
 
         UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
     }
