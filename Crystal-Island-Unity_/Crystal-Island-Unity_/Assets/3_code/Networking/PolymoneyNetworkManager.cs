@@ -14,9 +14,6 @@ using UnityEngine.UI;
 namespace Polymoney {
     [Serializable]
     public class HostStatus {
-
-      
-
         private bool _paused;
         private bool _focused;
         private bool _screenBlocked;
@@ -120,7 +117,6 @@ namespace Polymoney {
     /// </summary>
     [RequireComponent(typeof(NetworkDiscovery))]
     public class PolymoneyNetworkManager : NetworkLobbyManager, IStateManager {
-        NetworkIdentity m_Identity;
         /// <summary>
         /// Holds a reference to the create-game button.
         /// </summary>
@@ -527,10 +523,9 @@ namespace Polymoney {
         /// Called when a host should be spun up. Sets the broadcast data and starts a server.
         /// </summary>
         public override void OnStartHost() {
-            
             RootLogger.Debug(this, "OnStartHost()");
             // Set the broadcast for game discovery.
-            string broadcastData = String.Format("PolymoneyGame:{0}:{1}:20120", this.gamenameInput.text, m_Identity.connectionToClient.address );
+            string broadcastData = String.Format("PolymoneyGame:{0}:{1}:20120", this.gamenameInput.text, Network.player.ipAddress);
             RootLogger.Info(this, "Server: Setting broadcast data to '{0}'", broadcastData);
 
             this.networkDiscovery.useNetworkManager = false;

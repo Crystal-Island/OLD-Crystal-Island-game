@@ -9,11 +9,8 @@ using KoboldTools;
 
 namespace Polymoney
 {
-
     public class PolymoneyNetworkManagerUI : VCBehaviour<NetworkLobbyManager>
     {
-        NetworkIdentity m_Identity;
-
         public float displayFrequency = 1f;
         public LobbyPlayerUI lobbyPlayerUITemplate;
         public Text maxPlayersDisplay;
@@ -139,7 +136,7 @@ namespace Polymoney
                 this.startGameButton.gameObject.SetActive(false);
                 
                 
-                if(GetComponent<NetworkDiscovery>().isServer && m_Identity.connectionToClient.connectionId > 1)
+                if(GetComponent<NetworkDiscovery>().isServer && Network.connections.Length > 1)
                 {
                     //Apply options selected
                     print("Apply Option Menus");               

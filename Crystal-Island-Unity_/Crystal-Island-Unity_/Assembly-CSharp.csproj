@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,20 +13,20 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <BaseDirectory>.</BaseDirectory>
+    <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Temp\Bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2020_3_23;UNITY_2020_3;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;UNITY_POST_PROCESSING_STACK_V1;PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER;NET35</DefineConstants>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2017_4_39;UNITY_2017_4;UNITY_2017;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;UNITY_POST_PROCESSING_STACK_V1;NET35</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -35,1311 +35,702 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup>
-    <NoConfig>true</NoConfig>
-    <NoStdLib>true</NoStdLib>
-    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
-    <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
-    <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.16</UnityProjectGeneratorVersion>
-    <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
-    <UnityVersion>2020.3.23f1</UnityVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\koboldtools\Named\INamed.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineDebugLogger.cs" />
-    <Compile Include="Assets\koboldtools\UI\ButtonSound.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\UnityVectorExtensions.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\LocalisedText.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerCreateOffer.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineExternalCamera.cs" />
-    <Compile Include="Assets\koboldtools\Location\LocationMap.cs" />
-    <Compile Include="Assets\koboldtools\Logging\LogEntry.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerGiveFairydust.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineFreeLook.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyPlayerList.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_LightIntensityFade.cs" />
-    <Compile Include="Assets\koboldtools\Camera\CameraPinchZoomVirtual.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo.cs" />
-    <Compile Include="Assets\koboldtools\Camera\VirtualCameraWithState.cs" />
-    <Compile Include="Assets\3_code\LobbyPlayer.cs" />
-    <Compile Include="Assets\koboldtools\panel\paneldisplaytimeline\PanelDisplayTimelineClip.cs" />
-    <Compile Include="Assets\koboldtools\Debugging\DisplayWithDebug.cs" />
-    <Compile Include="Assets\koboldtools\Logging\LoggerFileWriter.cs" />
-    <Compile Include="Assets\PersistentOptionSettings.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\Localisation.cs" />
-    <Compile Include="Assets\koboldtools\panel\Alert.cs" />
-    <Compile Include="Assets\3_code\Level\LevelData.cs" />
-    <Compile Include="Assets\3_code\ButtonOpenTaxOfferUi.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\DropdownShortcut.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineCollider.cs" />
-    <Compile Include="Assets\koboldtools\State\IFlowPhase.cs" />
-    <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\UnitySingleton.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerWatchMarketplace.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineBlenderSettings.cs" />
-    <Compile Include="Assets\3_code\Items\TalentUI.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Utils\ColorGradingCurve.cs" />
-    <Compile Include="Assets\koboldtools\Location\LocatedDeviceLoc.cs" />
-    <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\PoolableObject.cs" />
-    <Compile Include="Assets\3_code\Level\LevelDisplayLuminance.cs" />
-    <Compile Include="Assets\koboldtools\State\ButtonEnableWithGamestate.cs" />
-    <Compile Include="Assets\3_code\Level\GetBuildingUpkeepRequirement.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\ICinemachineComponent.cs" />
-    <Compile Include="Assets\Julian\code\Utilities\Rotator.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Utils\MaterialFactory.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_AutoRotate.cs" />
-    <Compile Include="Assets\koboldtools\Logging\Logger.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\ScreenSpaceReflectionComponent.cs" />
-    <Compile Include="Assets\3_code\Level\LevelDisplayLoadingScreen.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerUIFilter.cs" />
-    <Compile Include="Assets\Resources\Stat_Tracker.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\ILocalisation.cs" />
-    <Compile Include="Assets\koboldtools\Logging\ILogger.cs" />
-    <Compile Include="Assets\3_code\Items\PersonUI.cs" />
-    <Compile Include="Assets\koboldtools\Cleanup\Cleanup.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_AutodestructWhenNoChildren.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineVirtualCamera.cs" />
-    <Compile Include="Assets\3_code\Level\LevelDisplayCityState.cs" />
-    <Compile Include="Assets\3_code\Networking\PolymoneyNetworkManagerSetupPlayer.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\Spawn System\CFX_SpawnSystem.cs" />
-    <Compile Include="Assets\3_code\Gamestates.cs" />
-    <Compile Include="Assets\koboldtools\feedback\KoboldFeedback.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerDisplaySymbols.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachinePipeline.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\ReflectionHelpers.cs" />
-    <Compile Include="Assets\koboldtools\Debugging\DisplayVersion.cs" />
-    <Compile Include="Assets\koboldtools\State\ButtonChangeGamestate.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineHardLookAt.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyManager.cs" />
-    <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioFader.cs" />
-    <Compile Include="Assets\postprocessing\runtime\PostProcessingProfile.cs" />
-    <Compile Include="Assets\koboldtools\feedback\Pivotal\StoryState.cs" />
-    <Compile Include="Assets\3_code\Level\LevelInput.cs" />
-    <Compile Include="Assets\3_code\Items\IncidentUI.cs" />
-    <Compile Include="Assets\3_code\Networking\PolymoneyNetworkManagerUI.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkLobbyHook.cs" />
-    <Compile Include="Assets\3_code\Debug\PolymoneyDebug.cs" />
-    <Compile Include="Assets\Julian\code\Utilities\Billboard.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_AutoStopLoopedEffect.cs" />
-    <Compile Include="Assets\3_code\Networking\PolymoneyDisplayGameSuspend.cs" />
-    <Compile Include="Assets\Resources\Options_Controller.cs" />
-    <Compile Include="Assets\koboldtools\Pool\PoolPopEvent.cs" />
-    <Compile Include="Assets\3_code\Networking\PolymoneyNetworkDiscoveryUI.cs" />
-    <Compile Include="Assets\koboldtools\Interactive\InteractiveEvent.cs" />
-    <Compile Include="Assets\cinemachine\Timeline\CinemachineTrack.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\IEnumerableExtensions.cs" />
-    <Compile Include="Assets\postprocessing\runtime\PostProcessingContext.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\MotionBlurComponent.cs" />
-    <Compile Include="Assets\koboldtools\Logging\LoggerWriteFile.cs" />
-    <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\SystemTime.cs" />
-    <Compile Include="Assets\koboldtools\lazybar\ILazyBar.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Attributes\MinAttribute.cs" />
-    <Compile Include="Assets\koboldtools\Debugging\MissingReferenceFinder.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineMixingCamera.cs" />
-    <Compile Include="Assets\koboldtools\Logging\LoggerWriteConsole.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\AxisState.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\BloomComponent.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerNotifyOfferApplication.cs" />
-    <Compile Include="Assets\Resources\Mayor_Panel.cs" />
-    <Compile Include="Assets\koboldtools\ViewController\IViewController.cs" />
-    <Compile Include="Assets\3_code\ButtonOpenIncidentUi.cs" />
-    <Compile Include="Assets\koboldtools\Interactive\IInteractiveBlocker.cs" />
-    <Compile Include="Assets\3_code\Level\LevelControlTime.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineSmoothPath.cs" />
-    <Compile Include="Assets\3_code\Level\LevelControlIntro.cs" />
-    <Compile Include="Assets\koboldtools\panel\PanelDisplayBasic.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\ButtonShortcut.cs" />
-    <Compile Include="Assets\koboldtools\Interactive\InteractiveEventChangeGamestate.cs" />
-    <Compile Include="Assets\3_code\Analytics\RootAnalytics.cs" />
-    <Compile Include="Assets\3_code\Items\Item.cs" />
-    <Compile Include="Assets\koboldtools\Camera\CameraTouchPan.cs" />
-    <Compile Include="Assets\3_code\Items\JobUI.cs" />
-    <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioObject.cs" />
-    <Compile Include="Assets\3_code\Networking\PolymoneyNetworkManager.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_RandomDir.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineFramingTransposer.cs" />
-    <Compile Include="Assets\koboldtools\Logging\Record.cs" />
-    <Compile Include="Assets\cinemachine\Timeline\CinemachineMixer.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\Predictor.cs" />
-    <Compile Include="Assets\3_code\Items\UiResource.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerLoadCharacter.cs" />
-    <Compile Include="Assets\3_code\Market\Currency.cs" />
-    <Compile Include="Assets\3_code\Market\MarketplaceDisplayCarousel.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\LocalisationReaderXML.cs" />
-    <Compile Include="Assets\koboldtools\Roulette\Roulette.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerCreateMarketplace.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\DitheringComponent.cs" />
-    <Compile Include="Assets\koboldtools\ViewController\ViewController.cs" />
-    <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\ArrayHelper.cs" />
-    <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioController.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineGroupComposer.cs" />
-    <Compile Include="Assets\koboldtools\State\StateManager.cs" />
-    <Compile Include="Assets\postprocessing\runtime\PostProcessingComponent.cs" />
-    <Compile Include="Assets\koboldtools\panel\AlertSkin.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyCountdownPanel.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerDisplayBalanceSheet.cs" />
-    <Compile Include="Assets\koboldtools\SaveLoad\SaveLoad.cs" />
-    <Compile Include="Assets\koboldtools\panel\paneldisplaytimeline\PanelDisplayTimelineBehaviour.cs" />
-    <Compile Include="Assets\3_code\Pocket\Pocket.cs" />
-    <Compile Include="Assets\3_code\Analytics\PolymoneyMonthDataDisplay.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\DontDestroyOnLoad.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineHardLockToTarget.cs" />
-    <Compile Include="Assets\koboldtools\Location\ILocated.cs" />
-    <Compile Include="Assets\koboldtools\State\PanelDisplayWithState.cs" />
-    <Compile Include="Assets\koboldtools\ViewController\VC.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\SerializableGuid.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\ColorGradingComponent.cs" />
-    <Compile Include="Assets\3_code\Level\LevelGenerateCharacter.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineTargetGroup.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerDisplayCharacter.cs" />
-    <Compile Include="Assets\lobby\scripts\DraggablePanel.cs" />
-    <Compile Include="Assets\koboldtools\Timeline\SetState.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerMarketplaceDisplaySymbols.cs" />
-    <Compile Include="Assets\koboldtools\panel\PanelSetState.cs" />
-    <Compile Include="Assets\koboldtools\panel\PanelDisplayTransitions.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_AutoDestructShuriken.cs" />
-    <Compile Include="Assets\3_code\Buildings\BuildingOpenMarketplace.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyPlayer.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\BloomModel.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerDisplayFairydust.cs" />
-    <Compile Include="Assets\koboldtools\State\StateChangeEvent.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachinePOV.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkGameManager.cs" />
-    <Compile Include="Assets\koboldtools\State\IStateManager.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Attributes\TrackballAttribute.cs" />
-    <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\MessengerExtensions.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyServerEntry.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceship.cs" />
-    <Compile Include="Assets\3_code\Items\Talent.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\GaussianFilter.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineComposer.cs" />
-    <Compile Include="Assets\koboldtools\Carousel\Carousel.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineBlendListCamera.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CameraState.cs" />
-    <Compile Include="Assets\3_code\Level\Level.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineBlend.cs" />
-    <Compile Include="Assets\3_code\ButtonSkipGameFlow.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\BoolEvent.cs" />
-    <Compile Include="Assets\koboldtools\Timeline\SkipSection.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\FxaaComponent.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyHook.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachinePath.cs" />
-    <Compile Include="Assets\koboldtools\State\GameFlow.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\ICinemachineCamera.cs" />
-    <Compile Include="Assets\3_code\Buildings\MarketplaceDisplaySymbols.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerDisplayName.cs" />
-    <Compile Include="Assets\3_code\Networking\Messages.cs" />
-    <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\RegisteredComponent.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_InspectorHelp.cs" />
-    <Compile Include="Assets\3_code\Items\IncidentResolutionUi.cs" />
-    <Compile Include="Assets\3_code\Market\MarketplaceCarousel.cs" />
-    <Compile Include="Assets\3_code\Market\MarketplaceSetSync.cs" />
-    <Compile Include="Assets\koboldtools\Logging\LoggerHandleUncaughtExceptions.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerOpenMarket.cs" />
-    <Compile Include="Assets\vacuumshaders\terrain to mesh\Example Scenes\Scripts\Runtime_OBJExporter.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_RotateCamera.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\SetTargetFramerate.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\LocalisationSelectLanguage.cs" />
-    <Compile Include="Assets\3_code\Market\Marketplace.cs" />
-    <Compile Include="Assets\3_code\Market\OfferEditorDisplay.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\QuitGameButton.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Attributes\GetSetAttribute.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\ChromaticAberrationComponent.cs" />
-    <Compile Include="Assets\koboldtools\Logging\DataLog.cs" />
-    <Compile Include="Assets\koboldtools\panel\IPanel.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\BuiltinDebugViewsComponent.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachinePathBase.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineDollyCart.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Attributes\TrackballGroupAttribute.cs" />
-    <Compile Include="Assets\koboldtools\Camera\Camera2dAspectSize.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\LocaliseElementUIText.cs" />
-    <Compile Include="Assets\3_code\Items\HomeUI.cs" />
-    <Compile Include="Assets\koboldtools\panel\paneldisplaytimeline\PanelDisplayTimelineMixerBehaviour.cs" />
-    <Compile Include="Assets\Julian\code\PostProcessing\ColorFocus.cs" />
-    <Compile Include="Assets\postprocessing\runtime\PostProcessingBehaviour.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\EyeAdaptationModel.cs" />
-    <Compile Include="Assets\3_code\Market\MarketplaceSet.cs" />
-    <Compile Include="Assets\Resources\Stats_Controller.cs" />
-    <Compile Include="Assets\koboldtools\Camera\CameraPinchZoom.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyInfoPanel.cs" />
-    <Compile Include="Assets\koboldtools\Interactive\IInteractive.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\ILocalisedText.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Utils\GraphicsUtils.cs" />
-    <Compile Include="Assets\3_code\Items\Job.cs" />
-    <Compile Include="Assets\3_code\Items\ItemUI.cs" />
-    <Compile Include="Assets\cinemachine\postfx\CinemachinePostProcessing.cs" />
-    <Compile Include="Assets\3_code\LevelFilterVisibility.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineOrbitalTransposer.cs" />
-    <Compile Include="Assets\koboldtools\feedback\Pivotal\ApiError.cs" />
-    <Compile Include="Assets\postprocessing\utilities\CustomMotionTexture\ExampleWheelController.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\VignetteComponent.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\FogModel.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerDisplayIncidents.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineComponentBase.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\TaaComponent.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineBrain.cs" />
-    <Compile Include="Assets\koboldtools\Pool\Pool.cs" />
-    <Compile Include="Assets\3_code\Items\Home.cs" />
-    <Compile Include="Assets\koboldtools\Timeline\SkipController.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\LensSettings.cs" />
-    <Compile Include="Assets\koboldtools\Logging\ILogEntry.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineConfiner.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineSameAsFollowObject.cs" />
-    <Compile Include="Assets\koboldtools\feedback\Pivotal\Comment.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\VignetteModel.cs" />
-    <Compile Include="Assets\3_code\Analytics\AnalyticsManager.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\GrainModel.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyServerList.cs" />
-    <Compile Include="Assets\koboldtools\State\PanelDisplayWithGamestate.cs" />
-    <Compile Include="Assets\koboldtools\Logging\RootLogger.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineClearShot.cs" />
-    <Compile Include="Assets\koboldtools\Interactive\Interactions.cs" />
-    <Compile Include="Assets\3_code\CharacterSheetUi.cs" />
-    <Compile Include="Assets\postprocessing\runtime\PostProcessingModel.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerTutorial.cs" />
-    <Compile Include="Assets\3_code\Market\OfferSetMarketSeller.cs" />
-    <Compile Include="Assets\koboldtools\Singleton\Singleton.cs" />
-    <Compile Include="Assets\3_code\ButtonCompleteTurn.cs" />
-    <Compile Include="Assets\koboldtools\lazybar\LazyBar.cs" />
-    <Compile Include="Assets\3_code\Buildings\BuildingDisplaySymbols.cs" />
-    <Compile Include="Assets\koboldtools\State\IFlow.cs" />
-    <Compile Include="Assets\koboldtools\State\StateFlagsAttribute.cs" />
-    <Compile Include="Assets\koboldtools\State\FlowPhase.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyMainMenu.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\GrainComponent.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\NETLegacyExtension.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\EnumFlagAttribute.cs" />
-    <Compile Include="Assets\koboldtools\NetworkTools\AutoConnect.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\ILocalisationDataReader.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerDisplayFreeTime.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkAsteroid.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachinePropertyAttribute.cs" />
-    <Compile Include="Assets\koboldtools\Camera\CameraTouchPanVirtual.cs" />
-    <Compile Include="Assets\3_code\Level\LevelDisplayMonth.cs" />
-    <Compile Include="Assets\3_code\Market\Benefit.cs" />
-    <Compile Include="Assets\koboldtools\State\IFlowCondition.cs" />
-    <Compile Include="Assets\3_code\Level\LevelControlPlayerIntroduction.cs" />
-    <Compile Include="Assets\3_code\Market\MarketplaceDisplay.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerDisplayCurrency.cs" />
-    <Compile Include="Assets\3_code\Level\LevelDisplayPlayers.cs" />
-    <Compile Include="Assets\koboldtools\State\FlowBehaviour.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\UserLutModel.cs" />
-    <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioLog.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineExtension.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineSmoother.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineVirtualCameraBase.cs" />
-    <Compile Include="Assets\koboldtools\Logging\DataLogger.cs" />
-    <Compile Include="Assets\3_code\Market\OfferDisplay.cs" />
-    <Compile Include="Assets\3_code\Items\Person.cs" />
-    <Compile Include="Assets\koboldtools\panel\Panel.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\MotionBlurModel.cs" />
-    <Compile Include="Assets\koboldtools\NetworkTools\PanelNetworkServer.cs" />
-    <Compile Include="Assets\3_code\Analytics\AnalyticsManagerSummaryDisplay.cs" />
-    <Compile Include="Assets\koboldtools\feedback\Pivotal\Label.cs" />
-    <Compile Include="Assets\3_code\Market\BenefitDisplay.cs" />
-    <Compile Include="Assets\3_code\Player\LocalPlayerDisplayIncident.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\UserLutComponent.cs" />
-    <Compile Include="Assets\3_code\ComplIntroSetMarketplace.cs" />
-    <Compile Include="Assets\3_code\Level\LevelLoadData.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerGetIncident.cs" />
-    <Compile Include="Assets\koboldtools\Location\ILocationMap.cs" />
-    <Compile Include="Assets\3_code\Items\Incident.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\NoiseSettings.cs" />
-    <Compile Include="Assets\koboldtools\building\FileAccessHelpers.cs" />
-    <Compile Include="Assets\3_code\LobbyPlayerUI.cs" />
-    <Compile Include="Assets\3_code\Player\Player.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\ILanguage.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineTransposer.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerDisplayWaiting.cs" />
-    <Compile Include="Assets\koboldtools\ViewController\VCBehaviour.cs" />
-    <Compile Include="Assets\cinemachine\Timeline\CinemachineShot.cs" />
-    <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioControllerHelper.cs" />
-    <Compile Include="Assets\SetMinimumUpkeep.cs" />
-    <Compile Include="Assets\3_code\Level\LevelDisplayEndMonth.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_Translate.cs" />
-    <Compile Include="Assets\3_code\Market\OfferSetMarketPairSet.cs" />
-    <Compile Include="Assets\3_code\Buildings\BuildingDisplayLuminance.cs" />
-    <Compile Include="Assets\koboldtools\feedback\Pivotal\FileAttachment.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\GameLanguage.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\Easing.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineTrackedDolly.cs" />
-    <Compile Include="Assets\3_code\TaxOfferPopUp.cs" />
-    <Compile Include="Assets\Julian\code\PostProcessing\PostProcessingBase.cs" />
-    <Compile Include="Assets\3_code\Level\LevelControlTurns.cs" />
-    <Compile Include="Assets\3_code\Character.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\AmbientOcclusionModel.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\IListExtensions.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Utils\RenderTextureFactory.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\BuiltinDebugViewsModel.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_ShurikenThreadFix.cs" />
-    <Compile Include="Assets\koboldtools\Helpers\DeactivateOnPlatform.cs" />
-    <Compile Include="Assets\3_code\ButtonDisplayTurnCompletion.cs" />
-    <Compile Include="Assets\3_code\Market\CostDisplay.cs" />
-    <Compile Include="Assets\3_code\Player\PlayerControlStartup.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineStateDrivenCamera.cs" />
-    <Compile Include="Assets\3_code\GameFlowSync.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\EyeAdaptationComponent.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\ChromaticAberrationModel.cs" />
-    <Compile Include="Assets\3_code\IncidentPopUp.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\ColorGradingModel.cs" />
-    <Compile Include="Assets\3_code\Buildings\BuildingDisplayState.cs" />
-    <Compile Include="Assets\koboldtools\Camera\Billboard.cs" />
-    <Compile Include="Assets\koboldtools\panel\paneldisplaytimeline\PanelDisplayTimelineTrack.cs" />
-    <Compile Include="Assets\koboldtools\State\ButtonEnableWithState.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\ScreenSpaceReflectionModel.cs" />
-    <Compile Include="Assets\3_code\Market\Cost.cs" />
-    <Compile Include="Assets\3_code\Market\Offer.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\DepthOfFieldComponent.cs" />
-    <Compile Include="Assets\3_code\Buildings\BuildingShowSymbol.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\SplineHelpers.cs" />
-    <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_New.cs" />
-    <Compile Include="Assets\3_code\Buildings\BuildingIncreaseLuminance.cs" />
-    <Compile Include="Assets\koboldtools\lazybar\LazyBarAnimation.cs" />
-    <Compile Include="Assets\koboldtools\State\EventWithGamestate.cs" />
-    <Compile Include="Assets\3_code\CharacterNavigation.cs" />
-    <Compile Include="Assets\koboldtools\feedback\Pivotal\Story.cs" />
-    <Compile Include="Assets\lobby\scripts\EventSystemChecker.cs" />
-    <Compile Include="Assets\3_code\Level\LevelControlQIntroduction.cs" />
-    <Compile Include="Assets\koboldtools\Named\NamedUIText.cs" />
-    <Compile Include="Assets\3_code\Level\LevelStartGame.cs" />
-    <Compile Include="Assets\vacuumshaders\terrain to mesh\Example Scenes\Scripts\RunTime_Terrain_Convertion.cs" />
-    <Compile Include="Assets\3_code\ButtonOpenMarketplace.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\FogComponent.cs" />
-    <Compile Include="Assets\3_code\Buildings\Building.cs" />
-    <Compile Include="Assets\cinemachine\postfx\CinemachinePostFX.cs" />
-    <Compile Include="Assets\3_code\Player\CharacterDisplayLuminance.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\DepthOfFieldModel.cs" />
-    <Compile Include="Assets\lobby\scripts\Lobby\LobbyTopPanel.cs" />
-    <Compile Include="Assets\koboldtools\SaveLoad\ISaveLoad.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineBasicMultiChannelPerlin.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Components\AmbientOcclusionComponent.cs" />
-    <Compile Include="Assets\3_code\CameraFollowPlayer.cs" />
-    <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceshipBullet.cs" />
-    <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioItem.cs" />
-    <Compile Include="Assets\koboldtools\feedback\Pivotal\StoryType.cs" />
-    <Compile Include="Assets\3_code\Buildings\BuildingLinkWithIncident.cs" />
-    <Compile Include="Assets\3_code\GameFlow\PolymoneyGameFlow.cs" />
-    <Compile Include="Assets\koboldtools\Localisation\ILocaliseElement.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\AntialiasingModel.cs" />
-    <Compile Include="Assets\3_code\Level\LevelAuthoritativePlayer.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineFollowZoom.cs" />
-    <Compile Include="Assets\koboldtools\State\Gamestate.cs" />
-    <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineCore.cs" />
-    <Compile Include="Assets\3_code\Player\LocalPlayerApplyOffer.cs" />
-    <Compile Include="Assets\postprocessing\runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\DemoChat\ChatGui.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonLibs\WebSocket\WebSocket.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\DemoChat\ChatAppIdCheckerUI.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonLibs\WebSocket\SocketWebTcp.cs" />
-    <Compile Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
-    <Compile Include="Assets\3_code\Networking\PolymoneyDisplayGameSuspend_photon.cs" />
-    <Compile Include="Assets\3_code\Networking\PolymoneyNetworkDiscoveryUI_photon.cs" />
-    <Compile Include="Assets\3_code\Networking\PolymoneyNetworkManager_photon.cs" />
-    <Compile Include="Assets\3_code\Networking\PolymoneyNetworkingManagerSetupPlayer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\streamingassets\lang\eng.xml" />
-    <None Include="Assets\postprocessing\resources\Shaders\ScreenSpaceReflection.shader" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.xml" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\Packages\ReadMe.txt" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Bumped_2.shader" />
-    <None Include="Assets\streamingassets\lang\languages.xml" />
-    <None Include="Assets\postprocessing\resources\Shaders\GrainGen.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_4.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_4.shader" />
-    <None Include="Assets\postprocessing\editor resources\Monitors\HistogramCompute.compute" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonUnityNetworking\changelog.txt" />
-    <None Include="Assets\postprocessing\resources\Shaders\FXAA3.cginc" />
-    <None Include="Assets\postprocessing\resources\Shaders\EyeAdaptation.shader" />
-    <None Include="Assets\postprocessing\utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
-    <None Include="Assets\postprocessing\editor resources\UI\CurveBackground.shader" />
-    <None Include="Assets\jmo assets\cartoon fx\Shaders\CFXM_MobileParticleAB_Alpha8.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Bumped_3.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\BumpedSpecular_4.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\BuiltinDebugViews.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\EyeAdaptation.cginc" />
-    <None Include="Assets\postprocessing\resources\Shaders\LutGen.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\EyeHistogram.compute" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_7.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\cginc\T2M_Variables.cginc" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_8.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_5.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_3.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_4.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Bumped_2.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\BumpedSpecular_2.shader" />
-    <None Include="Assets\cinemachine\ReleaseNotes.txt" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_8.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\TAA.cginc" />
-    <None Include="Assets\streamingassets\lang\deu.xml" />
-    <None Include="Assets\postprocessing\resources\Shaders\AmbientOcclusion.cginc" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_7.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_3.shader" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonLibs\WebSocket\websocket-sharp.dll" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_6.shader" />
-    <None Include="Assets\jmo assets\cartoon fx easy editor\CartoonFX Easy Editor Readme.txt" />
-    <None Include="Assets\postprocessing\editor resources\Monitors\VectorscopeCompute.compute" />
-    <None Include="Assets\postprocessing\resources\Shaders\ColorGrading.cginc" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_4.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\BumpedSpecular_3.shader" />
-    <None Include="Assets\lobby\Instruction.txt" />
-    <None Include="Assets\streamingassets\lang\spa.xml" />
-    <None Include="Assets\postprocessing\editor resources\Monitors\HistogramRender.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\UberSecondPass.cginc" />
-    <None Include="Assets\jmo assets\cartoon fx\CartoonFX Readme.txt" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_8.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_2.shader" />
-    <None Include="Assets\lobby\Documentation.txt" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\cginc\T2M_ODL.cginc" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_8.shader" />
-    <None Include="Assets\Julian\Shaders\PostProcessing\ColorFocus.shader" />
-    <None Include="Assets\postprocessing\resources\Bluenoise64\LICENSE.txt" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_2.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_7.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\ACES.cginc" />
-    <None Include="Assets\postprocessing\resources\Shaders\MotionBlur.cginc" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonLibs\changes-library.txt" />
-    <None Include="Assets\postprocessing\resources\Shaders\AmbientOcclusion.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\Scripts\VacuumShaders.TerrainToMesh.dll" />
-    <None Include="Assets\postprocessing\resources\Shaders\FXAA.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_6.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Bumped_4.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\ScreenSpaceRaytrace.cginc" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonUnityNetworking\readme.txt" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonChat\Demos\DemoChat\Files\eurof_tt.txt" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_6.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\Tonemapping.cginc" />
-    <None Include="Assets\postprocessing\resources\Shaders\Fog.shader" />
-    <None Include="Assets\postprocessing\editor resources\Monitors\ParadeRender.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_5.shader" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll" />
-    <None Include="Assets\postprocessing\resources\Shaders\MotionBlur.shader" />
-    <None Include="Assets\streamingassets\lang\ger.xml" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\cginc\T2M_Unlit.cginc" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonLibs\Photon3Unity3D.dll" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_2.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\DiskKernels.cginc" />
-    <None Include="Assets\postprocessing\resources\Bluenoise64\COPYING.txt" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonLibs\Metro\Photon3Unity3D.dll" />
-    <None Include="Assets\postprocessing\editor resources\UI\Trackball.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_3.shader" />
-    <None Include="Assets\postprocessing\editor resources\Monitors\WaveformRender.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_2.shader" />
-    <None Include="Assets\Julian\Shaders\PostProcessing\EdgeDetection.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\Common.cginc" />
-    <None Include="Assets\postprocessing\editor resources\Monitors\VectorscopeRender.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\Bloom.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\Uber.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\cginc\T2M_Deferred.cginc" />
-    <None Include="Assets\postprocessing\resources\Shaders\DepthOfField.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Bumped_3.shader" />
-    <None Include="Assets\jmo assets\cartoon fx\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\TAA.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_6.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_5.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\Blit.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\Bloom.cginc" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonLibs\Photon3Unity3D.xml" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Bumped_2.shader" />
-    <None Include="Assets\postprocessing\editor resources\Monitors\WaveformCompute.compute" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_5.shader" />
-    <None Include="Assets\postprocessing\resources\Shaders\DepthOfField.cginc" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Bumped_4.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Basemap\Basemap.shader" />
-    <None Include="Assets\koboldtools\plugins\JsonDotNet\link.xml" />
-    <None Include="Assets\jmo assets\!JMO Assets Readme.txt" />
-    <None Include="Assets\3_code\Networking\Photon\PhotonUnityNetworking\link.xml" />
-    <None Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_WaterWiggle.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Bumped_4.shader" />
-    <None Include="Assets\mcs.rsp" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Bumped_3.shader" />
-    <None Include="Assets\fonts\OpenSans\License!.txt" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_7.shader" />
-    <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_3.shader" />
-  </ItemGroup>
-  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AIModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.AIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ARModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.ARModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AccessibilityModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.AccessibilityModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AndroidJNIModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.AndroidJNIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.AnimationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.AssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AudioModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.AudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClothModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClothModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterInputModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterInputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClusterRendererModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.ClusterRendererModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CrashReportingModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.CrashReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.DSPGraphModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.DSPGraphModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.DirectorModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GIModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.GIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GameCenterModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.GameCenterModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GridModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.GridModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.HotReloadModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.HotReloadModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.IMGUIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.ImageConversionModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.InputLegacyModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.JSONSerializeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.LocalizationModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.LocalizationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.ParticleSystemModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PerformanceReportingModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.PerformanceReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.PhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.Physics2DModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ProfilerModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.ProfilerModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.ScreenCaptureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.SharedInternalsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteMaskModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpriteShapeModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.SpriteShapeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StreamingModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.StreamingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SubstanceModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubstanceModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SubsystemsModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.SubsystemsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TLSModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.TLSModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.TerrainPhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextCoreModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextCoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.TextRenderingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.TilemapModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIElementsNativeModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UIElementsNativeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UNETModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UNETModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UmbraModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UmbraModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityAnalyticsModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityAnalyticsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityConnectModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityCurlModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityCurlModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityTestProtocolModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityTestProtocolModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VFXModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.VFXModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VRModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.VRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VehiclesModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.VehiclesModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VideoModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.VideoModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VirtualTexturingModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.VirtualTexturingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.WindModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.WindModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.XRModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.XRModule.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.CoreModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.GraphViewModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.GraphViewModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.PackageManagerUIModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.PackageManagerUIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.SceneTemplateModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.SceneTemplateModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UIElementsModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UIElementsSamplesModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIElementsSamplesModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UIServiceModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.UIServiceModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UnityConnectModule">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="VacuumShaders.TerrainToMesh">
-      <HintPath>Assets\vacuumshaders\terrain to mesh\Scripts\VacuumShaders.TerrainToMesh.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>Library\PackageCache\com.unity.analytics@3.6.12\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-      <HintPath>Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>Library\PackageCache\com.unity.analytics@3.6.12\Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>Library\PackageCache\com.unity.nuget.mono-cecil@1.10.1\Mono.Cecil.dll</HintPath>
-    </Reference>
-    <Reference Include="Photon3Unity3D">
-      <HintPath>Assets\3_code\Networking\Photon\PhotonLibs\netstandard2.0\Photon3Unity3D.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>Assets\3_code\Networking\Photon\PhotonLibs\WebSocket\websocket-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="mscorlib">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.Runtime.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.Xml.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.Numerics.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics.Vectors">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.Net.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.IO.Compression.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Microsoft.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\System.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Win32.Primitives">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\Microsoft.Win32.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="netstandard">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\netstandard.dll</HintPath>
-    </Reference>
-    <Reference Include="System.AppContext">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.AppContext.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Concurrent">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Collections.Concurrent.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.NonGeneric">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Collections.NonGeneric.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Specialized">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Collections.Specialized.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Annotations">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ComponentModel.Annotations.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ComponentModel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.EventBasedAsync">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ComponentModel.EventBasedAsync.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.Primitives">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ComponentModel.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ComponentModel.TypeConverter">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ComponentModel.TypeConverter.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Console">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Console.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.Common">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Data.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.Contracts">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Diagnostics.Contracts.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.Debug">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Diagnostics.Debug.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.FileVersionInfo">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Diagnostics.FileVersionInfo.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.Process">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Diagnostics.Process.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.StackTrace">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Diagnostics.StackTrace.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.TextWriterTraceListener">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Diagnostics.TextWriterTraceListener.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.Tools">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Diagnostics.Tools.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Diagnostics.TraceSource">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Diagnostics.TraceSource.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing.Primitives">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Drawing.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Dynamic.Runtime">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Dynamic.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Globalization.Calendars">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Globalization.Calendars.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Globalization">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Globalization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Globalization.Extensions">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Globalization.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Compression.ZipFile">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.Compression.ZipFile.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.FileSystem.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem.DriveInfo">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.FileSystem.DriveInfo.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem.Primitives">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.FileSystem.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.FileSystem.Watcher">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.FileSystem.Watcher.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.IsolatedStorage">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.IsolatedStorage.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.MemoryMappedFiles">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.MemoryMappedFiles.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.Pipes">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.Pipes.dll</HintPath>
-    </Reference>
-    <Reference Include="System.IO.UnmanagedMemoryStream">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.IO.UnmanagedMemoryStream.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Linq">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Linq.Expressions">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Linq.Expressions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Linq.Parallel">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Linq.Parallel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Linq.Queryable">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Linq.Queryable.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Http.Rtc">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.Http.Rtc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.NameResolution">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.NameResolution.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.NetworkInformation">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.NetworkInformation.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Ping">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.Ping.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Primitives">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Requests">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.Requests.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Security">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.Sockets">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.Sockets.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.WebHeaderCollection">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.WebHeaderCollection.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.WebSockets.Client">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.WebSockets.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Net.WebSockets">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Net.WebSockets.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ObjectModel">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Reflection.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Emit">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Reflection.Emit.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Emit.ILGeneration">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Reflection.Emit.ILGeneration.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Emit.Lightweight">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Reflection.Emit.Lightweight.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Extensions">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Reflection.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reflection.Primitives">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Reflection.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Resources.Reader">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Resources.Reader.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Resources.ResourceManager">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Resources.ResourceManager.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Resources.Writer">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Resources.Writer.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.VisualC">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.CompilerServices.VisualC.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Extensions">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Handles">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.Handles.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.InteropServices">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.InteropServices.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.InteropServices.WindowsRuntime">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.InteropServices.WindowsRuntime.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Numerics">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.Numerics.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization.Formatters">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.Serialization.Formatters.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization.Json">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.Serialization.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization.Primitives">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.Serialization.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization.Xml">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Runtime.Serialization.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Claims">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Security.Claims.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Security.Cryptography.Algorithms.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Csp">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Security.Cryptography.Csp.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Security.Cryptography.Encoding.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Security.Cryptography.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Security.Cryptography.X509Certificates.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Principal">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Security.Principal.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.SecureString">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Security.SecureString.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Duplex">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ServiceModel.Duplex.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Http">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ServiceModel.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.NetTcp">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ServiceModel.NetTcp.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Primitives">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ServiceModel.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Security">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ServiceModel.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encoding">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Text.Encoding.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.Encoding.Extensions">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Text.Encoding.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Text.RegularExpressions">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Text.RegularExpressions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Threading.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Overlapped">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Threading.Overlapped.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Threading.Tasks.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Tasks.Parallel">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Threading.Tasks.Parallel.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Thread">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Threading.Thread.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.ThreadPool">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Threading.ThreadPool.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Threading.Timer">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Threading.Timer.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ValueTuple">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.ReaderWriter">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Xml.ReaderWriter.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XDocument">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Xml.XDocument.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XmlDocument">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Xml.XmlDocument.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XmlSerializer">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Xml.XmlSerializer.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XPath">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Xml.XPath.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.XPath.XDocument">
-      <HintPath>C:\Program Files\Unity\2020.3.23f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
-    </Reference>
-    <Reference Include="Purchasing.Common">
-      <HintPath>Library\ScriptAssemblies\Purchasing.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.multiplayer-hlapi.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Services.Analytics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing.SecurityStub">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityStub.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Services.Analytics">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.multiplayer-weaver.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Analytics">
-      <HintPath>Library\ScriptAssemblies\Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Services.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>Library\ScriptAssemblies\com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Services.Core.Analytics">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing.SecurityCore">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.SecurityCore.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing.Codeless">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Services.Core.Environments">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing.Stores">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.Stores.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Monetization">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Monetization.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Purchasing">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
-    </Reference>
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\3_code\Analytics\AnalyticsManager.cs" />
+     <Compile Include="Assets\3_code\Analytics\AnalyticsManagerSummaryDisplay.cs" />
+     <Compile Include="Assets\3_code\Analytics\PolymoneyMonthDataDisplay.cs" />
+     <Compile Include="Assets\3_code\Analytics\RootAnalytics.cs" />
+     <Compile Include="Assets\3_code\Buildings\Building.cs" />
+     <Compile Include="Assets\3_code\Buildings\BuildingDisplayLuminance.cs" />
+     <Compile Include="Assets\3_code\Buildings\BuildingDisplayState.cs" />
+     <Compile Include="Assets\3_code\Buildings\BuildingDisplaySymbols.cs" />
+     <Compile Include="Assets\3_code\Buildings\BuildingIncreaseLuminance.cs" />
+     <Compile Include="Assets\3_code\Buildings\BuildingLinkWithIncident.cs" />
+     <Compile Include="Assets\3_code\Buildings\BuildingOpenMarketplace.cs" />
+     <Compile Include="Assets\3_code\Buildings\BuildingShowSymbol.cs" />
+     <Compile Include="Assets\3_code\Buildings\MarketplaceDisplaySymbols.cs" />
+     <Compile Include="Assets\3_code\ButtonCompleteTurn.cs" />
+     <Compile Include="Assets\3_code\ButtonDisplayTurnCompletion.cs" />
+     <Compile Include="Assets\3_code\ButtonOpenIncidentUi.cs" />
+     <Compile Include="Assets\3_code\ButtonOpenMarketplace.cs" />
+     <Compile Include="Assets\3_code\ButtonOpenTaxOfferUi.cs" />
+     <Compile Include="Assets\3_code\ButtonSkipGameFlow.cs" />
+     <Compile Include="Assets\3_code\CameraFollowPlayer.cs" />
+     <Compile Include="Assets\3_code\Character.cs" />
+     <Compile Include="Assets\3_code\CharacterNavigation.cs" />
+     <Compile Include="Assets\3_code\CharacterSheetUi.cs" />
+     <Compile Include="Assets\3_code\ComplIntroSetMarketplace.cs" />
+     <Compile Include="Assets\3_code\Debug\PolymoneyDebug.cs" />
+     <Compile Include="Assets\3_code\GameFlow\PolymoneyGameFlow.cs" />
+     <Compile Include="Assets\3_code\GameFlowSync.cs" />
+     <Compile Include="Assets\3_code\Gamestates.cs" />
+     <Compile Include="Assets\3_code\IncidentPopUp.cs" />
+     <Compile Include="Assets\3_code\Items\Home.cs" />
+     <Compile Include="Assets\3_code\Items\HomeUI.cs" />
+     <Compile Include="Assets\3_code\Items\Incident.cs" />
+     <Compile Include="Assets\3_code\Items\IncidentResolutionUi.cs" />
+     <Compile Include="Assets\3_code\Items\IncidentUI.cs" />
+     <Compile Include="Assets\3_code\Items\Item.cs" />
+     <Compile Include="Assets\3_code\Items\ItemUI.cs" />
+     <Compile Include="Assets\3_code\Items\Job.cs" />
+     <Compile Include="Assets\3_code\Items\JobUI.cs" />
+     <Compile Include="Assets\3_code\Items\Person.cs" />
+     <Compile Include="Assets\3_code\Items\PersonUI.cs" />
+     <Compile Include="Assets\3_code\Items\Talent.cs" />
+     <Compile Include="Assets\3_code\Items\TalentUI.cs" />
+     <Compile Include="Assets\3_code\Items\UiResource.cs" />
+     <Compile Include="Assets\3_code\Level\GetBuildingUpkeepRequirement.cs" />
+     <Compile Include="Assets\3_code\Level\Level.cs" />
+     <Compile Include="Assets\3_code\Level\LevelAuthoritativePlayer.cs" />
+     <Compile Include="Assets\3_code\Level\LevelControlIntro.cs" />
+     <Compile Include="Assets\3_code\Level\LevelControlPlayerIntroduction.cs" />
+     <Compile Include="Assets\3_code\Level\LevelControlQIntroduction.cs" />
+     <Compile Include="Assets\3_code\Level\LevelControlTime.cs" />
+     <Compile Include="Assets\3_code\Level\LevelControlTurns.cs" />
+     <Compile Include="Assets\3_code\Level\LevelData.cs" />
+     <Compile Include="Assets\3_code\Level\LevelDisplayCityState.cs" />
+     <Compile Include="Assets\3_code\Level\LevelDisplayEndMonth.cs" />
+     <Compile Include="Assets\3_code\Level\LevelDisplayLoadingScreen.cs" />
+     <Compile Include="Assets\3_code\Level\LevelDisplayLuminance.cs" />
+     <Compile Include="Assets\3_code\Level\LevelDisplayMonth.cs" />
+     <Compile Include="Assets\3_code\Level\LevelDisplayPlayers.cs" />
+     <Compile Include="Assets\3_code\Level\LevelGenerateCharacter.cs" />
+     <Compile Include="Assets\3_code\Level\LevelInput.cs" />
+     <Compile Include="Assets\3_code\Level\LevelLoadData.cs" />
+     <Compile Include="Assets\3_code\Level\LevelStartGame.cs" />
+     <Compile Include="Assets\3_code\LevelFilterVisibility.cs" />
+     <Compile Include="Assets\3_code\LobbyPlayer.cs" />
+     <Compile Include="Assets\3_code\LobbyPlayerUI.cs" />
+     <Compile Include="Assets\3_code\Market\Benefit.cs" />
+     <Compile Include="Assets\3_code\Market\BenefitDisplay.cs" />
+     <Compile Include="Assets\3_code\Market\Cost.cs" />
+     <Compile Include="Assets\3_code\Market\CostDisplay.cs" />
+     <Compile Include="Assets\3_code\Market\Currency.cs" />
+     <Compile Include="Assets\3_code\Market\Marketplace.cs" />
+     <Compile Include="Assets\3_code\Market\MarketplaceCarousel.cs" />
+     <Compile Include="Assets\3_code\Market\MarketplaceDisplay.cs" />
+     <Compile Include="Assets\3_code\Market\MarketplaceDisplayCarousel.cs" />
+     <Compile Include="Assets\3_code\Market\MarketplaceSet.cs" />
+     <Compile Include="Assets\3_code\Market\MarketplaceSetSync.cs" />
+     <Compile Include="Assets\3_code\Market\Offer.cs" />
+     <Compile Include="Assets\3_code\Market\OfferDisplay.cs" />
+     <Compile Include="Assets\3_code\Market\OfferEditorDisplay.cs" />
+     <Compile Include="Assets\3_code\Market\OfferSetMarketPairSet.cs" />
+     <Compile Include="Assets\3_code\Market\OfferSetMarketSeller.cs" />
+     <Compile Include="Assets\3_code\Networking\Messages.cs" />
+     <Compile Include="Assets\3_code\Networking\PolymoneyDisplayGameSuspend.cs" />
+     <Compile Include="Assets\3_code\Networking\PolymoneyNetworkDiscoveryUI.cs" />
+     <Compile Include="Assets\3_code\Networking\PolymoneyNetworkManager.cs" />
+     <Compile Include="Assets\3_code\Networking\PolymoneyNetworkManagerSetupPlayer.cs" />
+     <Compile Include="Assets\3_code\Networking\PolymoneyNetworkManagerUI.cs" />
+     <Compile Include="Assets\3_code\Player\CharacterDisplayLuminance.cs" />
+     <Compile Include="Assets\3_code\Player\LocalPlayerApplyOffer.cs" />
+     <Compile Include="Assets\3_code\Player\LocalPlayerDisplayIncident.cs" />
+     <Compile Include="Assets\3_code\Player\Player.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerControlStartup.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerCreateMarketplace.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerCreateOffer.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerDisplayBalanceSheet.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerDisplayCharacter.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerDisplayCurrency.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerDisplayFairydust.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerDisplayFreeTime.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerDisplayIncidents.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerDisplayName.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerDisplaySymbols.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerDisplayWaiting.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerGetIncident.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerGiveFairydust.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerLoadCharacter.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerMarketplaceDisplaySymbols.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerNotifyOfferApplication.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerOpenMarket.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerTutorial.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerUIFilter.cs" />
+     <Compile Include="Assets\3_code\Player\PlayerWatchMarketplace.cs" />
+     <Compile Include="Assets\3_code\Pocket\Pocket.cs" />
+     <Compile Include="Assets\3_code\TaxOfferPopUp.cs" />
+     <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioController.cs" />
+     <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioControllerHelper.cs" />
+     <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioFader.cs" />
+     <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioItem.cs" />
+     <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioLog.cs" />
+     <Compile Include="Assets\audiotoolkit\audiotoolkit\AudioObject.cs" />
+     <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\ArrayHelper.cs" />
+     <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\MessengerExtensions.cs" />
+     <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\PoolableObject.cs" />
+     <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\RegisteredComponent.cs" />
+     <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\SystemTime.cs" />
+     <Compile Include="Assets\audiotoolkit\Shared Auxiliary Code\UnitySingleton.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineBlendListCamera.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineBrain.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineClearShot.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineCollider.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineConfiner.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineDollyCart.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineExternalCamera.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineFollowZoom.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineFreeLook.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineMixingCamera.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachinePath.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachinePipeline.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineSmoother.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineSmoothPath.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineStateDrivenCamera.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineTargetGroup.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Behaviours\CinemachineVirtualCamera.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineBasicMultiChannelPerlin.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineComposer.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineFramingTransposer.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineGroupComposer.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineHardLockToTarget.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineHardLookAt.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineOrbitalTransposer.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachinePOV.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineSameAsFollowObject.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineTrackedDolly.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Components\CinemachineTransposer.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\AxisState.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CameraState.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineBlend.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineBlenderSettings.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineComponentBase.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineCore.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineDebugLogger.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineExtension.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachinePathBase.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachinePropertyAttribute.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\CinemachineVirtualCameraBase.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\GaussianFilter.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\ICinemachineCamera.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\ICinemachineComponent.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\LensSettings.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\NoiseSettings.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\Predictor.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\ReflectionHelpers.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\SplineHelpers.cs" />
+     <Compile Include="Assets\cinemachine\Base\runtime\Core\UnityVectorExtensions.cs" />
+     <Compile Include="Assets\cinemachine\postfx\CinemachinePostFX.cs" />
+     <Compile Include="Assets\cinemachine\postfx\CinemachinePostProcessing.cs" />
+     <Compile Include="Assets\cinemachine\Timeline\CinemachineMixer.cs" />
+     <Compile Include="Assets\cinemachine\Timeline\CinemachineShot.cs" />
+     <Compile Include="Assets\cinemachine\Timeline\CinemachineTrack.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_New.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_RandomDir.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_RotateCamera.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_Translate.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_AutoDestructShuriken.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_AutodestructWhenNoChildren.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_AutoRotate.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_InspectorHelp.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_LightIntensityFade.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\Scripts\CFX_ShurikenThreadFix.cs" />
+     <Compile Include="Assets\jmo assets\cartoon fx\Spawn System\CFX_SpawnSystem.cs" />
+     <Compile Include="Assets\Julian\code\PostProcessing\ColorFocus.cs" />
+     <Compile Include="Assets\Julian\code\PostProcessing\PostProcessingBase.cs" />
+     <Compile Include="Assets\Julian\code\Utilities\Billboard.cs" />
+     <Compile Include="Assets\Julian\code\Utilities\Rotator.cs" />
+     <Compile Include="Assets\koboldtools\building\FileAccessHelpers.cs" />
+     <Compile Include="Assets\koboldtools\Camera\Billboard.cs" />
+     <Compile Include="Assets\koboldtools\Camera\Camera2dAspectSize.cs" />
+     <Compile Include="Assets\koboldtools\Camera\CameraPinchZoom.cs" />
+     <Compile Include="Assets\koboldtools\Camera\CameraPinchZoomVirtual.cs" />
+     <Compile Include="Assets\koboldtools\Camera\CameraTouchPan.cs" />
+     <Compile Include="Assets\koboldtools\Camera\CameraTouchPanVirtual.cs" />
+     <Compile Include="Assets\koboldtools\Camera\VirtualCameraWithState.cs" />
+     <Compile Include="Assets\koboldtools\Carousel\Carousel.cs" />
+     <Compile Include="Assets\koboldtools\Cleanup\Cleanup.cs" />
+     <Compile Include="Assets\koboldtools\Debugging\DisplayVersion.cs" />
+     <Compile Include="Assets\koboldtools\Debugging\DisplayWithDebug.cs" />
+     <Compile Include="Assets\koboldtools\Debugging\MissingReferenceFinder.cs" />
+     <Compile Include="Assets\koboldtools\feedback\KoboldFeedback.cs" />
+     <Compile Include="Assets\koboldtools\feedback\Pivotal\ApiError.cs" />
+     <Compile Include="Assets\koboldtools\feedback\Pivotal\Comment.cs" />
+     <Compile Include="Assets\koboldtools\feedback\Pivotal\FileAttachment.cs" />
+     <Compile Include="Assets\koboldtools\feedback\Pivotal\Label.cs" />
+     <Compile Include="Assets\koboldtools\feedback\Pivotal\Story.cs" />
+     <Compile Include="Assets\koboldtools\feedback\Pivotal\StoryState.cs" />
+     <Compile Include="Assets\koboldtools\feedback\Pivotal\StoryType.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\BoolEvent.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\ButtonShortcut.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\DeactivateOnPlatform.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\DontDestroyOnLoad.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\DropdownShortcut.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\Easing.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\EnumFlagAttribute.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\IEnumerableExtensions.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\IListExtensions.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\NETLegacyExtension.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\QuitGameButton.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\SerializableGuid.cs" />
+     <Compile Include="Assets\koboldtools\Helpers\SetTargetFramerate.cs" />
+     <Compile Include="Assets\koboldtools\Interactive\IInteractive.cs" />
+     <Compile Include="Assets\koboldtools\Interactive\IInteractiveBlocker.cs" />
+     <Compile Include="Assets\koboldtools\Interactive\Interactions.cs" />
+     <Compile Include="Assets\koboldtools\Interactive\InteractiveEvent.cs" />
+     <Compile Include="Assets\koboldtools\Interactive\InteractiveEventChangeGamestate.cs" />
+     <Compile Include="Assets\koboldtools\lazybar\ILazyBar.cs" />
+     <Compile Include="Assets\koboldtools\lazybar\LazyBar.cs" />
+     <Compile Include="Assets\koboldtools\lazybar\LazyBarAnimation.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\GameLanguage.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\ILanguage.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\ILocalisation.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\ILocalisationDataReader.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\ILocalisedText.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\ILocaliseElement.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\Localisation.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\LocalisationReaderXML.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\LocalisationSelectLanguage.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\LocalisedText.cs" />
+     <Compile Include="Assets\koboldtools\Localisation\LocaliseElementUIText.cs" />
+     <Compile Include="Assets\koboldtools\Location\ILocated.cs" />
+     <Compile Include="Assets\koboldtools\Location\ILocationMap.cs" />
+     <Compile Include="Assets\koboldtools\Location\LocatedDeviceLoc.cs" />
+     <Compile Include="Assets\koboldtools\Location\LocationMap.cs" />
+     <Compile Include="Assets\koboldtools\Logging\DataLog.cs" />
+     <Compile Include="Assets\koboldtools\Logging\DataLogger.cs" />
+     <Compile Include="Assets\koboldtools\Logging\ILogEntry.cs" />
+     <Compile Include="Assets\koboldtools\Logging\ILogger.cs" />
+     <Compile Include="Assets\koboldtools\Logging\LogEntry.cs" />
+     <Compile Include="Assets\koboldtools\Logging\Logger.cs" />
+     <Compile Include="Assets\koboldtools\Logging\LoggerFileWriter.cs" />
+     <Compile Include="Assets\koboldtools\Logging\LoggerHandleUncaughtExceptions.cs" />
+     <Compile Include="Assets\koboldtools\Logging\LoggerWriteConsole.cs" />
+     <Compile Include="Assets\koboldtools\Logging\LoggerWriteFile.cs" />
+     <Compile Include="Assets\koboldtools\Logging\Record.cs" />
+     <Compile Include="Assets\koboldtools\Logging\RootLogger.cs" />
+     <Compile Include="Assets\koboldtools\Named\INamed.cs" />
+     <Compile Include="Assets\koboldtools\Named\NamedUIText.cs" />
+     <Compile Include="Assets\koboldtools\NetworkTools\AutoConnect.cs" />
+     <Compile Include="Assets\koboldtools\NetworkTools\PanelNetworkServer.cs" />
+     <Compile Include="Assets\koboldtools\panel\Alert.cs" />
+     <Compile Include="Assets\koboldtools\panel\AlertSkin.cs" />
+     <Compile Include="Assets\koboldtools\panel\IPanel.cs" />
+     <Compile Include="Assets\koboldtools\panel\Panel.cs" />
+     <Compile Include="Assets\koboldtools\panel\PanelDisplayBasic.cs" />
+     <Compile Include="Assets\koboldtools\panel\paneldisplaytimeline\PanelDisplayTimelineBehaviour.cs" />
+     <Compile Include="Assets\koboldtools\panel\paneldisplaytimeline\PanelDisplayTimelineClip.cs" />
+     <Compile Include="Assets\koboldtools\panel\paneldisplaytimeline\PanelDisplayTimelineMixerBehaviour.cs" />
+     <Compile Include="Assets\koboldtools\panel\paneldisplaytimeline\PanelDisplayTimelineTrack.cs" />
+     <Compile Include="Assets\koboldtools\panel\PanelDisplayTransitions.cs" />
+     <Compile Include="Assets\koboldtools\panel\PanelSetState.cs" />
+     <Compile Include="Assets\koboldtools\Pool\Pool.cs" />
+     <Compile Include="Assets\koboldtools\Pool\PoolPopEvent.cs" />
+     <Compile Include="Assets\koboldtools\Roulette\Roulette.cs" />
+     <Compile Include="Assets\koboldtools\SaveLoad\ISaveLoad.cs" />
+     <Compile Include="Assets\koboldtools\SaveLoad\SaveLoad.cs" />
+     <Compile Include="Assets\koboldtools\Singleton\Singleton.cs" />
+     <Compile Include="Assets\koboldtools\State\ButtonChangeGamestate.cs" />
+     <Compile Include="Assets\koboldtools\State\ButtonEnableWithGamestate.cs" />
+     <Compile Include="Assets\koboldtools\State\ButtonEnableWithState.cs" />
+     <Compile Include="Assets\koboldtools\State\EventWithGamestate.cs" />
+     <Compile Include="Assets\koboldtools\State\FlowBehaviour.cs" />
+     <Compile Include="Assets\koboldtools\State\FlowPhase.cs" />
+     <Compile Include="Assets\koboldtools\State\GameFlow.cs" />
+     <Compile Include="Assets\koboldtools\State\Gamestate.cs" />
+     <Compile Include="Assets\koboldtools\State\IFlow.cs" />
+     <Compile Include="Assets\koboldtools\State\IFlowCondition.cs" />
+     <Compile Include="Assets\koboldtools\State\IFlowPhase.cs" />
+     <Compile Include="Assets\koboldtools\State\IStateManager.cs" />
+     <Compile Include="Assets\koboldtools\State\PanelDisplayWithGamestate.cs" />
+     <Compile Include="Assets\koboldtools\State\PanelDisplayWithState.cs" />
+     <Compile Include="Assets\koboldtools\State\StateChangeEvent.cs" />
+     <Compile Include="Assets\koboldtools\State\StateFlagsAttribute.cs" />
+     <Compile Include="Assets\koboldtools\State\StateManager.cs" />
+     <Compile Include="Assets\koboldtools\Timeline\SetState.cs" />
+     <Compile Include="Assets\koboldtools\Timeline\SkipController.cs" />
+     <Compile Include="Assets\koboldtools\Timeline\SkipSection.cs" />
+     <Compile Include="Assets\koboldtools\UI\ButtonSound.cs" />
+     <Compile Include="Assets\koboldtools\ViewController\IViewController.cs" />
+     <Compile Include="Assets\koboldtools\ViewController\VC.cs" />
+     <Compile Include="Assets\koboldtools\ViewController\VCBehaviour.cs" />
+     <Compile Include="Assets\koboldtools\ViewController\ViewController.cs" />
+     <Compile Include="Assets\lobby\scripts\DraggablePanel.cs" />
+     <Compile Include="Assets\lobby\scripts\EventSystemChecker.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyCountdownPanel.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyHook.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyInfoPanel.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyMainMenu.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyManager.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyPlayer.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyPlayerList.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyServerEntry.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyServerList.cs" />
+     <Compile Include="Assets\lobby\scripts\Lobby\LobbyTopPanel.cs" />
+     <Compile Include="Assets\PersistentOptionSettings.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Attributes\GetSetAttribute.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Attributes\MinAttribute.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Attributes\TrackballAttribute.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Attributes\TrackballGroupAttribute.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\AmbientOcclusionComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\BloomComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\BuiltinDebugViewsComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\ChromaticAberrationComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\ColorGradingComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\DepthOfFieldComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\DitheringComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\EyeAdaptationComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\FogComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\FxaaComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\GrainComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\MotionBlurComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\ScreenSpaceReflectionComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\TaaComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\UserLutComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Components\VignetteComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\AmbientOcclusionModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\AntialiasingModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\BloomModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\BuiltinDebugViewsModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\ChromaticAberrationModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\ColorGradingModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\DepthOfFieldModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\DitheringModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\EyeAdaptationModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\FogModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\GrainModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\MotionBlurModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\ScreenSpaceReflectionModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\UserLutModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Models\VignetteModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\PostProcessingBehaviour.cs" />
+     <Compile Include="Assets\postprocessing\runtime\PostProcessingComponent.cs" />
+     <Compile Include="Assets\postprocessing\runtime\PostProcessingContext.cs" />
+     <Compile Include="Assets\postprocessing\runtime\PostProcessingModel.cs" />
+     <Compile Include="Assets\postprocessing\runtime\PostProcessingProfile.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Utils\ColorGradingCurve.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Utils\GraphicsUtils.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Utils\MaterialFactory.cs" />
+     <Compile Include="Assets\postprocessing\runtime\Utils\RenderTextureFactory.cs" />
+     <Compile Include="Assets\postprocessing\utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\Resources\Mayor_Panel.cs" />
+     <Compile Include="Assets\Resources\Options_Controller.cs" />
+     <Compile Include="Assets\Resources\Stat_Tracker.cs" />
+     <Compile Include="Assets\Resources\Stats_Controller.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\NetworkAsteroid.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\NetworkGameManager.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\NetworkLobbyHook.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceship.cs" />
+     <Compile Include="Assets\SampleScenes\Scripts\NetworkSpaceshipBullet.cs" />
+     <Compile Include="Assets\SetMinimumUpkeep.cs" />
+     <Compile Include="Assets\vacuumshaders\terrain to mesh\Example Scenes\Scripts\Runtime_OBJExporter.cs" />
+     <Compile Include="Assets\vacuumshaders\terrain to mesh\Example Scenes\Scripts\RunTime_Terrain_Convertion.cs" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\BumpedSpecular_3.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\DepthOfField.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\BumpedSpecular_2.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Basemap\Basemap.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_6.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\MotionBlur.cginc" />
+     <None Include="Assets\postprocessing\resources\Shaders\Fog.shader" />
+     <None Include="Assets\jmo assets\cartoon fx\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
+     <None Include="Assets\postprocessing\editor resources\Monitors\ParadeRender.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\LutGen.shader" />
+     <None Include="Assets\postprocessing\editor resources\Monitors\HistogramRender.shader" />
+     <None Include="Assets\streamingassets\lang\spa.xml" />
+     <None Include="Assets\postprocessing\editor resources\UI\CurveBackground.shader" />
+     <None Include="Assets\lobby\Documentation.txt" />
+     <None Include="Assets\streamingassets\lang\deu.xml" />
+     <None Include="Assets\postprocessing\resources\Shaders\ScreenSpaceReflection.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_4.shader" />
+     <None Include="Assets\postprocessing\utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\ACES.cginc" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\BumpedSpecular_4.shader" />
+     <None Include="Assets\streamingassets\lang\eng.xml" />
+     <None Include="Assets\postprocessing\resources\Shaders\UberSecondPass.cginc" />
+     <None Include="Assets\postprocessing\resources\Shaders\Tonemapping.cginc" />
+     <None Include="Assets\lobby\Instruction.txt" />
+     <None Include="Assets\postprocessing\editor resources\Monitors\HistogramCompute.compute" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_3.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\Uber.shader" />
+     <None Include="Assets\Julian\Shaders\PostProcessing\EdgeDetection.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Bumped_2.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\cginc\T2M_ODL.cginc" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_6.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\Blit.shader" />
+     <None Include="Assets\postprocessing\editor resources\Monitors\WaveformRender.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_8.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Bumped_4.shader" />
+     <None Include="Assets\postprocessing\editor resources\Monitors\VectorscopeCompute.compute" />
+     <None Include="Assets\streamingassets\lang\languages.xml" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Bumped_2.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\FXAA3.cginc" />
+     <None Include="Assets\postprocessing\resources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\AmbientOcclusion.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_5.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_2.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_2.shader" />
+     <None Include="Assets\mcs.rsp" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Bumped_3.shader" />
+     <None Include="Assets\postprocessing\resources\Bluenoise64\LICENSE.txt" />
+     <None Include="Assets\cinemachine\ReleaseNotes.txt" />
+     <None Include="Assets\postprocessing\resources\Shaders\BuiltinDebugViews.shader" />
+     <None Include="Assets\jmo assets\cartoon fx easy editor\CartoonFX Easy Editor Readme.txt" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\cginc\T2M_Deferred.cginc" />
+     <None Include="Assets\postprocessing\resources\Shaders\Common.cginc" />
+     <None Include="Assets\postprocessing\resources\Bluenoise64\COPYING.txt" />
+     <None Include="Assets\fonts\OpenSans\License!.txt" />
+     <None Include="Assets\postprocessing\editor resources\UI\Trackball.shader" />
+     <None Include="Assets\jmo assets\!JMO Assets Readme.txt" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Bumped_2.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\cginc\T2M_Variables.cginc" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_4.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Bumped_4.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_7.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\Bloom.cginc" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_6.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\TAA.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_5.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\EyeHistogram.compute" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_5.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\TAA.cginc" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_7.shader" />
+     <None Include="Assets\jmo assets\cartoon fx\demo\Assets\CFX_Demo_WaterWiggle.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\EyeAdaptation.cginc" />
+     <None Include="Assets\jmo assets\cartoon fx\Shaders\CFXM_MobileParticleAB_Alpha8.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_3.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_5.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\GrainGen.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_8.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_2.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_7.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\FXAA.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_2.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\DiskKernels.cginc" />
+     <None Include="Assets\postprocessing\resources\Shaders\DepthOfField.cginc" />
+     <None Include="Assets\postprocessing\resources\Shaders\ScreenSpaceRaytrace.cginc" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_7.shader" />
+     <None Include="Assets\streamingassets\lang\ger.xml" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_8.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\Bloom.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Standard\Diffuse_3.shader" />
+     <None Include="Assets\Julian\Shaders\PostProcessing\ColorFocus.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_6.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_8.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Bumped_4.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Diffuse_4.shader" />
+     <None Include="Assets\postprocessing\editor resources\Monitors\VectorscopeRender.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\EyeAdaptation.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\ColorGrading.cginc" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Bumped_3.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\One Directional Light\Bumped_3.shader" />
+     <None Include="Assets\postprocessing\resources\Shaders\AmbientOcclusion.cginc" />
+     <None Include="Assets\koboldtools\plugins\JsonDotNet\link.xml" />
+     <None Include="Assets\postprocessing\editor resources\Monitors\WaveformCompute.compute" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Legacy Shaders\Diffuse_4.shader" />
+     <None Include="Assets\jmo assets\cartoon fx\CartoonFX Readme.txt" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\cginc\T2M_Unlit.cginc" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\shaders\Unlit\Unlit_3.shader" />
+     <None Include="Assets\vacuumshaders\terrain to mesh\Packages\ReadMe.txt" />
+ <Reference Include="UnityEngine.CoreModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AccessibilityModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ParticleSystemModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PhysicsModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VehiclesModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ClothModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AIModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AnimationModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TextRenderingModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainPhysicsModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.IMGUIModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ClusterInputModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ClusterRendererModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UNETModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.DirectorModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityAnalyticsModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PerformanceReportingModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityConnectModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.WebModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.WebModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ARModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VRModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIElementsModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StyleSheetsModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AssetBundleModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AudioModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CrashReportingModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GameCenterModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GridModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ImageConversionModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.InputModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.JSONSerializeModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ParticlesLegacyModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Physics2DModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ScreenCaptureModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SharedInternalsModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteMaskModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteShapeModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TilemapModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VideoModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.WindModule">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIAutomation">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GoogleAudioSpatializer">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpatialTracking">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2017.4.39f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/koboldtools/plugins/JsonDotNet/assemblies/AOT/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="VacuumShaders.TerrainToMesh">
+ <HintPath>C:/Users/15208/Documents/GitHub/Crystal-Island-game/Crystal-Island-Unity_/Crystal-Island-Unity_/Assets/vacuumshaders/terrain to mesh/Scripts/VacuumShaders.TerrainToMesh.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Users/15208/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Purchasing">
+ <HintPath>C:/Users/15208/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StandardEvents">
+ <HintPath>C:/Users/15208/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{B64CD39E-F42A-A2C5-2A19-4322F6ECCA49}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.csproj">
-      <Project>{9075C5CE-1CBE-F967-DC29-832A645C8952}</Project>
-      <Name>PhotonUnityNetworking</Name>
-    </ProjectReference>
-    <ProjectReference Include="PunDemos.DemoSlotcarEditor.csproj">
-      <Project>{14F9A8CA-722D-79EE-4AA6-FEA860C15675}</Project>
-      <Name>PunDemos.DemoSlotcarEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
-      <Project>{92DF98E8-5A0A-E62D-C386-09444A13B456}</Project>
-      <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
-      <Project>{D9F8D650-C2A1-7533-BF94-2A5C67CECE1E}</Project>
-      <Name>PhotonUnityNetworking.Utilities</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
-      <Project>{71F973DC-E508-E701-4142-405514AF8E2F}</Project>
-      <Name>PhotonUnityNetworking.Demos</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonChat.csproj">
-      <Project>{C59280C1-7B96-2366-4D98-01F5736B5C3E}</Project>
-      <Name>PhotonChat</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
-      <Project>{F2EEDC21-A42E-7DD5-1A82-9E19BA7A3E02}</Project>
-      <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
-      <Project>{CF7D40A5-A6D1-E01D-2658-14043E45C991}</Project>
-      <Name>PhotonUnityNetworking.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PunDemos.DemoHubEditor.csproj">
-      <Project>{8447968D-08F6-07E2-557D-4E6091DD3C57}</Project>
-      <Name>PunDemos.DemoHubEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PhotonRealtime.csproj">
-      <Project>{C9E80087-D00A-2226-1255-6FFD4FD4F070}</Project>
-      <Name>PhotonRealtime</Name>
-    </ProjectReference>
+      <Project>{B64CD39E-F42A-A2C5-2A19-4322F6ECCA49}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>
