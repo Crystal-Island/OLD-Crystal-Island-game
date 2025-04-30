@@ -40,6 +40,16 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - UpdatePlayerReadyState
+  - RpcAddMarketplace
+  - RpcAddOffer
+  - RpcClearOffers
+  - RpcRemoveMarketplace
+  - RpcRemoveOffer
+  - RpcSetInitialGuids
+  - RpcSetMarketSeller
+  - RpcApplyOffer
+  - RPCCreateOffer
+  - RPCClientUpdateIncident
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

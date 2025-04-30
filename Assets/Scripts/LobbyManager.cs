@@ -6,6 +6,9 @@ using Photon.Realtime;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using KoboldTools;
+using Photon.Pun.Demo.Cockpit;
+using Unity.Mathematics;
 
 
 namespace Herman
@@ -186,6 +189,30 @@ namespace Herman
                     if (changedProps.ContainsKey("IsMayor"))
                     {
                         bool isMayor = (bool)changedProps["IsMayor"];
+                        if (!isMayor)
+                        {
+                            foreach (GameObject entry in playerListItems.Values)
+                            {
+                                PlayerListItem subItem = entry.GetComponent<PlayerListItem>();
+                                subItem.RunAsMayorToggle.interactable = true;
+                            }
+                        }
+                        else
+                        {
+                            foreach (GameObject entry in playerListItems.Values)
+                            {
+                                PlayerListItem subItem = entry.GetComponent<PlayerListItem>();
+                                subItem.RunAsMayorToggle.interactable = false;
+                            }
+                        }
+                        if (targetPlayer == PhotonNetwork.LocalPlayer)
+                        {
+                            playerItemScript.RunAsMayorToggle.interactable = true;
+                        }
+                        else
+                        {
+                            playerItemScript.RunAsMayorToggle.interactable = false;
+                        }
                         playerItemScript.UpdateMayorStatus(isMayor);
                     }
 
@@ -299,6 +326,49 @@ namespace Herman
         #endregion
         public void OnStartGameButtonClicked()
         {
+            // Pick one mayor
+            int i = 0, j =0;
+            
+            foreach (Player p in PhotonNetwork.PlayerList)
+            {
+                try
+                {
+                    bool isMayor = (bool)p.CustomProperties["IsMayor"];
+                    if (isMayor)
+                    {
+                        i++;
+                    }
+                }
+                catch { 
+
+                }
+            }
+            System.Random rand = new System.Random();
+            int selected = rand.Next(0, i);
+
+            ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable
+            {
+                { "IsMayor", false }
+            };
+            i = 0;
+            foreach (Player p in PhotonNetwork.PlayerList)
+            {
+                try
+                {
+                    bool isMayor = (bool)p.CustomProperties["IsMayor"];
+                    if (isMayor)
+                    {
+                        if (selected != i)
+                        {
+                            p.SetCustomProperties(playerProperties);
+                        }
+                        i++;
+                    }
+                }
+                catch { }
+            }
+
+
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
