@@ -136,12 +136,18 @@ namespace Polymoney
                 this.startGameButton.gameObject.SetActive(false);
                 
                 
-                if(GetComponent<NetworkDiscovery>().isServer && Network.connections.Length > 1)
-                {
-                    //Apply options selected
-                    print("Apply Option Menus");               
-                    optionsController.GetComponent<Options_Controller>().RpcUpdateSettings();
-                }
+                // TODO: NETWORKING-MIGRATION - legacy UnityEngine.Network removed in Unity 2018.2; restore via Mirror/Photon
+                // BEHAVIOR LOST: when the server host clicks "Start Game" with one or more remote clients connected,
+                // this previously broadcast the host's Options_Controller settings (tax mode, water-crystal turn,
+                // disaster severity/frequency, mayor panel visibility, etc.) to every connected client via RpcUpdateSettings().
+                // While disabled, host-selected lobby options will NOT be propagated - clients will run with their
+                // local defaults, which is incorrect for shared-game gameplay. Re-wire when networking is restored.
+                //if(GetComponent<NetworkDiscovery>().isServer && Network.connections.Length > 1)
+                //{
+                //    //Apply options selected
+                //    print("Apply Option Menus");
+                //    optionsController.GetComponent<Options_Controller>().RpcUpdateSettings();
+                //}
                 
             }
         }

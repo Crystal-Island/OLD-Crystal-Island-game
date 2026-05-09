@@ -524,13 +524,23 @@ namespace Polymoney {
         /// </summary>
         public override void OnStartHost() {
             RootLogger.Debug(this, "OnStartHost()");
-            // Set the broadcast for game discovery.
-            string broadcastData = String.Format("PolymoneyGame:{0}:{1}:20120", this.gamenameInput.text, Network.player.ipAddress);
-            RootLogger.Info(this, "Server: Setting broadcast data to '{0}'", broadcastData);
-
-            this.networkDiscovery.useNetworkManager = false;
-            this.networkDiscovery.broadcastData = broadcastData;
-            this.networkDiscovery.StartAsServer();
+            // TODO: NETWORKING-MIGRATION - legacy UnityEngine.Network.player.ipAddress removed in Unity 2018.2; restore via Mirror/Photon
+            // BEHAVIOR LOST: previously built a LAN-discovery broadcast string of the form
+            //   "PolymoneyGame:<gameName>:<hostLanIP>:20120"
+            // and started NetworkDiscovery as a server so any other Crystal Island client on the same LAN would
+            // see the new game appear in its pre-lobby game list and could one-tap to join.
+            // While disabled, LAN auto-discovery is OFF - clients will NOT see this host's game in their game list,
+            // and there is currently no fallback path to manually enter a host IP. Hosting still spins up
+            // (base.OnStartHost runs below), but only the host can play unless joinability is re-implemented.
+            // When migrating: replace Network.player.ipAddress with a Mirror/Photon-equivalent local-LAN IP lookup
+            // (e.g. NetworkInterface enumeration via System.Net.NetworkInformation), then re-enable the broadcast block.
+            //// Set the broadcast for game discovery.
+            //string broadcastData = String.Format("PolymoneyGame:{0}:{1}:20120", this.gamenameInput.text, Network.player.ipAddress);
+            //RootLogger.Info(this, "Server: Setting broadcast data to '{0}'", broadcastData);
+            //
+            //this.networkDiscovery.useNetworkManager = false;
+            //this.networkDiscovery.broadcastData = broadcastData;
+            //this.networkDiscovery.StartAsServer();
             base.OnStartHost();
         }
 

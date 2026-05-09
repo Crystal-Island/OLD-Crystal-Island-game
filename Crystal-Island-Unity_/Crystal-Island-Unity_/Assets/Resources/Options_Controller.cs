@@ -476,17 +476,18 @@ public class Options_Controller : NetworkBehaviour
     //Close the Option menu
     private void ClosePanel()
     {
-        if(Network.connections.Length > 1)
-        {
-            //Send the settings to the clients
-            RpcUpdateSettings();
-
-            //Send the panel info to clients
-            RpcSetPanel(showPanel);
-
-            //Send the manual intro info to clients
-
-        }
+        // TODO: NETWORKING-MIGRATION - legacy UnityEngine.Network removed in Unity 2018.2; restore via Mirror/Photon
+        //if(Network.connections.Length > 1)
+        //{
+        //    //Send the settings to the clients
+        //    RpcUpdateSettings();
+        //
+        //    //Send the panel info to clients
+        //    RpcSetPanel(showPanel);
+        //
+        //    //Send the manual intro info to clients
+        //
+        //}
 
         optionsPanel.SetActive(false);
     }
@@ -508,10 +509,11 @@ public class Options_Controller : NetworkBehaviour
         presetFlag1 = true;
         presetFlag2 = false;
         presetFlag3 = false;
-        if (Network.connections.Length > 1)
-        {
-            RpcApplyPreset1();
-        }
+        // TODO: NETWORKING-MIGRATION - legacy UnityEngine.Network removed in Unity 2018.2; restore via Mirror/Photon
+        //if (Network.connections.Length > 1)
+        //{
+        //    RpcApplyPreset1();
+        //}
         InitializeSettings();
     }
 
@@ -530,10 +532,11 @@ public class Options_Controller : NetworkBehaviour
         presetFlag2 = true;
         presetFlag1 = false;
         presetFlag3 = false;
-        if (Network.connections.Length > 1)
-        {
-            RpcApplyPreset2();
-        }
+        // TODO: NETWORKING-MIGRATION - legacy UnityEngine.Network removed in Unity 2018.2; restore via Mirror/Photon
+        //if (Network.connections.Length > 1)
+        //{
+        //    RpcApplyPreset2();
+        //}
         InitializeSettings();
     }
 
@@ -552,10 +555,11 @@ public class Options_Controller : NetworkBehaviour
         presetFlag3 = true;
         presetFlag1 = false;
         presetFlag2 = false;
-        if (Network.connections.Length > 1)
-        {
-            RpcApplyPreset3();
-        }
+        // TODO: NETWORKING-MIGRATION - legacy UnityEngine.Network removed in Unity 2018.2; restore via Mirror/Photon
+        //if (Network.connections.Length > 1)
+        //{
+        //    RpcApplyPreset3();
+        //}
         InitializeSettings();
     }
 }
