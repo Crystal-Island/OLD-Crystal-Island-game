@@ -102,7 +102,9 @@ namespace Polymoney {
         }
 
         public void OnDestroy() {
-            Level.instance.RemovePlayer(this);
+            if (Level.instance != null) {
+                Level.instance.RemovePlayer(this);
+            }
         }
 
         /// <summary>

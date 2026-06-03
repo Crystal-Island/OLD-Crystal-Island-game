@@ -15,7 +15,7 @@ namespace KoboldTools {
 
         public T model
         {
-            get { return vc.model; }
+            get { return vc?.model; }
         }
 
         public void Start() {

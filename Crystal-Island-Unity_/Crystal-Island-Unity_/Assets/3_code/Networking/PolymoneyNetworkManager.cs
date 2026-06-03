@@ -478,7 +478,9 @@ namespace Polymoney {
         /// </summary>
         public void onClickCancelLobby() {
             this.StopHost();
-            this.networkDiscovery.StopBroadcast();
+            if (this.networkDiscovery.running) {
+                this.networkDiscovery.StopBroadcast();
+            }
             this.networkDiscovery.Initialize();
             this.networkDiscovery.StartAsClient();
             this.stateManager.onChangeState((int) UIState.PRELOBBY);
@@ -587,7 +589,7 @@ namespace Polymoney {
         /// <param name="sceneName">The name of the scene.</param>
         public override void OnLobbyServerSceneChanged(string sceneName) {
             // Stop broadcast when not in lobby scene.
-            if (sceneName != this.lobbyScene) {
+            if (sceneName != this.lobbyScene && this.networkDiscovery.running) {
                 this.networkDiscovery.StopBroadcast();
             }
             base.OnLobbyServerSceneChanged(sceneName);

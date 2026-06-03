@@ -30,13 +30,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.unity.collab-proxy": {
-      "version": "1.14.18",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,
@@ -84,11 +77,11 @@
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0",
-        "com.unity.modules.unityanalytics": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.services.core": "1.0.1",
         "com.unity.modules.androidjni": "1.0.0",
-        "com.unity.services.core": "1.0.1"
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.unityanalytics": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -126,9 +119,9 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {
+        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.director": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
