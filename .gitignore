@@ -1,0 +1,12 @@
+# Repo-root ignores (the Unity project has its own .gitignore inside
+# Crystal-Island-Unity_/Crystal-Island-Unity_/)
+
+# macOS junk
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/
+
+# Stray blank Unity projects accidentally created via Hub "New project"
+/Crystal Island Upgrade/
+/My project/

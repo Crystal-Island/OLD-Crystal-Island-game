@@ -70,3 +70,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Crystal-Island-Unity_/Crystal-Island-Unity_/Builds/testBuild0.001_Data/level0
+
+# Runtime gameplay data logs (written into Assets/ at play time)
+/[Aa]ssets/[Ll]ogs/
+/[Aa]ssets/[Ll]ogs/*.meta
+
+# macOS junk
+.DS_Store
+__MACOSX/
