@@ -208,6 +208,12 @@ namespace KoboldTools
             if (scale)
                 _rectTransform.localScale = Vector3.one;
             model.canvasGroup.alpha = 1f;
+            // A fully-opened panel must be interactive. Don't rely on the cached
+            // interactable/blocksRaycasts values: depending on Awake/init ordering
+            // (which changed between Unity versions) the cache can be captured as
+            // false, leaving the open panel visible but unclickable.
+            model.canvasGroup.interactable = true;
+            model.canvasGroup.blocksRaycasts = true;
         }
     }
 }

@@ -43,6 +43,12 @@ namespace KoboldTools
                     else if (Application.platform == RuntimePlatform.IPhonePlayer) {
                         _logDirectory = Application.persistentDataPath;
                     }
+                    else if (Application.isEditor)
+                    {
+                        // Never write into the Assets folder in the Editor: it makes
+                        // Unity reimport mid-Play (suspending the game / dropping input).
+                        _logDirectory = Application.persistentDataPath + "/koboldgames/logs";
+                    }
                     else
                     {
                         _logDirectory = Application.dataPath + "/logs";
