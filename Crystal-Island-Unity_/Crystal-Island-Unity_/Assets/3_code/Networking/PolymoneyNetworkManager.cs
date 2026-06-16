@@ -387,8 +387,13 @@ namespace Polymoney {
 
         public override void OnStopClient() {
             RootLogger.Debug(this, "OnStopClient()");
-            this.client.UnregisterHandler(PolymoneyMsgType.NetworkStatus);
-            this.client.UnregisterHandler(PolymoneyMsgType.ClientAvailable);
+            // In 2020.3's HLAPI the NetworkClient can already be torn down by the
+            // time OnStopClient runs, so guard against a null client here
+            // (was throwing NullReferenceException at shutdown / scene change).
+            if (this.client != null) {
+                this.client.UnregisterHandler(PolymoneyMsgType.NetworkStatus);
+                this.client.UnregisterHandler(PolymoneyMsgType.ClientAvailable);
+            }
             base.OnStopClient();
         }
 
