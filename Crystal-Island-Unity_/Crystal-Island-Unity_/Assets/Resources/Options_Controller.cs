@@ -4,7 +4,12 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine;
 
-public class Options_Controller : NetworkBehaviour
+// NOTE: Converted from NetworkBehaviour to MonoBehaviour. As a NetworkBehaviour
+// this scene object was auto-assigned a NetworkIdentity and deactivated by UNET
+// until network-spawned, so Start() never ran and none of the settings controls
+// were ever wired up. Its multiplayer sync was already disabled in a prior
+// migration (Cmd/Rpc bodies/callers commented out), so it now runs locally.
+public class Options_Controller : MonoBehaviour
 {
     public Button preset1, preset2, preset3;
     public Toggle preset1Toggle, preset2Toggle, preset3Toggle;
@@ -186,14 +191,12 @@ public class Options_Controller : NetworkBehaviour
 
 
     //Broadcasts settings to all the clients
-    [Command]
     public void CmdSentSettings()
     {
         RpcUpdateSettings();
     }
 
     //Call this method when the menu is closed
-    [ClientRpc]
     public void RpcUpdateSettings()
     {
         optionsPanel.SetActive(true);
@@ -234,13 +237,11 @@ public class Options_Controller : NetworkBehaviour
         optionsPanel.SetActive(false);
     }
 
-    [ClientRpc]
     public void RpcSetPanel(bool panel)
     {
         showPanel = panel;
     }
     
-    [ClientRpc]
     public void RpcApplyPreset1()
     {
         flatTax = preset1FlatTax;
@@ -256,7 +257,6 @@ public class Options_Controller : NetworkBehaviour
         frequencyFactor = preset1DisasterFreq;
     }
 
-    [ClientRpc]
     public void RpcApplyPreset2()
     {
         flatTax = preset2FlatTax;
@@ -271,7 +271,6 @@ public class Options_Controller : NetworkBehaviour
         frequencyFactor = preset2DisasterFreq;
     }
 
-    [ClientRpc]
     public void RpcApplyPreset3()
     {
         flatTax = preset3FlatTax;
@@ -397,7 +396,6 @@ public class Options_Controller : NetworkBehaviour
         RpcUpdateWaterCrystal(int.Parse(waterTurn.text));
     }
 
-    [ClientRpc]
     public void RpcUpdateWaterCrystal(int turn)
     {
         Debug.Log("Setting manual turn to " + turn);
