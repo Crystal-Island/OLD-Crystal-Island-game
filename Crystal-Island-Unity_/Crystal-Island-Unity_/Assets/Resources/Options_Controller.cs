@@ -464,11 +464,11 @@ public class Options_Controller : MonoBehaviour
     //Opens the option menu
     private void OpenPanel()
     {
-        //Check if the player clicking is the host
-        if(GameObject.Find("NetworkManager").GetComponent<NetworkDiscovery>().isServer)
-        {
-            optionsPanel.SetActive(true);
-        }          
+        // The old host-only gate checked NetworkDiscovery.isServer, but discovery
+        // is never started as server anymore (the StartAsServer calls were
+        // commented out in the networking migration), so isServer was always false
+        // and the cog-wheel never opened the panel. Open it directly.
+        optionsPanel.SetActive(true);
     }
 
     //Close the Option menu
