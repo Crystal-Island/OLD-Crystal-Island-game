@@ -117,6 +117,11 @@ public class Options_Controller : MonoBehaviour
     //============================================================
 
 
+    // Guards against re-entrancy: EnableFlatTax/EnableProgTax set the tax toggles
+    // programmatically (in InitializeSettings), which would otherwise re-fire
+    // their onValueChanged listeners.
+    private bool _suppressTaxToggle = false;
+
     // Use this for initialization
     void Start ()
     {
@@ -126,6 +131,14 @@ public class Options_Controller : MonoBehaviour
         
         flatEnable.onClick.AddListener(EnableFlatTax);
         progEnable.onClick.AddListener(EnableProgTax);
+        // Let the flat/prog checkboxes themselves select the tax mode (they only
+        // had visual state before, no click handler).
+        flatToggle.onValueChanged.AddListener(delegate { if (!_suppressTaxToggle && flatToggle.isOn) EnableFlatTax(); });
+        progToggle.onValueChanged.AddListener(delegate { if (!_suppressTaxToggle && progToggle.isOn) EnableProgTax(); });
+        // These checkboxes shipped as interactable=false (display-only); make them
+        // clickable so the boxes themselves can select the tax mode.
+        flatToggle.interactable = true;
+        progToggle.interactable = true;
 
         progSlider.onValueChanged.AddListener(delegate { UpdateSliderText(); });
         baseTaxField.onEndEdit.AddListener(delegate { UpdateBaseTaxRate(); });
@@ -288,6 +301,7 @@ public class Options_Controller : MonoBehaviour
     private void InitializeSettings()
     {
         //Update the tax settings
+        _suppressTaxToggle = true;
         if(flatTax)
         {
             flatToggle.isOn = true;
@@ -303,6 +317,7 @@ public class Options_Controller : MonoBehaviour
             progSlider.value = progressiveTaxUpper;
             progText.text = progressiveTaxUpper.ToString() + "%";
         }
+        _suppressTaxToggle = false;
         progMinText.text = baseTaxRate.ToString() + "%";
 
         baseTaxField.text = baseTaxRate.ToString();
