@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Networking;
+using Mirror;
 
 namespace Polymoney
 {

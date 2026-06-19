@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using KoboldTools;
 using KoboldTools.Logging;
 using UnityEngine;
-using UnityEngine.Networking;
+using Mirror;
 using UnityEngine.UI;
 
 namespace Polymoney {

@@ -6,7 +6,7 @@ using KoboldTools;
 using KoboldTools.Logging;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Networking;
+using Mirror;
 
 namespace Polymoney {
     /// <summary>

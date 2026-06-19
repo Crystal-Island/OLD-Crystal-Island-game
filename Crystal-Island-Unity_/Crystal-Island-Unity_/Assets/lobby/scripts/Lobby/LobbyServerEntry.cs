@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Networking;
+using Mirror;
 using UnityEngine.Networking.Match;
 using UnityEngine.Networking.Types;
 using System.Collections;

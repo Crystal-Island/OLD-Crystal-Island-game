@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-using UnityEngine.Networking;
+using Mirror;
 using UnityEngine.Events;
 using KoboldTools;
 using KoboldTools.Logging;

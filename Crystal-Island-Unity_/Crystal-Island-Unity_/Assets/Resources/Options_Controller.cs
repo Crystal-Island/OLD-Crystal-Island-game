@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEngine.Networking;
+using Mirror;
 using UnityEngine;
 
 // NOTE: Converted from NetworkBehaviour to MonoBehaviour. As a NetworkBehaviour
