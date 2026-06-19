@@ -16,7 +16,7 @@ namespace Polymoney
         public Button quitGameButton;
         public Panel soloGameOverPanel;
 
-        private Pool<Transform> monthPool;
+        private KoboldTools.Pool<Transform> monthPool;
         private uint mayorID = 0;
 
         private void Start()
@@ -27,7 +27,7 @@ namespace Polymoney
 
         public override void onModelChanged()
         {
-            monthPool = new Pool<Transform>(monthDisplayTemplate);
+            monthPool = new KoboldTools.Pool<Transform>(monthDisplayTemplate);
             GameFlow.instance.changeState.AddListener(gameStateChanged);
             moreInformationButton.onClick.AddListener(moreInfoClicked);
             quitGameButton.onClick.AddListener(quitGameClicked);

@@ -12,11 +12,11 @@ namespace Polymoney {
         public float displayFrequency = 1f;
         public Button gameButtonTemplate;
 
-        private Pool<Button> buttonPool;
+        private KoboldTools.Pool<Button> buttonPool;
         private float sinceLastDisplay = 1f;
 
         public override void onModelChanged() {
-            buttonPool = new Pool<Button>(gameButtonTemplate);
+            buttonPool = new KoboldTools.Pool<Button>(gameButtonTemplate);
         }
 
         private void Update() {

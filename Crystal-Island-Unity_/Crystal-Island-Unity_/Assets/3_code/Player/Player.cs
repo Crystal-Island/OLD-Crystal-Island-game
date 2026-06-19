@@ -621,7 +621,7 @@ namespace Polymoney {
             }
         }
 
-        public void ClientGiveFairydust(NetworkInstanceId recipient, NetworkInstanceId building, CurrencyValue cost, int benefit, float playerLuminanceIncrement, float buildingLuminanceIncrement) {
+        public void ClientGiveFairydust(uint recipient, uint building, CurrencyValue cost, int benefit, float playerLuminanceIncrement, float buildingLuminanceIncrement) {
             this.CmdGiveFairydust(recipient, building, cost.GetCurrency(), cost.value, benefit, playerLuminanceIncrement, buildingLuminanceIncrement);
         }
 
@@ -747,11 +747,11 @@ namespace Polymoney {
             this.RpcSetLuminance(value);
         }
 
-        public void ClientSetBuildingLuminance(NetworkInstanceId buildingId, float value) {
+        public void ClientSetBuildingLuminance(uint buildingId, float value) {
             this.CmdSetBuildingLuminance(buildingId, value);
         }
 
-        public void ServerSetBuildingLuminance(NetworkInstanceId buildingId, float value) {
+        public void ServerSetBuildingLuminance(uint buildingId, float value) {
             GameObject obj = NetworkServer.FindLocalObject(buildingId);
             if (obj != null) {
                 Building building = obj.GetComponent<Building>();
@@ -1170,7 +1170,7 @@ namespace Polymoney {
         }
 
         [ClientRpc]
-        private void RpcNotifyOfferApplication(string offerData, NetworkInstanceId buyerId, NetworkInstanceId sellerId) {
+        private void RpcNotifyOfferApplication(string offerData, uint buyerId, uint sellerId) {
             Offer offer = ScriptableObject.CreateInstance<Offer>();
             JsonUtility.FromJsonOverwrite(offerData, offer);
 
@@ -1340,7 +1340,7 @@ namespace Polymoney {
         }
 
         [Command]
-        private void CmdApplyOfferDirect(string offerData, NetworkInstanceId buyerId, NetworkInstanceId sellerId) {
+        private void CmdApplyOfferDirect(string offerData, uint buyerId, uint sellerId) {
             Offer offer = ScriptableObject.CreateInstance<Offer>();
             JsonUtility.FromJsonOverwrite(offerData, offer);
             GameObject buyerObj = NetworkServer.FindLocalObject(buyerId);
@@ -1386,7 +1386,7 @@ namespace Polymoney {
         }
 
         [Command]
-        private void CmdSetBuildingLuminance(NetworkInstanceId buildingId, float value) {
+        private void CmdSetBuildingLuminance(uint buildingId, float value) {
             GameObject obj = NetworkServer.FindLocalObject(buildingId);
             if (obj != null) {
                 Building building = obj.GetComponent<Building>();
@@ -1402,7 +1402,7 @@ namespace Polymoney {
         }
 
         [Command]
-        private void CmdGiveFairydust(NetworkInstanceId recipientId, NetworkInstanceId buildingId, Currency currency, int cost, int benefit, float playerLuminanceIncrement, float buildingLuminanceIncrement) {
+        private void CmdGiveFairydust(uint recipientId, uint buildingId, Currency currency, int cost, int benefit, float playerLuminanceIncrement, float buildingLuminanceIncrement) {
             RootLogger.Debug(this, "Cmd: Player '{0}' (netid: {1}) gives fairydust to player (netid: {2}).", this.name, this.netId, recipientId);
 
             // Obtain a reference to the recipient player and the building.

@@ -19,7 +19,7 @@ namespace Polymoney
         public string maxPlayersTextId = "maxPlayerInfo";
         public GameObject optionsController, optionPanel;
 
-        private Pool<LobbyPlayerUI> lobbyPlayerUIPool;
+        private KoboldTools.Pool<LobbyPlayerUI> lobbyPlayerUIPool;
         private List<LobbyPlayerUI> lobbyPlayerUIUsed;
         private float sinceLastDisplay = 1f;
         private bool gameStarted = false;
@@ -35,7 +35,7 @@ namespace Polymoney
             this.startGameButton.gameObject.SetActive(false);
             this.waitingForPlayers.SetActive(true);
 
-            this.lobbyPlayerUIPool = new Pool<LobbyPlayerUI>(this.lobbyPlayerUITemplate);
+            this.lobbyPlayerUIPool = new KoboldTools.Pool<LobbyPlayerUI>(this.lobbyPlayerUITemplate);
             for (int i = 0; i < this.model.maxPlayers; i++)
             {
                 LobbyPlayerUI uiElement = this.lobbyPlayerUIPool.pop();
