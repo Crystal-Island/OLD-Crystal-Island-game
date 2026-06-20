@@ -49,6 +49,27 @@ namespace Polymoney
             GameFlow.instance.changeState.AddListener(flowStateChanged);
             GameFlow.instance.addEnterCondition((int)PolymoneyGameFlow.FlowStates.GAMEOVER, this);
             currentMonth = model.months;
+
+            // These end-of-month / game-over panels are active in the prefab and are only meant to be
+            // shown once the flow reaches END_MONTH_DISPLAY/GAMEOVER. At game start (INTRO_WORLD) they
+            // must be hidden, otherwise they sit on top of the intro and look like an instant "Game Over".
+            // Force them hidden here (mirrors PanelDisplayBasic.closeCompleted); the game re-opens them
+            // via onOpen() when actually needed.
+            ForceHideAtStartup(cityOverviewPanel);
+            ForceHideAtStartup(cityCritcalPanel);
+            ForceHideAtStartup(playerCriticalPanel);
+            ForceHideAtStartup(playerGoodbyePanel);
+            ForceHideAtStartup(gameOverSoloPanel);
+        }
+
+        // Force a panel into the hidden state via its CanvasGroup, regardless of its display controller.
+        private void ForceHideAtStartup(Panel panel)
+        {
+            if (panel == null || panel.canvasGroup == null)
+                return;
+            panel.canvasGroup.alpha = 0f;
+            panel.canvasGroup.interactable = false;
+            panel.canvasGroup.blocksRaycasts = false;
         }
 
         public override void onModelRemoved()
@@ -96,14 +117,14 @@ namespace Polymoney
             criticalPlayerPool.releaseAll();
             gameOverPlayerPool.releaseAll();
 
-            foreach (Player p in model.allPlayers.Where(allP => model.criticalPlayers.Contains(allP.netId.Value)))
+            foreach (Player p in model.allPlayers.Where(allP => model.criticalPlayers.Contains(allP.netId)))
             {
                 Transform element = criticalPlayerPool.pop();
                 VC<Player>.addModelToAllControllers(p, element.gameObject, true);
                 element.gameObject.SetActive(true);
             }
 
-            foreach (Player p in model.allPlayers.Where(allP => model.gameOverPlayers.Contains(allP.netId.Value)))
+            foreach (Player p in model.allPlayers.Where(allP => model.gameOverPlayers.Contains(allP.netId)))
             {
                 Transform element = gameOverPlayerPool.pop();
                 VC<Player>.addModelToAllControllers(p, element.gameObject, true);
@@ -128,7 +149,7 @@ namespace Polymoney
                 yield return null;
 
             //check if city is critical
-            if (mayorPlayer != null && model.criticalPlayers.Contains(mayorPlayer.netId.Value))
+            if (mayorPlayer != null && model.criticalPlayers.Contains(mayorPlayer.netId))
             {
                 if (model.criticalPlayers.Count <= 1 && model.gameOverPlayers.Count <= 0)
                 {
@@ -187,7 +208,7 @@ namespace Polymoney
         {
             for(int i=model.gameOverPlayers.Count-1; i >= 0; i--)
             {
-                Player p = model.allPlayers.FirstOrDefault(pl => pl.netId.Value == model.gameOverPlayers[i]);
+                Player p = model.allPlayers.FirstOrDefault(pl => pl.netId == model.gameOverPlayers[i]);
                 if (p.isLocalPlayer)
                 {
                     RootLogger.Debug(this, "Player {0} went gameover.", p.name);

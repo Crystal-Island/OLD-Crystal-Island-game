@@ -29,7 +29,8 @@ namespace KoboldTools
 
         private void changedState(int oldState, int newState)
         {
-            if (stateManager.hasState(state))
+            bool active = stateManager.hasState(state);
+            if (active)
             {
                 model.Priority = setToPriority;
             }

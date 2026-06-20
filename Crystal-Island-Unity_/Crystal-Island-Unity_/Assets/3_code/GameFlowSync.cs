@@ -30,17 +30,47 @@ namespace Polymoney
             //grab flow from children
             this.flow = GameFlow.instance;
 
+            // Do NOT start advancing the flow yet. The phase controllers (LevelControlTurns /
+            // LevelControlTime) register their exit conditions asynchronously — their Start coroutines
+            // wait for Level/GameFlow to exist. If the server let the flow advance immediately it would
+            // run past every phase before those conditions are registered and go straight to Game Over.
+            // Start the flow only once the game truly begins (Level.onAllPlayersReady), by which point
+            // every controller has registered its exit conditions.
+            this.flow.running = false;
 
-            //only run flow on server
-            this.flow.running = this.isServer;
             //add listener for changes on server
             if (isServer)
             {
                 this.flow.changeState.AddListener(flowStateChanged);
-                //initial sync
-                this.flowStateChanged(flow.currentState, flow.currentState);
+                StartCoroutine(StartFlowWhenReady());
             }
+        }
 
+        private IEnumerator StartFlowWhenReady()
+        {
+            while (Level.instance == null)
+            {
+                yield return null;
+            }
+            Level.instance.onAllPlayersReady.AddListener(this.OnGameStarted);
+        }
+
+        private void OnGameStarted()
+        {
+            //only run flow on the server; clients receive forced states via RpcStateChange
+            this.flow.running = this.isServer;
+
+            // Re-broadcast the current gamestate to every listener now that the game has truly begun.
+            // FlowBehaviour.Awake() emits the very first state (INTRO_WORLD) before the scene's
+            // controllers — the virtual cameras, the intro/montage sequence, the gamestate-driven
+            // panels — have registered their changeState listeners, so they all miss it and never
+            // initialize (camera never frames the world, intro never plays, panels stay visible).
+            // StateManager.onChangeState won't re-fire an unchanged state, so we invoke the event
+            // directly. oldState = -1 matches no state, so this reads as a clean "enter current state".
+            this.flow.changeState.Invoke(-1, this.flow.currentState);
+
+            //initial sync to clients
+            this.flowStateChanged(flow.currentState, flow.currentState);
         }
 
         private void flowStateChanged(int oldState, int newState)

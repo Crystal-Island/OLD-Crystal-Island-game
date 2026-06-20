@@ -31,6 +31,24 @@ namespace Polymoney
             GameFlow.instance.changeState.AddListener(gameStateChanged);
             moreInformationButton.onClick.AddListener(moreInfoClicked);
             quitGameButton.onClick.AddListener(quitGameClicked);
+
+            // The solo game-over panel has no state-driven display controller: it is opened explicitly
+            // when a non-mayor player loses and only closed when the state reaches SUMMARY. At game
+            // start it would otherwise sit visible on top of the intro, so force it closed here.
+            if (soloGameOverPanel != null)
+            {
+                // onClose() is a no-op when the panel is already logically closed (isOpen == false),
+                // but the panel can still be visible (CanvasGroup alpha == 1 from the prefab). Force
+                // the CanvasGroup hidden directly so it can't sit on top of the intro.
+                CanvasGroup cg = soloGameOverPanel.canvasGroup;
+                if (cg != null)
+                {
+                    cg.alpha = 0f;
+                    cg.interactable = false;
+                    cg.blocksRaycasts = false;
+                }
+                soloGameOverPanel.onClose();
+            }
         }
 
         public override void onModelRemoved()
@@ -53,7 +71,7 @@ namespace Polymoney
                 Player mayor = Level.instance.allPlayers.FirstOrDefault(m => m.Mayor);
                 if(mayor != null)
                 {
-                    mayorID = mayor.netId.Value;
+                    mayorID = mayor.netId;
                 }
 
             }

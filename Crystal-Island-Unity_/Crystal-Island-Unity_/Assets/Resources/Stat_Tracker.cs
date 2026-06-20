@@ -103,6 +103,17 @@ namespace Polymoney
         // Update is called once per frame
         void Update()
         {
+            // NewGameOver_Citizen (this object) carries a NetworkIdentity, so Mirror's
+            // NetworkServer.SpawnObjects() force-activates it at scene start even though it is
+            // disabled in the scene. Until the game is actually over, keep the panel hidden so it
+            // does not render the "Game Over" screen on top of live gameplay. The panel is meant to
+            // be shown only at GAMEOVER (see LevelDisplayEndMonth.gameOverNew.SetActive(true)).
+            if (!gameOver)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+
             GetStatistics();
             /*
             if(playerNetworkID.Count < Level.instance.allPlayers.Count && Level.instance.authoritativePlayer.isServer)
@@ -495,7 +506,7 @@ namespace Polymoney
 
         }
         [TargetRpc]
-        public void TargetRpcSetStatistics(NetworkConnection target)
+        public void TargetRpcSetStatistics(NetworkConnectionToClient target)
         {
             //CmdSendStatistics();
         }

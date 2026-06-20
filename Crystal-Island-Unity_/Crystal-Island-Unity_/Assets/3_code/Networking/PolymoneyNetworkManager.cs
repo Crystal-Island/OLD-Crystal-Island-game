@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using KoboldTools.Logging;
 using UnityEngine;
 using UnityEngine.Events;
 using Mirror;
-using UnityEngine.Networking.NetworkSystem;
+using Mirror.Discovery;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -113,10 +113,11 @@ namespace Polymoney {
 
     /// <summary>
     /// The purpose of the PolymoneyNetworkManager is to provide a UI with which players may create or join a networked game.
-    /// The class inherits from Unity HLAPI NetworkLobbyManager, and requires a NetworkDiscovery component to add network discovery functionality.
+    /// Migrated from UNet NetworkLobbyManager to Mirror NetworkRoomManager. LAN game discovery is provided by the
+    /// <see cref="PolymoneyNetworkDiscovery"/> component (Mirror replacement for UNet NetworkDiscovery).
     /// </summary>
-    [RequireComponent(typeof(NetworkDiscovery))]
-    public class PolymoneyNetworkManager : NetworkLobbyManager, IStateManager {
+    [RequireComponent(typeof(PolymoneyNetworkDiscovery))]
+    public class PolymoneyNetworkManager : NetworkRoomManager, IStateManager {
         /// <summary>
         /// Holds a reference to the create-game button.
         /// </summary>
@@ -153,9 +154,9 @@ namespace Polymoney {
         [Header("Other")]
         public bool preventSleep;
         /// <summary>
-        /// Holds a reference to the <see cref="NetworkDiscovery"/> component.
+        /// Holds a reference to the <see cref="PolymoneyNetworkDiscovery"/> component.
         /// </summary>
-        public NetworkDiscovery networkDiscovery;
+        public PolymoneyNetworkDiscovery networkDiscovery;
         /// <summary>
         /// Holds a reference to the <see cref="Canvas"/>.
         /// </summary>
@@ -174,12 +175,14 @@ namespace Polymoney {
         /// </summary>
         /// <typeparam name="int"></typeparam>
         /// <typeparam name="HostStatus"></typeparam>
-        private Dictionary<int, HostStatus> HostStates = new Dictionary<int, HostStatus>(); 
+        private Dictionary<int, HostStatus> HostStates = new Dictionary<int, HostStatus>();
 
         /// <summary>
-        /// Adds event listeners for the UI buttons and initializes the Unity network discovery system.
+        /// Adds event listeners for the UI buttons and initializes the network discovery system.
         /// </summary>
-        private void Start() {
+        public override void Start() {
+            base.Start();
+
             // Prevent phone from sleeping to keep network connection up
             if (this.preventSleep) {
                 RootLogger.Info(this, "Setting the device to never fall asleep.");
@@ -188,7 +191,7 @@ namespace Polymoney {
 
             // Assign the network discovery reference.
             if (this.networkDiscovery == null) {
-                this.networkDiscovery = this.GetComponent<NetworkDiscovery>();
+                this.networkDiscovery = this.GetComponent<PolymoneyNetworkDiscovery>();
             }
 
             // Assign the canvas reference.
@@ -203,19 +206,44 @@ namespace Polymoney {
             this.cancelLobbyButton.onClick.AddListener(this.onClickCancelLobby);
             this.reconnectButton.onClick.AddListener(this.onClickReconnect);
 
-            // Listen for game discovery broadcasts.
-            this.networkDiscovery.Initialize();
-            this.networkDiscovery.StartAsClient();
+            // Listen for game discovery broadcasts (browse for available LAN games).
+            this.BrowseForGames();
         }
 
-        private void OnApplicationQuit() {
+        // ----------------- Discovery helpers (Mirror NetworkDiscovery) -----------------
+
+        // Start broadcasting discovery requests to find LAN games. Safe to call repeatedly.
+        private void BrowseForGames() {
+            if (this.networkDiscovery == null) {
+                return;
+            }
+            this.networkDiscovery.StopDiscovery();
+            this.networkDiscovery.StartDiscovery();
+        }
+
+        // Start replying to discovery requests so this host appears in clients' game lists.
+        private void AdvertiseGame() {
+            if (this.networkDiscovery == null) {
+                return;
+            }
+            this.networkDiscovery.StopDiscovery();
+            this.networkDiscovery.AdvertiseServer();
+        }
+
+        private void StopDiscovery() {
+            if (this.networkDiscovery != null) {
+                this.networkDiscovery.StopDiscovery();
+            }
+        }
+
+        public override void OnApplicationQuit() {
             RootLogger.Debug(this, "OnApplicationQuit() called");
             if (NetworkClient.active) {
                 RootLogger.Debug(this, "OnApplicationQuit() called on a client");
                 NetworkStatusMessage msg = new NetworkStatusMessage(NetworkRole.CLIENT, NetworkStatusEvent.QUIT, true);
-                this.client.SendByChannel(PolymoneyMsgType.NetworkStatus, msg, 1);
-                this.client.connection.FlushChannels();
+                NetworkClient.Send(msg, Channels.Reliable);
             }
+            base.OnApplicationQuit();
         }
 
         // This coroutine is only called twice before the game is paused
@@ -228,15 +256,12 @@ namespace Polymoney {
                 RootLogger.Debug(this, "OnApplicationPause({0}) called on the server", pause);
                 if (pause) {
                     NetworkStatusMessage msg = new NetworkStatusMessage(NetworkRole.SERVER, NetworkStatusEvent.BLOCK_SCREEN, pause);
-                    bool success = this.SendToAvailable(NetworkServer.connections, PolymoneyMsgType.NetworkStatus, msg, 1, true);
+                    this.SendToAvailable(NetworkServer.connections.Values, msg, Channels.Reliable);
                     yield return null;
-                    if (!success) {
-                        this.SendToAvailable(NetworkServer.connections, PolymoneyMsgType.NetworkStatus, msg, 1, true);
-                    }
                 } else {
                     // Send out a call to all clients to see whether they are available.
                     // Assume none of the clients are available.
-                    foreach (NetworkConnection conn in NetworkServer.connections) {
+                    foreach (NetworkConnectionToClient conn in NetworkServer.connections.Values) {
                         int id = conn.connectionId;
                         if (this.HostStates.ContainsKey(id)) {
                             this.HostStates[id].AssumeUnavailable();
@@ -245,7 +270,7 @@ namespace Polymoney {
                             h.AssumeUnavailable();
                             this.HostStates.Add(id, h);
                         }
-                        conn.SendByChannel(PolymoneyMsgType.ClientAvailable, new ClientAvailableMessage(), 1);
+                        conn.Send(new ClientAvailableMessage(), Channels.Reliable);
                     }
 
                     this.UpdateScreenBlockStatus();
@@ -253,13 +278,8 @@ namespace Polymoney {
             } else if (NetworkClient.active) {
                 RootLogger.Debug(this, "OnApplicationPause({0}) called on a client", pause);
                 NetworkStatusMessage msg = new NetworkStatusMessage(NetworkRole.CLIENT, NetworkStatusEvent.PAUSE, pause);
-                bool success = this.client.SendByChannel(PolymoneyMsgType.NetworkStatus, msg, 1);
-                this.client.connection.FlushChannels();
+                NetworkClient.Send(msg, Channels.Reliable);
                 yield return null;
-                if (!success) {
-                    this.client.SendByChannel(PolymoneyMsgType.NetworkStatus, msg, 1);
-                    this.client.connection.FlushChannels();
-                }
             }
         }
 
@@ -276,30 +296,25 @@ namespace Polymoney {
             if (NetworkClient.active) {
                 RootLogger.Debug(this, "OnApplicationFocus({0}) called on a client", focus);
                 NetworkStatusMessage msg = new NetworkStatusMessage(NetworkRole.CLIENT, NetworkStatusEvent.FOCUS, focus);
-                bool success = this.client.SendByChannel(PolymoneyMsgType.NetworkStatus, msg, 1);
-                this.client.connection.FlushChannels();
+                NetworkClient.Send(msg, Channels.Reliable);
                 yield return null;
-                if (!success) {
-                    this.client.SendByChannel(PolymoneyMsgType.NetworkStatus, msg, 1);
-                    this.client.connection.FlushChannels();
-                }
             }
         }
 
-        private void OnServerNetworkStatusMessage(NetworkMessage message) {
-            NetworkStatusMessage statusMsg = message.ReadMessage<NetworkStatusMessage>();
-            RootLogger.Debug(this, "Received message from client: {0} (from: {1})", statusMsg, message.conn);
-            if (this.HostStates.ContainsKey(message.conn.connectionId)) {
-                this.HostStates[message.conn.connectionId].UpdateWith(statusMsg);
+        // ----------------- Message handlers (Mirror typed handlers) -----------------
+
+        private void OnServerNetworkStatusMessage(NetworkConnectionToClient conn, NetworkStatusMessage statusMsg) {
+            RootLogger.Debug(this, "Received message from client: {0} (from: {1})", statusMsg, conn);
+            if (this.HostStates.ContainsKey(conn.connectionId)) {
+                this.HostStates[conn.connectionId].UpdateWith(statusMsg);
             } else {
-                this.HostStates.Add(message.conn.connectionId, new HostStatus(statusMsg));
+                this.HostStates.Add(conn.connectionId, new HostStatus(statusMsg));
             }
 
             this.UpdateScreenBlockStatus();
         }
 
-        private void OnClientNetworkStatusMessage(NetworkMessage message) {
-            NetworkStatusMessage statusMsg = message.ReadMessage<NetworkStatusMessage>();
+        private void OnClientNetworkStatusMessage(NetworkStatusMessage statusMsg) {
             RootLogger.Debug(this, "Received message from server: {0}", statusMsg);
             this.LocalClientStatus.UpdateWith(statusMsg);
             if (this.LocalClientStatus.ScreenBlockChanged) {
@@ -309,9 +324,9 @@ namespace Polymoney {
             }
         }
 
-        private void OnServerClientAvailableMessage(NetworkMessage message) {
+        private void OnServerClientAvailableMessage(NetworkConnectionToClient conn, ClientAvailableMessage message) {
             RootLogger.Debug(this, "A client has told the server that it is available");
-            int id = message.conn.connectionId;
+            int id = conn.connectionId;
             if (this.HostStates.ContainsKey(id)) {
                 this.HostStates[id].AssumeAvailable();
             } else {
@@ -321,10 +336,10 @@ namespace Polymoney {
             this.UpdateScreenBlockStatus();
         }
 
-        private void OnClientClientAvailableMessage(NetworkMessage message) {
+        private void OnClientClientAvailableMessage(ClientAvailableMessage message) {
             RootLogger.Debug(this, "The client has been asked whether it is available, and it will respond with yes");
             this.LocalClientStatus.AssumeAvailable();
-            this.client.SendByChannel(PolymoneyMsgType.ClientAvailable, new ClientAvailableMessage(), 0);
+            NetworkClient.Send(new ClientAvailableMessage(), Channels.Reliable);
         }
 
         private void UpdateScreenBlockStatus() {
@@ -332,11 +347,11 @@ namespace Polymoney {
                 if (this.HostStates.Values.Any(v => v.Paused)) {
                     RootLogger.Debug(this, "At least one of the clients is unavailable; the game must pause.");
                     NetworkStatusMessage msgb = new NetworkStatusMessage(NetworkRole.SERVER, NetworkStatusEvent.BLOCK_SCREEN, true);
-                    this.SendToAvailable(NetworkServer.connections, PolymoneyMsgType.NetworkStatus, msgb, 0, false);
+                    this.SendToAvailable(NetworkServer.connections.Values, msgb, Channels.Reliable);
                 } else {
                     RootLogger.Debug(this, "All clients are available; the game may unpause.");
                     NetworkStatusMessage msgb = new NetworkStatusMessage(NetworkRole.SERVER, NetworkStatusEvent.BLOCK_SCREEN, false);
-                    this.SendToAvailable(NetworkServer.connections, PolymoneyMsgType.NetworkStatus, msgb, 0, false);
+                    this.SendToAvailable(NetworkServer.connections.Values, msgb, Channels.Reliable);
                 }
                 foreach (HostStatus s in this.HostStates.Values) {
                     s.ClearDirtyFlags();
@@ -344,24 +359,20 @@ namespace Polymoney {
             }
         }
 
-        private bool SendToAvailable(IEnumerable conns, short msgType, MessageBase msg, int channelId, bool immediate) {
-            List<bool> successes = new List<bool>();
-            foreach (NetworkConnection conn in conns) {
+        // Mirror's conn.Send returns void (reliable channel is guaranteed), so the UNet per-send
+        // success/retry bookkeeping is gone. Only sends to clients we believe are available.
+        private void SendToAvailable(IEnumerable<NetworkConnectionToClient> conns, NetworkStatusMessage msg, int channelId) {
+            foreach (NetworkConnectionToClient conn in conns) {
                 if (conn != null) {
                     int id = conn.connectionId;
                     if (!this.HostStates.ContainsKey(id)) {
                         this.HostStates.Add(id, new HostStatus());
                     }
                     if (!this.HostStates[id].Paused) {
-                        successes.Add(conn.SendByChannel(PolymoneyMsgType.NetworkStatus, msg, channelId));
-                        if (immediate) {
-                            conn.FlushChannels();
-                        }
+                        conn.Send(msg, channelId);
                     }
                 }
             }
-
-            return successes.All(s => s);
         }
 
         /// <summary>
@@ -373,76 +384,58 @@ namespace Polymoney {
             SceneManager.LoadScene(0);
         }
 
-        public override void OnStartClient(NetworkClient lobbyClient) {
-            RootLogger.Debug(this, "OnStartClient(client={0}) for server at {1}", lobbyClient, lobbyClient.serverIp);
-            base.OnStartClient(lobbyClient);
-            lobbyClient.RegisterHandler(PolymoneyMsgType.NetworkStatus, this.OnClientNetworkStatusMessage);
-            lobbyClient.RegisterHandler(PolymoneyMsgType.ClientAvailable, this.OnClientClientAvailableMessage);
+        public override void OnRoomStartClient() {
+            RootLogger.Debug(this, "OnRoomStartClient()");
+            base.OnRoomStartClient();
+            NetworkClient.RegisterHandler<NetworkStatusMessage>(this.OnClientNetworkStatusMessage, false);
+            NetworkClient.RegisterHandler<ClientAvailableMessage>(this.OnClientClientAvailableMessage, false);
         }
 
-        public override void OnLobbyStartClient(NetworkClient lobbyClient) {
-            RootLogger.Debug(this, "OnLobbyStartClient(client={0})", lobbyClient);
-            base.OnLobbyStartClient(lobbyClient);
+        public override void OnRoomStopClient() {
+            RootLogger.Debug(this, "OnRoomStopClient()");
+            NetworkClient.UnregisterHandler<NetworkStatusMessage>();
+            NetworkClient.UnregisterHandler<ClientAvailableMessage>();
+            KoboldTools.DontDestroyOnLoad.destroyAll();
+            this.stateManager.onChangeState((int) UIState.PRELOBBY);
+            base.OnRoomStopClient();
         }
 
-        public override void OnStopClient() {
-            RootLogger.Debug(this, "OnStopClient()");
-            // In 2020.3's HLAPI the NetworkClient can already be torn down by the
-            // time OnStopClient runs, so guard against a null client here
-            // (was throwing NullReferenceException at shutdown / scene change).
-            if (this.client != null) {
-                this.client.UnregisterHandler(PolymoneyMsgType.NetworkStatus);
-                this.client.UnregisterHandler(PolymoneyMsgType.ClientAvailable);
-            }
-            base.OnStopClient();
+        public override void OnClientError(TransportError error, string reason) {
+            RootLogger.Warning(this, "OnClientError(error={0}, reason={1})", error, reason);
+            base.OnClientError(error, reason);
         }
 
-        public override void OnLobbyClientAddPlayerFailed() {
-            RootLogger.Debug(this, "OnLobbyStartClient()");
-            base.OnLobbyClientAddPlayerFailed();
+        public override void OnClientTransportException(System.Exception exception) {
+            base.OnClientTransportException(exception);
         }
 
-        public override void OnClientError(NetworkConnection conn, int errorCode) {
-            RootLogger.Warning(this, "OnClientError(conn={0}, error={1})", conn, errorCode);
-            base.OnClientError(conn, errorCode);
+        public override void OnServerError(NetworkConnectionToClient conn, TransportError error, string reason) {
+            base.OnServerError(conn, error, reason);
         }
 
-        public override void OnLobbyServerPlayersReady() {
-            RootLogger.Debug(this, "OnLobbyServerPlayersReady()");
-            base.OnLobbyServerPlayersReady();
+        public override void OnRoomServerPlayersReady() {
+            RootLogger.Debug(this, "OnRoomServerPlayersReady()");
+            base.OnRoomServerPlayersReady();
         }
 
-        public override void OnLobbyClientConnect(NetworkConnection conn) {
-            RootLogger.Debug(this, "OnLobbyClientConnect(conn={0}) with address {1})", conn, conn.address);
-            base.OnLobbyClientConnect(conn);
+        public override void OnRoomClientConnect() {
+            RootLogger.Debug(this, "OnRoomClientConnect()");
+            base.OnRoomClientConnect();
         }
 
-        public override void OnClientConnect(NetworkConnection conn) {
-            RootLogger.Debug(this, "OnClientConnect(conn={0})", conn);
-            if (!this.HostStates.ContainsKey(conn.connectionId)) {
-                this.HostStates.Add(conn.connectionId, new HostStatus());
-            }
-            base.OnClientConnect(conn);
+        public override void OnClientNotReady() {
+            RootLogger.Debug(this, "OnClientNotReady()");
+            base.OnClientNotReady();
         }
 
-        public override void OnClientDisconnect(NetworkConnection conn) {
-            RootLogger.Warning(this, "OnClientDisconnect(conn={0})", conn);
-            base.OnClientDisconnect(conn);
+        public override GameObject OnRoomServerCreateGamePlayer(NetworkConnectionToClient conn, GameObject roomPlayer) {
+            RootLogger.Debug(this, "OnRoomServerCreateGamePlayer(conn={0})", conn);
+            return base.OnRoomServerCreateGamePlayer(conn, roomPlayer);
         }
 
-        public override void OnClientNotReady(NetworkConnection conn) {
-            RootLogger.Debug(this, "OnClientNotReady(conn={0})", conn);
-            base.OnClientNotReady(conn);
-        }
-
-        public override GameObject OnLobbyServerCreateGamePlayer(NetworkConnection conn, short playerControllerId) {
-            RootLogger.Debug(this, "OnLobbyServerCreateGamePlayer(conn={0}, controllerId={1})", conn, playerControllerId);
-            return base.OnLobbyServerCreateGamePlayer(conn, playerControllerId);
-        }
-
-        public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId) {
-            RootLogger.Debug(this, "OnLobbyServerCreateLobbyPlayer(conn={0}, controllerId={1})", conn, playerControllerId);
-            return base.OnLobbyServerCreateLobbyPlayer(conn, playerControllerId);
+        public override GameObject OnRoomServerCreateRoomPlayer(NetworkConnectionToClient conn) {
+            RootLogger.Debug(this, "OnRoomServerCreateRoomPlayer(conn={0})", conn);
+            return base.OnRoomServerCreateRoomPlayer(conn);
         }
 
         /// <summary>
@@ -451,9 +444,7 @@ namespace Polymoney {
         /// state <see cref="UIState.CREATEGAME"/>.
         /// </summary>
         public void onClickCreateGame() {
-            if (this.networkDiscovery.running) {
-                this.networkDiscovery.StopBroadcast();
-            }
+            this.StopDiscovery();
             this.stateManager.onChangeState((int) UIState.CREATEGAME);
         }
         /// <summary>
@@ -462,6 +453,10 @@ namespace Polymoney {
         /// </summary>
         public void onClickConfirmCreateGame() {
             this.confirmCreateGameButton.interactable = false;
+            // Make the chosen game name available to the discovery responder before hosting.
+            if (this.networkDiscovery != null && this.gamenameInput != null) {
+                this.networkDiscovery.gameName = this.gamenameInput.text;
+            }
             this.StartHost();
         }
         /// <summary>
@@ -470,10 +465,7 @@ namespace Polymoney {
         /// discovery to look for other games.
         /// </summary>
         public void onClickCancelCreateGame() {
-            if (!this.networkDiscovery.running) {
-                this.networkDiscovery.Initialize();
-                this.networkDiscovery.StartAsClient();
-            }
+            this.BrowseForGames();
             this.stateManager.onChangeState((int) UIState.PRELOBBY);
         }
         /// <summary>
@@ -483,150 +475,118 @@ namespace Polymoney {
         /// </summary>
         public void onClickCancelLobby() {
             this.StopHost();
-            if (this.networkDiscovery.running) {
-                this.networkDiscovery.StopBroadcast();
-            }
-            this.networkDiscovery.Initialize();
-            this.networkDiscovery.StartAsClient();
+            this.BrowseForGames();
             this.stateManager.onChangeState((int) UIState.PRELOBBY);
         }
         /// <summary>
-        /// Called when the game client is to enter the lobby. Results in a state change to <see cref="UIState.LOBBY"/>.
+        /// Called when the game client is to enter the room. Results in a state change to <see cref="UIState.LOBBY"/>.
         /// </summary>
-        public override void OnLobbyClientEnter() {
+        public override void OnRoomClientEnter() {
             this.stateManager.onChangeState((int) UIState.LOBBY);
         }
         /// <summary>
-        /// Called when the game client is to exit the lobby. Results in a state change to <see cref="UIState.PRELOBBY"/>.
+        /// Called when the game client is to exit the room. Results in a state change to <see cref="UIState.PRELOBBY"/>.
         /// </summary>
-        public override void OnLobbyClientExit() {
+        public override void OnRoomClientExit() {
             //this.stateManager.onChangeState((int)UIState.PRELOBBY);
         }
-        public override void OnLobbyServerConnect(NetworkConnection conn) {
+        public override void OnRoomServerConnect(NetworkConnectionToClient conn) {
             RootLogger.Info(this, "Server: A new client has connected.");
 
             if (NetworkServer.connections.Count > this.maxConnections) {
                 RootLogger.Warning(this, "Server: I have more connections than allowed.");
                 conn.Disconnect();
+                return;
+            }
+
+            if (!this.HostStates.ContainsKey(conn.connectionId)) {
+                this.HostStates.Add(conn.connectionId, new HostStatus());
             }
         }
-        public override void OnLobbyServerDisconnect(NetworkConnection conn) {
+        public override void OnRoomServerDisconnect(NetworkConnectionToClient conn) {
             RootLogger.Warning(this, "Server: Have lost connection to a client.");
-            //this.networkDiscovery.Initialize();
-            //this.networkDiscovery.StartAsServer();
+            this.HostStates.Remove(conn.connectionId);
+            base.OnRoomServerDisconnect(conn);
         }
-        public override void OnLobbyClientDisconnect(NetworkConnection conn) {
+        public override void OnRoomClientDisconnect() {
             RootLogger.Info(this, "Client: Have lost connection to the server.");
             this.stateManager.onChangeState((int) UIState.RECONNECT);
+            base.OnRoomClientDisconnect();
         }
-        public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId) {
+        public override void OnServerAddPlayer(NetworkConnectionToClient conn) {
             RootLogger.Info(this, "Server: A player was added.");
-            base.OnServerAddPlayer(conn, playerControllerId);
-        }
-        public override void OnLobbyServerPlayerRemoved(NetworkConnection conn, short playerControllerId) {
-            RootLogger.Info(this, "Server: A player was removed.");
+            base.OnServerAddPlayer(conn);
         }
         /// <summary>
-        /// Called when a host should be spun up. Sets the broadcast data and starts a server.
+        /// Called when a host should be spun up. Advertises the game on the LAN and starts a server.
         /// </summary>
-        public override void OnStartHost() {
-            RootLogger.Debug(this, "OnStartHost()");
-            // TODO: NETWORKING-MIGRATION - legacy UnityEngine.Network.player.ipAddress removed in Unity 2018.2; restore via Mirror/Photon
-            // BEHAVIOR LOST: previously built a LAN-discovery broadcast string of the form
-            //   "PolymoneyGame:<gameName>:<hostLanIP>:20120"
-            // and started NetworkDiscovery as a server so any other Crystal Island client on the same LAN would
-            // see the new game appear in its pre-lobby game list and could one-tap to join.
-            // While disabled, LAN auto-discovery is OFF - clients will NOT see this host's game in their game list,
-            // and there is currently no fallback path to manually enter a host IP. Hosting still spins up
-            // (base.OnStartHost runs below), but only the host can play unless joinability is re-implemented.
-            // When migrating: replace Network.player.ipAddress with a Mirror/Photon-equivalent local-LAN IP lookup
-            // (e.g. NetworkInterface enumeration via System.Net.NetworkInformation), then re-enable the broadcast block.
-            //// Set the broadcast for game discovery.
-            //string broadcastData = String.Format("PolymoneyGame:{0}:{1}:20120", this.gamenameInput.text, Network.player.ipAddress);
-            //RootLogger.Info(this, "Server: Setting broadcast data to '{0}'", broadcastData);
-            //
-            //this.networkDiscovery.useNetworkManager = false;
-            //this.networkDiscovery.broadcastData = broadcastData;
-            //this.networkDiscovery.StartAsServer();
-            base.OnStartHost();
+        public override void OnRoomStartHost() {
+            RootLogger.Debug(this, "OnRoomStartHost()");
+            base.OnRoomStartHost();
         }
 
-        public override void OnLobbyStartHost() {
-            RootLogger.Debug(this, "OnLobbyStartHost()");
-            base.OnLobbyStartHost();
+        public override void OnRoomStartServer() {
+            RootLogger.Debug(this, "OnRoomStartServer()");
+            base.OnRoomStartServer();
+            // requireAuthentication: false because this project has no NetworkAuthenticator; otherwise
+            // these app-level status messages could be silently dropped.
+            NetworkServer.RegisterHandler<NetworkStatusMessage>(this.OnServerNetworkStatusMessage, false);
+            NetworkServer.RegisterHandler<ClientAvailableMessage>(this.OnServerClientAvailableMessage, false);
+
+            // Restores the UNet "broadcast PolymoneyGame:<name>:<ip>:<port>" behaviour: any Crystal Island
+            // client browsing the LAN will now see this host's game in its pre-lobby game list and can join.
+            this.AdvertiseGame();
         }
 
-        public override void OnStartServer() {
-            RootLogger.Debug(this, "OnStartServer()");
-            base.OnStartServer();
-            NetworkServer.RegisterHandler(PolymoneyMsgType.NetworkStatus, this.OnServerNetworkStatusMessage);
-            NetworkServer.RegisterHandler(PolymoneyMsgType.ClientAvailable, this.OnServerClientAvailableMessage);
+        public override void OnRoomStopServer() {
+            RootLogger.Debug(this, "OnRoomStopServer()");
+            NetworkServer.UnregisterHandler<NetworkStatusMessage>();
+            NetworkServer.UnregisterHandler<ClientAvailableMessage>();
+            this.StopDiscovery();
+            base.OnRoomStopServer();
         }
 
-        public override void OnLobbyStartServer() {
-            RootLogger.Debug(this, "OnLobbyStartServer()");
-            base.OnLobbyStartServer();
-        }
-
-        public override void OnLobbyStopHost() {
-            RootLogger.Debug(this, "OnLobbyStopHost()");
+        public override void OnRoomStopHost() {
+            RootLogger.Debug(this, "OnRoomStopHost()");
             KoboldTools.DontDestroyOnLoad.destroyAll();
             this.stateManager.onChangeState((int) UIState.PRELOBBY);
-            base.OnLobbyStopHost();
-        }
-
-        public override void OnStopServer() {
-            RootLogger.Debug(this, "OnStopServer()");
-            NetworkServer.UnregisterHandler(PolymoneyMsgType.NetworkStatus);
-            NetworkServer.UnregisterHandler(PolymoneyMsgType.ClientAvailable);
-            base.OnStopServer();
-        }
-
-        public override void OnLobbyStopClient() {
-            KoboldTools.DontDestroyOnLoad.destroyAll();
-            this.stateManager.onChangeState((int) UIState.PRELOBBY);
-            base.OnLobbyStopClient();
+            base.OnRoomStopHost();
         }
         /// <summary>
         /// Called on the server when a networked scene has finished loading. Stops network discovery broadcasting
-        /// when the lobby scene is not active. Subsequently calls the base class' event handler of the same name.
+        /// when the room scene is not active. Subsequently calls the base class' event handler of the same name.
         /// </summary>
         /// <param name="sceneName">The name of the scene.</param>
-        public override void OnLobbyServerSceneChanged(string sceneName) {
-            // Stop broadcast when not in lobby scene.
-            if (sceneName != this.lobbyScene && this.networkDiscovery.running) {
-                this.networkDiscovery.StopBroadcast();
+        public override void OnRoomServerSceneChanged(string sceneName) {
+            // Stop advertising when not in the room scene.
+            if (sceneName != this.RoomScene) {
+                this.StopDiscovery();
             }
-            base.OnLobbyServerSceneChanged(sceneName);
+            base.OnRoomServerSceneChanged(sceneName);
         }
         /// <summary>
         /// Called on the client when a new networked scene has finished loading. Stops network discovery
-        /// broadcasting when the lobby scene is not active. Subsequently calls the base class' event handler
+        /// broadcasting when the room scene is not active. Subsequently calls the base class' event handler
         /// of the same name.
         /// </summary>
-        /// <param name="conn">The relevant network connection.</param>
-        public override void OnLobbyClientSceneChanged(NetworkConnection conn) {
-            // Stop broadcast when not in lobby scene
-            if (SceneManager.GetActiveScene().name != this.lobbyScene) {
-                if (this.networkDiscovery.running) {
-                    this.networkDiscovery.StopBroadcast();
-                }
+        public override void OnRoomClientSceneChanged() {
+            // Stop discovery when not in room scene
+            if (SceneManager.GetActiveScene().name != this.RoomScene) {
+                this.StopDiscovery();
                 this.stateManager.onChangeState((int) UIState.NONE);
             }
-            base.OnLobbyClientSceneChanged(conn);
+            base.OnRoomClientSceneChanged();
         }
         /// <summary>
-        /// Called on the server when a client has completed switching from the lobby scene to a game player scene.
+        /// Called on the server when a client has completed switching from the room scene to a game player scene.
         /// </summary>
-        /// <param name="lobbyPlayer">Lobby player.</param>
-        /// <param name="gamePlayer">Game player.</param>
-        public override bool OnLobbyServerSceneLoadedForPlayer(GameObject lobbyPlayer, GameObject gamePlayer) {
+        public override bool OnRoomServerSceneLoadedForPlayer(NetworkConnectionToClient conn, GameObject roomPlayer, GameObject gamePlayer) {
             PolymoneyNetworkManagerSetupPlayer playerSetup = this.GetComponent<PolymoneyNetworkManagerSetupPlayer>();
             if (playerSetup != null) {
-                playerSetup.OnLobbyServerSceneLoadedForPlayer(lobbyPlayer, gamePlayer);
+                playerSetup.OnLobbyServerSceneLoadedForPlayer(roomPlayer, gamePlayer);
             }
 
-            return base.OnLobbyServerSceneLoadedForPlayer(lobbyPlayer, gamePlayer);
+            return base.OnRoomServerSceneLoadedForPlayer(conn, roomPlayer, gamePlayer);
         }
 
         #region StateManager
