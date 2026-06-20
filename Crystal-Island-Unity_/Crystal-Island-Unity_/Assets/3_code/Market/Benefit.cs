@@ -84,7 +84,7 @@ namespace Polymoney
             this.addTalent = new List<string>();
             this.fairyDust = 0;
             this.income = new List<CurrencyValue>();
-            this.repairBuilding = NetworkInstanceId.Invalid.Value;
+            this.repairBuilding = 0u; // Mirror: 0 is the invalid netId (was NetworkInstanceId.Invalid.Value)
         }
         public Benefit(Benefit other)
         {
@@ -244,14 +244,14 @@ namespace Polymoney
                 }
             }
 
-            // Apply the building resurrection
-            NetworkInstanceId netId = new NetworkInstanceId(this.repairBuilding);
-            if (netId != NetworkInstanceId.Invalid)
+            // Apply the building resurrection. Mirror: netId is a uint and spawned objects are looked up
+            // via NetworkServer.spawned (was new NetworkInstanceId + NetworkServer.FindLocalObject).
+            uint netId = this.repairBuilding;
+            if (netId != 0u)
             {
-                GameObject obj = NetworkServer.FindLocalObject(netId);
-                if (obj != null)
+                if (NetworkServer.spawned.TryGetValue(netId, out NetworkIdentity identity) && identity != null)
                 {
-                    Building bldg = obj.GetComponent<Building>();
+                    Building bldg = identity.GetComponent<Building>();
                     if (bldg != null)
                     {
                         bldg.ServerRepairBuilding();

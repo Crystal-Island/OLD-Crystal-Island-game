@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Mirror;
-using Prototype.NetworkLobby;
 using KoboldTools.Logging;
 
 namespace Polymoney

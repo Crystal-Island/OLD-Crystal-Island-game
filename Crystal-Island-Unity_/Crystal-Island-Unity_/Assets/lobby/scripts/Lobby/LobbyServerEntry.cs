@@ -1,38 +1,41 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
-using Mirror;
-using UnityEngine.Networking.Match;
-using UnityEngine.Networking.Types;
-using System.Collections;
+using Mirror.Discovery;
 
 namespace Prototype.NetworkLobby
 {
-    public class LobbyServerEntry : MonoBehaviour 
+    // Migrated from UNet relay matchmaking (MatchInfoSnapshot / matchMaker.JoinMatch) to Mirror
+    // NetworkDiscovery. A discovered server is described by a ServerResponse (its reachable Uri).
+    // NOTE: the built-in ServerResponse only carries the server's address. Server name and player
+    // count need a custom NetworkDiscovery subclass with an extended response message (follow-up).
+    public class LobbyServerEntry : MonoBehaviour
     {
         public Text serverInfoText;
         public Text slotInfo;
         public Button joinButton;
 
-		public void Populate(MatchInfoSnapshot match, LobbyManager lobbyManager, Color c)
-		{
-            serverInfoText.text = match.name;
+        public void Populate(ServerResponse response, LobbyManager lobbyManager, Color c)
+        {
+            serverInfoText.text = response.EndPoint != null
+                ? response.EndPoint.Address.ToString()
+                : response.uri.Host;
 
-            slotInfo.text = match.currentSize.ToString() + "/" + match.maxSize.ToString(); ;
-
-            NetworkID networkID = match.networkId;
+            slotInfo.text = "LAN";
 
             joinButton.onClick.RemoveAllListeners();
-            joinButton.onClick.AddListener(() => { JoinMatch(networkID, lobbyManager); });
+            joinButton.onClick.AddListener(() => { JoinServer(response, lobbyManager); });
 
             GetComponent<Image>().color = c;
         }
 
-        void JoinMatch(NetworkID networkID, LobbyManager lobbyManager)
+        void JoinServer(ServerResponse response, LobbyManager lobbyManager)
         {
-			lobbyManager.matchMaker.JoinMatch(networkID, "", "", "", 0, 0, lobbyManager.OnMatchJoined);
-			lobbyManager.backDelegate = lobbyManager.StopClientClbk;
-            lobbyManager._isMatchmaking = true;
+            lobbyManager.networkAddress = response.uri.Host;
+            lobbyManager.StartClient(response.uri);
+
+            lobbyManager.backDelegate = lobbyManager.StopClientClbk;
             lobbyManager.DisplayIsConnecting();
+            lobbyManager.SetServerInfo("Connecting...", lobbyManager.networkAddress);
         }
     }
 }

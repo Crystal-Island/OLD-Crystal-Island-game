@@ -64,7 +64,7 @@ namespace Polymoney
         public Cost()
         {
             this.expenses = new List<CurrencyValue>();
-            this.breakBuilding = NetworkInstanceId.Invalid.Value;
+            this.breakBuilding = 0u; // Mirror: 0 is the invalid netId (was NetworkInstanceId.Invalid.Value)
             this.time = 0;
         }
         public Cost(Cost other)
@@ -179,14 +179,14 @@ namespace Polymoney
                 }
             }
 
-            // Apply the building breakage
-            NetworkInstanceId netId = new NetworkInstanceId(this.breakBuilding);
-            if (netId != NetworkInstanceId.Invalid)
+            // Apply the building breakage. Mirror: netId is a uint and spawned objects are looked up
+            // via NetworkServer.spawned (was new NetworkInstanceId + NetworkServer.FindLocalObject).
+            uint netId = this.breakBuilding;
+            if (netId != 0u)
             {
-                GameObject obj = NetworkServer.FindLocalObject(netId);
-                if (obj != null)
+                if (NetworkServer.spawned.TryGetValue(netId, out NetworkIdentity identity) && identity != null)
                 {
-                    Building bldg = obj.GetComponent<Building>();
+                    Building bldg = identity.GetComponent<Building>();
                     if (bldg != null)
                     {
                         bldg.ServerBreakBuilding();
@@ -219,7 +219,7 @@ namespace Polymoney
             get
             {
                 return this.Expenses.Count == 0 &&
-                    this.BreakBuilding == NetworkInstanceId.Invalid.Value &&
+                    this.BreakBuilding == 0u &&
                     this.Time == 0;
             }
         }

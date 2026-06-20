@@ -13,15 +13,18 @@ namespace Polymoney
     /// <summary>
     /// The Player representation in the lobby. Handles all state, that the player can change in the lobby.
     /// </summary>
-    public class LobbyPlayer : NetworkLobbyPlayer
+    // Migrated from UNet NetworkLobbyPlayer to Mirror NetworkRoomPlayer.
+    // Mirror SyncVar hooks must take (oldValue, newValue); the backing field is already set before
+    // the hook fires. Hook names use nameof for compile-time safety.
+    public class LobbyPlayer : NetworkRoomPlayer
     {
-        [SyncVar(hook = "playerReadyChanged")]
+        [SyncVar(hook = nameof(playerReadyChanged))]
         public bool playerReady = false;
-        [SyncVar(hook = "languageNameChanged")]
+        [SyncVar(hook = nameof(languageNameChanged))]
         public string languageName = "English";
-        [SyncVar(hook = "mayorChanged")]
+        [SyncVar(hook = nameof(mayorChanged))]
         public bool runsForMayor = false;
-        [SyncVar(hook = "nameChanged")]
+        [SyncVar(hook = nameof(nameChanged))]
         public new string name = "Player"; //loca defaultPlayerName
         public UnityEvent stateChanged = new UnityEvent();
 
@@ -74,13 +77,13 @@ namespace Polymoney
             }
         }
 
-        private void playerReadyChanged(bool newValue)
+        private void playerReadyChanged(bool oldValue, bool newValue)
         {
             this.playerReady = newValue;
             this.stateChanged.Invoke();
         }
 
-        private void languageNameChanged(string newValue)
+        private void languageNameChanged(string oldValue, string newValue)
         {
             this.languageName = newValue;
             if (!String.IsNullOrEmpty(newValue))
@@ -99,13 +102,13 @@ namespace Polymoney
             this.stateChanged.Invoke();
         }
 
-        private void mayorChanged(bool newValue)
+        private void mayorChanged(bool oldValue, bool newValue)
         {
             this.runsForMayor = newValue;
             this.stateChanged.Invoke();
         }
 
-        private void nameChanged(string newValue)
+        private void nameChanged(string oldValue, string newValue)
         {
             this.name = newValue;
             if (!this.isClient)

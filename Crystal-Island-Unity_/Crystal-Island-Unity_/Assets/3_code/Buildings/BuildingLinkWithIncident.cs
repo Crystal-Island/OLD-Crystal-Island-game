@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Networking;
 using KoboldTools.Logging;
 
 namespace Polymoney
@@ -43,7 +42,7 @@ namespace Polymoney
 
         public bool IsLinkedWith(Incident incident)
         {
-            uint buildingNetId = this.building.netId.Value;
+            uint buildingNetId = this.building.netId;
             return this.filterTags.Any(f => incident.EquivalentTags(f.tags)) && incident.State == IncidentState.UNTOUCHED && incident.IgnoranceCost.BreakBuilding != buildingNetId && incident.ApplicationBenefit.RepairBuilding != buildingNetId;
         }
 
@@ -63,7 +62,7 @@ namespace Polymoney
 
         private void onPlayerStateChanged()
         {
-            uint buildingNetId = this.building.netId.Value;
+            uint buildingNetId = this.building.netId;
             Incident newLinkedIncident = this.player.Incidents.Find(e => this.IsLinkedWith(e));
             if (newLinkedIncident != null)
             {

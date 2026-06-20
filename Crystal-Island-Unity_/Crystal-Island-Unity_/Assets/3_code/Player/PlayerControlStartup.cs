@@ -37,13 +37,19 @@ namespace Polymoney
         {
             if (!this.allPlayersReady)
             {
+                // [DIAG] temporary — reveals which ready-condition is blocking the intro from starting. Remove after debugging.
+                if (Time.frameCount % 120 == 0)
+                {
+                    UnityEngine.Debug.LogError($"[DIAG] isLocalPlayer={this.isLocalPlayer} isServer={this.isServer} level={(this.level != null)} localPlayersReady={PlayerControlStartup.localPlayersReady} playerCount(syncvar)={this.playerCount} allPlayers.Count={(this.level != null ? this.level.allPlayers.Count : -1)} levelDataLoaded={(this.level != null && this.level.levelData != null)} numPlayers={(PolymoneyNetworkManager.singleton != null ? PolymoneyNetworkManager.singleton.numPlayers : -1)} clientCount={this.clientCount}");
+                }
+
                 // On the server, make sure to get the correct values for the
                 // number of clients and players.
                 if (this.isServer)
                 {
-                    if (this.clientCount != NetworkServer.connections.Count(c => c != null))
+                    if (this.clientCount != NetworkServer.connections.Values.Count(c => c != null))
                     {
-                        this.clientCount = NetworkServer.connections.Count(c => c != null);
+                        this.clientCount = NetworkServer.connections.Values.Count(c => c != null);
                     }
                     if (this.playerCount != PolymoneyNetworkManager.singleton.numPlayers)
                     {
@@ -93,7 +99,7 @@ namespace Polymoney
             if (RootLogger.LogLevel == KoboldTools.Logging.Level.DEBUG)
             {
                 NetworkIdentity[] tmp = (NetworkIdentity[]) GameObject.FindObjectsOfType(typeof(NetworkIdentity));
-                IOrderedEnumerable<NetworkIdentity> netIds = tmp.OrderBy(e => e.netId.Value);
+                IOrderedEnumerable<NetworkIdentity> netIds = tmp.OrderBy(e => e.netId);
                 foreach (NetworkIdentity id in netIds)
                 {
                     RootLogger.Debug(this, "Found NetworkIdentity {0} - {1}", id.gameObject.name, id.netId);

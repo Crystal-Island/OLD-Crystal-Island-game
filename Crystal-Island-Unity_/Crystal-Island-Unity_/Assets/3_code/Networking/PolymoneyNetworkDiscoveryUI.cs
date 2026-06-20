@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using KoboldTools;
 using KoboldTools.Logging;
@@ -8,15 +7,36 @@ using Mirror;
 using UnityEngine.UI;
 
 namespace Polymoney {
-    public class PolymoneyNetworkDiscoveryUI : VCBehaviour<NetworkDiscovery> {
+    // Migrated from UNet NetworkDiscovery (broadcastsReceived / NetworkBroadcastResult polling) to
+    // Mirror's event-driven PolymoneyNetworkDiscovery. Hosts found on the LAN arrive via the
+    // OnServerFound event, each carrying its game name + reachable URI.
+    public class PolymoneyNetworkDiscoveryUI : VCBehaviour<PolymoneyNetworkDiscovery> {
         public float displayFrequency = 1f;
         public Button gameButtonTemplate;
 
         private KoboldTools.Pool<Button> buttonPool;
         private float sinceLastDisplay = 1f;
 
+        // Discovered hosts keyed by serverId so a host seen on multiple NICs is listed once.
+        private readonly Dictionary<long, PolymoneyDiscoveryResponse> discovered = new Dictionary<long, PolymoneyDiscoveryResponse>();
+
         public override void onModelChanged() {
             buttonPool = new KoboldTools.Pool<Button>(gameButtonTemplate);
+
+            if (model != null) {
+                model.OnServerFound.RemoveListener(OnDiscoveredServer);
+                model.OnServerFound.AddListener(OnDiscoveredServer);
+            }
+        }
+
+        private void OnDestroy() {
+            if (model != null) {
+                model.OnServerFound.RemoveListener(OnDiscoveredServer);
+            }
+        }
+
+        private void OnDiscoveredServer(PolymoneyDiscoveryResponse info) {
+            discovered[info.serverId] = info;
         }
 
         private void Update() {
@@ -27,45 +47,41 @@ namespace Polymoney {
             }
             sinceLastDisplay = 0f;
 
+            if (buttonPool == null) {
+                return;
+            }
+
             //release current list
             buttonPool.releaseAll();
 
             //create new list
-            if (model.broadcastsReceived != null) {
-                foreach (string addr in model.broadcastsReceived.Keys) {
-                    //get data
-                    NetworkBroadcastResult res = model.broadcastsReceived[addr];
-                    string dataString = BytesToString(res.broadcastData);
-                    string[] items = dataString.Split(':');
-
-                    //add button callback
-                    if (items.Length == 4 && items[0] == "PolymoneyGame") {
-                        //create button from pool
-                        Button buttonObject = buttonPool.pop();
-                        buttonObject.onClick.RemoveAllListeners();
-                        buttonObject.onClick.AddListener(() => {
-                            this.StartConnection(items[2], Convert.ToInt32(items[3]));
-                        });
-
-                        //add button values
-                        Text text = buttonObject.GetComponentInChildren<Text>();
-                        text.text = String.Format("{0} ({1}:{2})", items[1], items[2], items[3]);
-
-                        //display button
-                        buttonObject.gameObject.SetActive(true);
-                    }
-
+            foreach (PolymoneyDiscoveryResponse res in discovered.Values) {
+                Uri uri = res.uri;
+                if (uri == null) {
+                    continue;
                 }
+
+                //create button from pool
+                Button buttonObject = buttonPool.pop();
+                buttonObject.onClick.RemoveAllListeners();
+                buttonObject.onClick.AddListener(() => {
+                    this.StartConnection(uri);
+                });
+
+                //add button values
+                Text text = buttonObject.GetComponentInChildren<Text>();
+                text.text = String.Format("{0} ({1}:{2})", res.gameName, uri.Host, uri.Port);
+
+                //display button
+                buttonObject.gameObject.SetActive(true);
             }
         }
 
-        private void StartConnection(string networkAddress, int networkPort) {
+        private void StartConnection(Uri uri) {
             if (NetworkManager.singleton != null) {
-                if (NetworkManager.singleton.client == null) {
-                    NetworkManager.singleton.networkAddress = networkAddress;
-                    NetworkManager.singleton.networkPort = networkPort;
-                    RootLogger.Info(this, "Trying to connect to {0}:{1}", networkAddress, networkPort);
-                    NetworkManager.singleton.StartClient();
+                if (!NetworkClient.active) {
+                    RootLogger.Info(this, "Trying to connect to {0}", uri);
+                    NetworkManager.singleton.StartClient(uri);
                 } else {
                     RootLogger.Exception(this, "Could not establish a connection to the server, a client is already present.");
                 }
@@ -73,12 +89,5 @@ namespace Polymoney {
                 RootLogger.Exception(this, "Could not find a network manager instance!");
             }
         }
-
-        private string BytesToString(byte[] bytes) {
-            char[] chars = new char[bytes.Length / sizeof(char)];
-            Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
-            return new string(chars);
-        }
-
     }
 }

@@ -6,7 +6,6 @@ using System.Reflection;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Networking;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 

@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 namespace Prototype.NetworkLobby
 {
     //Main menu, mainly only a bunch of callback called by the UI (setup throught the Inspector)
-    public class LobbyMainMenu : MonoBehaviour 
+    public class LobbyMainMenu : MonoBehaviour
     {
         public LobbyManager lobbyManager;
 
@@ -13,7 +12,6 @@ namespace Prototype.NetworkLobby
         public RectTransform lobbyPanel;
 
         public InputField ipInput;
-        public InputField matchNameInput;
 
         public void OnEnable()
         {
@@ -21,9 +19,6 @@ namespace Prototype.NetworkLobby
 
             ipInput.onEndEdit.RemoveAllListeners();
             ipInput.onEndEdit.AddListener(onEndEditIP);
-
-            matchNameInput.onEndEdit.RemoveAllListeners();
-            matchNameInput.onEndEdit.AddListener(onEndEditGameName);
         }
 
         public void OnClickHost()
@@ -54,26 +49,13 @@ namespace Prototype.NetworkLobby
             lobbyManager.SetServerInfo("Dedicated Server", lobbyManager.networkAddress);
         }
 
-        public void OnClickCreateMatchmakingGame()
-        {
-            lobbyManager.StartMatchMaker();
-            lobbyManager.matchMaker.CreateMatch(
-                matchNameInput.text,
-                (uint)lobbyManager.maxPlayers,
-                true,
-				"", "", "", 0, 0,
-				lobbyManager.OnMatchCreate);
+        // Was OnClickCreateMatchmakingGame in UNet. Mirror has no relay matchmaking; LAN servers are
+        // discovered automatically (NetworkDiscovery), so hosting is just a normal host (OnClickHost).
+        // Internet matchmaking would be a separate service (Edgegap lobby / custom list-server).
 
-            lobbyManager.backDelegate = lobbyManager.StopHost;
-            lobbyManager._isMatchmaking = true;
-            lobbyManager.DisplayIsConnecting();
-
-            lobbyManager.SetServerInfo("Matchmaker Host", lobbyManager.matchHost);
-        }
-
+        // Opens the LAN server browser. The LobbyServerList panel starts NetworkDiscovery in its OnEnable.
         public void OnClickOpenServerList()
         {
-            lobbyManager.StartMatchMaker();
             lobbyManager.backDelegate = lobbyManager.SimpleBackClbk;
             lobbyManager.ChangeTo(lobbyServerList);
         }
@@ -85,14 +67,5 @@ namespace Prototype.NetworkLobby
                 OnClickJoin();
             }
         }
-
-        void onEndEditGameName(string text)
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                OnClickCreateMatchmakingGame();
-            }
-        }
-
     }
 }

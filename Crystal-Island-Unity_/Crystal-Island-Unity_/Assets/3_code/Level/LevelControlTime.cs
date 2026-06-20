@@ -273,35 +273,35 @@ namespace Polymoney
                 RootLogger.Debug(this, "update critical player {0} with fiat: {1} and mayor: {2} and NotUpkeptBuildings: {3}", p.Person.Title, fiat, p.Mayor, Level.instance.UpkeptBuildings);
                 if (fiat < Level.instance.RegularStartingMoney * .25f || (p.Mayor && Level.instance.UpkeptBuildings < Level.instance.MinimumUpkeep))
                 {
-                    if (p.GameOver && Level.instance.gameOverPlayers.Contains(p.netId.Value))
+                    if (p.GameOver && Level.instance.gameOverPlayers.Contains(p.netId))
                     {
                         //remove from game over list if the client did commit the game over
-                        Level.instance.gameOverPlayers.Remove(p.netId.Value);
+                        Level.instance.gameOverPlayers.Remove(p.netId);
                         RootLogger.Debug(this, "remove player from gameover");
                     }
 
-                    if (!Level.instance.criticalPlayers.Contains(p.netId.Value))
+                    if (!Level.instance.criticalPlayers.Contains(p.netId))
                     {
                         //player is critical
-                        Level.instance.criticalPlayers.Add(p.netId.Value);
+                        Level.instance.criticalPlayers.Add(p.netId);
                         RootLogger.Debug(this, "add player to critical");
                     }
                     else
                     {
                         //player is gameover
-                        Level.instance.criticalPlayers.Remove(p.netId.Value);
+                        Level.instance.criticalPlayers.Remove(p.netId);
 
                         //add to game over list if the client did not yet commit the game over
-                        Level.instance.gameOverPlayers.Add(p.netId.Value);
+                        Level.instance.gameOverPlayers.Add(p.netId);
                         RootLogger.Debug(this, "add player to gameover");                   
                     }
                 }
                 else
                 {
-                    if (Level.instance.criticalPlayers.Contains(p.netId.Value))
+                    if (Level.instance.criticalPlayers.Contains(p.netId))
                     {
                         //saved a critical player
-                        Level.instance.criticalPlayers.Remove(p.netId.Value);
+                        Level.instance.criticalPlayers.Remove(p.netId);
                         RootLogger.Debug(this, "remove player from critical");
                     }
                 }

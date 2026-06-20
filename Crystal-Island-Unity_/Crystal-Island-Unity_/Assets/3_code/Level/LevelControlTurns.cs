@@ -67,7 +67,7 @@ namespace Polymoney
         {
             RootLogger.Info(this, "Server: A player has completed their turn");
 
-            if (isServer && NetworkServer.connections.Count(c => c != null) > Level.instance.allPlayers.Count)
+            if (isServer && NetworkServer.connections.Values.Count(c => c != null) > Level.instance.allPlayers.Count)
             {
                 RootLogger.Info(this, "Server: Not all players are connected. Turn completion check for all players is suspended");
                 return;

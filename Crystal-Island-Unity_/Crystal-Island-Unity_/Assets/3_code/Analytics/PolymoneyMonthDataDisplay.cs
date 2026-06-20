@@ -34,7 +34,7 @@ namespace Polymoney
 
             foreach(PolymoneyPlayerData p in model.Players)
             {
-                Player current = Level.instance.allPlayers.FirstOrDefault(c => c.netId.Value == p.PlayerId);
+                Player current = Level.instance.allPlayers.FirstOrDefault(c => c.netId == p.PlayerId);
                 if (!current.Mayor)
                 {
                     playerFiat += (float)p.FiatAccountBalance;

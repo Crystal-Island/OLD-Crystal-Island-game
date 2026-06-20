@@ -171,7 +171,7 @@ namespace Polymoney
                     if (assocBuilding != null)
                     {
                         RootLogger.Info(this, "This special offer will now repair the building {0}, if bought.", assocBuilding);
-                        newOffer.sellingBenefit.RepairBuilding = assocBuilding.netId.Value;
+                        newOffer.sellingBenefit.RepairBuilding = assocBuilding.netId;
                     }
                     newOffer.creationBenefit.SetIncome(Currency.Q, Level.instance.PolymoneyPerFreeTime);
                     //Add WC offer creation stat to player

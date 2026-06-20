@@ -291,7 +291,7 @@ namespace Polymoney
         public void AddPlayer(Player player)
         {
             RootLogger.Debug(this, "Player '{0}' (netid: {1}) was registered", player.name, player.netId);
-            RootAnalytics.AddPlayer(player.netId.Value);
+            RootAnalytics.AddPlayer(player.netId);
             this._allPlayers.Add(player);
             this.onPlayerAdded.Invoke(player);
         }

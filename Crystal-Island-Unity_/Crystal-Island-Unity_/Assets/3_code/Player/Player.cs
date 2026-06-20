@@ -747,12 +747,27 @@ namespace Polymoney {
             this.RpcSetLuminance(value);
         }
 
+        // Mirror replacements for UNet's NetworkServer.FindLocalObject / ClientScene.FindLocalObject:
+        // spawned objects are looked up by uint netId in NetworkServer.spawned (server) or
+        // NetworkClient.spawned (client).
+        private static GameObject FindServerObject(uint netId) {
+            return NetworkServer.spawned.TryGetValue(netId, out NetworkIdentity identity) && identity != null
+                ? identity.gameObject
+                : null;
+        }
+
+        private static GameObject FindClientObject(uint netId) {
+            return NetworkClient.spawned.TryGetValue(netId, out NetworkIdentity identity) && identity != null
+                ? identity.gameObject
+                : null;
+        }
+
         public void ClientSetBuildingLuminance(uint buildingId, float value) {
             this.CmdSetBuildingLuminance(buildingId, value);
         }
 
         public void ServerSetBuildingLuminance(uint buildingId, float value) {
-            GameObject obj = NetworkServer.FindLocalObject(buildingId);
+            GameObject obj = FindServerObject(buildingId);
             if (obj != null) {
                 Building building = obj.GetComponent<Building>();
                 if (building != null) {
@@ -988,13 +1003,13 @@ namespace Polymoney {
         private void RpcSetEnjoyment(int value) {
             RootLogger.Debug(this, "Rpc: The player enjoys the game this much: {0}", value);
             this._enjoyment = value;
-            RootAnalytics.SetPlayerEnjoyment(this.netId.Value, value);
+            RootAnalytics.SetPlayerEnjoyment(this.netId, value);
         }
 
         [ClientRpc]
         private void RpcUpdateFoodHealthStatus(float status) {
             this._foodHealthStatus = status;
-            RootAnalytics.SetFoodHealthStatus(this.netId.Value, status);
+            RootAnalytics.SetFoodHealthStatus(this.netId, status);
         }
 
         [ClientRpc]
@@ -1059,7 +1074,7 @@ namespace Polymoney {
                 if (this._talents.FindIndex(e => e.Equals(talent)) < 0) {
                     RootLogger.Debug(this, "Rpc: Adding a talent: {0} (json: {1})", talent, jsonData);
                     this._talents.Add(talent);
-                    RootAnalytics.SetTalentNumber(this.netId.Value, this._talents.Count);
+                    RootAnalytics.SetTalentNumber(this.netId, this._talents.Count);
                     this._playerStateChanged.Invoke();
                 } else {
                     RootLogger.Warning(this, "The player already has the specified talent '{0}'. Not doing anything.", talent);
@@ -1140,14 +1155,14 @@ namespace Polymoney {
             if (pkt != null) {
                 int fiatBalance;
                 pkt.TryGetBalance(Currency.FIAT, out fiatBalance);
-                RootAnalytics.SetAccountBalance(this.netId.Value, Currency.FIAT, fiatBalance);
+                RootAnalytics.SetAccountBalance(this.netId, Currency.FIAT, fiatBalance);
                 if (this.Mayor) {
                     RootAnalytics.SetCityAccountBalance(fiatBalance);
                 }
 
                 int qBalance;
                 pkt.TryGetBalance(Currency.Q, out qBalance);
-                RootAnalytics.SetAccountBalance(this.netId.Value, Currency.Q, qBalance);
+                RootAnalytics.SetAccountBalance(this.netId, Currency.Q, qBalance);
 
                 this._pocket = pkt;
                 this._playerStateChanged.Invoke();
@@ -1174,18 +1189,18 @@ namespace Polymoney {
             Offer offer = ScriptableObject.CreateInstance<Offer>();
             JsonUtility.FromJsonOverwrite(offerData, offer);
 
-            GameObject sellerObj = ClientScene.FindLocalObject(sellerId);
+            GameObject sellerObj = FindClientObject(sellerId);
             if (sellerObj != null) {
                 Player seller = sellerObj.GetComponent<Player>();
                 if (seller != null) {
-                    GameObject buyerObj = ClientScene.FindLocalObject(buyerId);
+                    GameObject buyerObj = FindClientObject(buyerId);
                     if (buyerObj != null) {
                         Player buyer = buyerObj.GetComponent<Player>();
                         if (buyer != null) {
                             seller.OnOfferApplied.Invoke(offer, buyer);
                             CurrencyValue buyingBalance = offer.BuyingBalance;
                             if (offer.EquivalentTags(Level.instance.welfareTags)) {
-                                RootAnalytics.AddWelfarePayment(seller.netId.Value, offer.SellingBalance.value);
+                                RootAnalytics.AddWelfarePayment(seller.netId, offer.SellingBalance.value);
                             } else if (!offer.EquivalentTags(Level.instance.taxTags) && buyingBalance.value != 0) {
                                 RootAnalytics.SetCirculationRate(buyingBalance.GetCurrency(), Math.Abs(buyingBalance.value), Level.instance.months);
                             }
@@ -1343,9 +1358,9 @@ namespace Polymoney {
         private void CmdApplyOfferDirect(string offerData, uint buyerId, uint sellerId) {
             Offer offer = ScriptableObject.CreateInstance<Offer>();
             JsonUtility.FromJsonOverwrite(offerData, offer);
-            GameObject buyerObj = NetworkServer.FindLocalObject(buyerId);
+            GameObject buyerObj = FindServerObject(buyerId);
             Player buyer = buyerObj.GetComponent<Player>();
-            GameObject sellerObj = NetworkServer.FindLocalObject(sellerId);
+            GameObject sellerObj = FindServerObject(sellerId);
             Player seller = sellerObj.GetComponent<Player>();
             this.ServerApplyOffer(offer, buyer, seller);
         }
@@ -1387,7 +1402,7 @@ namespace Polymoney {
 
         [Command]
         private void CmdSetBuildingLuminance(uint buildingId, float value) {
-            GameObject obj = NetworkServer.FindLocalObject(buildingId);
+            GameObject obj = FindServerObject(buildingId);
             if (obj != null) {
                 Building building = obj.GetComponent<Building>();
                 if (building != null) {
@@ -1406,11 +1421,11 @@ namespace Polymoney {
             RootLogger.Debug(this, "Cmd: Player '{0}' (netid: {1}) gives fairydust to player (netid: {2}).", this.name, this.netId, recipientId);
 
             // Obtain a reference to the recipient player and the building.
-            GameObject recipientObj = NetworkServer.FindLocalObject(recipientId);
+            GameObject recipientObj = FindServerObject(recipientId);
             if (recipientObj != null) {
                 Player recipient = recipientObj.GetComponent<Player>();
                 if (recipient != null) {
-                    GameObject buildingObj = NetworkServer.FindLocalObject(buildingId);
+                    GameObject buildingObj = FindServerObject(buildingId);
                     if (buildingObj != null) {
                         Building building = buildingObj.GetComponent<Building>();
                         if (building != null) {

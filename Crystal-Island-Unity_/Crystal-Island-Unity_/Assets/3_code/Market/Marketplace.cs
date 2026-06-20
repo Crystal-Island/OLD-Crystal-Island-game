@@ -109,7 +109,7 @@ namespace Polymoney
             _offers.Add(offer);
             if (this._seller != null && offer.BuyingBalance.value != 0 && !offer.EquivalentTags(Level.instance.taxTags))
             {
-                RootAnalytics.AddOffer(this._seller.netId.Value, offer.BuyingBalance.GetCurrency());
+                RootAnalytics.AddOffer(this._seller.netId, offer.BuyingBalance.GetCurrency());
             }
             onOfferAdd.Invoke(offer);
         }

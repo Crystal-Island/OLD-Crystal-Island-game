@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,12 @@ using KoboldTools;
 
 namespace Polymoney
 {
-    public class PolymoneyNetworkManagerUI : VCBehaviour<NetworkLobbyManager>
+    // Migrated from UNet NetworkLobbyManager to Mirror NetworkRoomManager.
+    //  - model type NetworkLobbyManager -> NetworkRoomManager
+    //  - model.lobbySlots[] (fixed array, may contain nulls) -> model.roomSlots (HashSet, active players only)
+    //  - model.maxPlayers -> model.maxConnections (Mirror's room size is bounded by maxConnections;
+    //    set maxConnections on the manager to the intended player count).
+    public class PolymoneyNetworkManagerUI : VCBehaviour<NetworkRoomManager>
     {
         public float displayFrequency = 1f;
         public LobbyPlayerUI lobbyPlayerUITemplate;
@@ -36,7 +41,7 @@ namespace Polymoney
             this.waitingForPlayers.SetActive(true);
 
             this.lobbyPlayerUIPool = new KoboldTools.Pool<LobbyPlayerUI>(this.lobbyPlayerUITemplate);
-            for (int i = 0; i < this.model.maxPlayers; i++)
+            for (int i = 0; i < this.model.maxConnections; i++)
             {
                 LobbyPlayerUI uiElement = this.lobbyPlayerUIPool.pop();
                 uiElement.gameObject.SetActive(true);
@@ -60,12 +65,16 @@ namespace Polymoney
             }
             this.sinceLastDisplay = 0f;
 
-            // Update the models
-            for (int i = 0; i < this.model.lobbySlots.Length; i++)
+            // Update the models. roomSlots is a HashSet (was a fixed lobbySlots[] array in UNet), so
+            // snapshot it to a list to map active room players into the fixed set of UI rows. Sort by the
+            // room player index (a SyncVar Mirror assigns per player) so rows stay stable between frames.
+            List<NetworkRoomPlayer> roomList = this.model.roomSlots.OrderBy(p => p.index).ToList();
+            for (int i = 0; i < this.lobbyPlayerUIUsed.Count; i++)
             {
-                if (this.lobbyPlayerUIUsed[i].model != this.model.lobbySlots[i])
+                LobbyPlayer slot = (i < roomList.Count) ? roomList[i] as LobbyPlayer : null;
+                if (this.lobbyPlayerUIUsed[i].model != slot)
                 {
-                    this.lobbyPlayerUIUsed[i].onSetModel(this.model.lobbySlots[i]);
+                    this.lobbyPlayerUIUsed[i].onSetModel(slot);
                 }
             }
 
@@ -73,8 +82,9 @@ namespace Polymoney
             if (Localisation.instance != null)
             {
                 string langName = Localisation.instance.activeLanguage.langNameEnglish;
-                foreach (LobbyPlayer player in this.model.lobbySlots)
+                foreach (NetworkRoomPlayer roomPlayer in this.model.roomSlots)
                 {
+                    LobbyPlayer player = roomPlayer as LobbyPlayer;
                     if (player != null && player.languageName != langName)
                     {
                         player.languageName = langName;
@@ -117,7 +127,7 @@ namespace Polymoney
 
         private void onLanguageChanged()
         {
-            this.maxPlayersDisplay.text = Localisation.instance.getLocalisedFormat(this.maxPlayersTextId, this.model.maxPlayers);
+            this.maxPlayersDisplay.text = Localisation.instance.getLocalisedFormat(this.maxPlayersTextId, this.model.maxConnections);
         }
 
         private void onClickStartGame()
@@ -125,30 +135,23 @@ namespace Polymoney
             if (!this.gameStarted && NetworkServer.active)
             {
                 this.gameStarted = true;
-                foreach (LobbyPlayer player in this.model.lobbySlots)
-                {
-                    if (player != null)
-                    {
-                        player.readyToBegin = true;
-                    }
-                }
-                this.model.CheckReadyToBegin();
+                // Host force-starts the game. We can't set NetworkRoomPlayer.readyToBegin from this
+                // assembly (Mirror forbids cross-assembly [SyncVar] writes), and forcing every player
+                // ready + CheckReadyToBegin() ultimately just calls ServerChangeScene(GameplayScene),
+                // so drive the room->game transition directly. The game's own readiness gate uses
+                // Polymoney.LobbyPlayer.playerReady (see allPlayersReady above), not Mirror's readyToBegin.
+                this.model.ServerChangeScene(this.model.GameplayScene);
                 this.startGameButton.gameObject.SetActive(false);
-                
-                
-                // TODO: NETWORKING-MIGRATION - legacy UnityEngine.Network removed in Unity 2018.2; restore via Mirror/Photon
+
+
+                // TODO: NETWORKING-MIGRATION - host->client lobby-options propagation still disabled.
                 // BEHAVIOR LOST: when the server host clicks "Start Game" with one or more remote clients connected,
                 // this previously broadcast the host's Options_Controller settings (tax mode, water-crystal turn,
                 // disaster severity/frequency, mayor panel visibility, etc.) to every connected client via RpcUpdateSettings().
                 // While disabled, host-selected lobby options will NOT be propagated - clients will run with their
-                // local defaults, which is incorrect for shared-game gameplay. Re-wire when networking is restored.
-                //if(GetComponent<NetworkDiscovery>().isServer && Network.connections.Length > 1)
-                //{
-                //    //Apply options selected
-                //    print("Apply Option Menus");
-                //    optionsController.GetComponent<Options_Controller>().RpcUpdateSettings();
-                //}
-                
+                // local defaults, which is incorrect for shared-game gameplay. Re-wire once Options_Controller is migrated:
+                //   if (NetworkServer.active && NetworkServer.connections.Count > 1)
+                //       optionsController.GetComponent<Options_Controller>().RpcUpdateSettings();
             }
         }
     }

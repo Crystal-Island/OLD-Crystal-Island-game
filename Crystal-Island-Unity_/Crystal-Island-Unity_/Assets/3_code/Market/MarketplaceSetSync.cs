@@ -47,7 +47,7 @@ namespace Polymoney
 
         private IEnumerator init()
         {
-            while(NetworkServer.connections.Any(c => !c.isReady)){
+            while(NetworkServer.connections.Values.Any(c => !c.isReady)){
                 yield return null;
             }
 

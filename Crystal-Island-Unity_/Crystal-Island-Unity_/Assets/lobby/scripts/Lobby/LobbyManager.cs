@@ -1,17 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using Mirror;
-using UnityEngine.Networking.Types;
-using UnityEngine.Networking.Match;
+using Mirror.Discovery;
 using System.Collections;
-
 
 namespace Prototype.NetworkLobby
 {
-    public class LobbyManager : NetworkLobbyManager 
+    // Migrated from UNet NetworkLobbyManager to Mirror NetworkRoomManager.
+    // Notes on the migration:
+    //  - UNet relay matchmaking (matchMaker / MatchInfo / OnMatchCreate / OnDestroyMatch /
+    //    StopMatchMaker) has no Mirror equivalent and was removed. Use direct connect or
+    //    NetworkDiscovery instead (see LobbyServerList / LobbyMainMenu migration).
+    //  - Mirror supports a single player per connection, so the UNet "add local player"
+    //    flow (maxPlayersPerConnection / ClientScene.localPlayers / addPlayerButton) is gone.
+    //  - lobbySlots[] (fixed array) -> roomSlots (HashSet<NetworkRoomPlayer>).
+    //  - The custom kick message is now a Mirror struct message instead of a MsgType + MessageBase.
+    public class LobbyManager : NetworkRoomManager
     {
-        static short MsgKicked = MsgType.Highest + 1;
+        // Mirror struct message replacing the UNet "MsgType.Highest + 1" / MessageBase kick message.
+        public struct KickMsg : NetworkMessage { }
 
         static public LobbyManager s_Singleton;
 
@@ -43,18 +50,20 @@ namespace Prototype.NetworkLobby
         [HideInInspector]
         public int _playerNumber = 0;
 
-        //used to disconnect a client properly when exiting the matchmaker
-        [HideInInspector]
-        public bool _isMatchmaking = false;
-
-        protected bool _disconnectServer = false;
-        
-        protected ulong _currentMatchID;
-
         protected LobbyHook _lobbyHooks;
 
-        void Start()
+        protected Coroutine _countdownCoroutine;
+
+        // Replaces UNet relay matchmaking with Mirror's LAN NetworkDiscovery.
+        // Assign the NetworkDiscovery component (on the LobbyManager object) in the inspector.
+        // For internet matchmaking, swap this for Edgegap lobby or a custom list-server later.
+        [Header("LAN Discovery (replaces UNet matchmaking)")]
+        public NetworkDiscovery discovery;
+
+        public override void Start()
         {
+            base.Start();
+
             s_Singleton = this;
             _lobbyHooks = GetComponent<Prototype.NetworkLobby.LobbyHook>();
             currentPanel = mainMenuPanel;
@@ -67,35 +76,19 @@ namespace Prototype.NetworkLobby
             SetServerInfo("Offline", "None");
         }
 
-        public override void OnLobbyClientSceneChanged(NetworkConnection conn)
+        public override void OnRoomClientSceneChanged()
         {
-            if (SceneManager.GetSceneAt(0).name == lobbyScene)
+            if (Utils.IsSceneActive(RoomScene))
             {
                 if (topPanel.isInGame)
                 {
                     ChangeTo(lobbyPanel);
-                    if (_isMatchmaking)
-                    {
-                        if (conn.playerControllers[0].unetView.isServer)
-                        {
-                            backDelegate = StopHostClbk;
-                        }
-                        else
-                        {
-                            backDelegate = StopClientClbk;
-                        }
-                    }
+
+                    // Mirror dropped UNet matchmaking, so the host is simply whoever is also running the server.
+                    if (NetworkServer.active)
+                        backDelegate = StopHostClbk;
                     else
-                    {
-                        if (conn.playerControllers[0].unetView.isClient)
-                        {
-                            backDelegate = StopHostClbk;
-                        }
-                        else
-                        {
-                            backDelegate = StopClientClbk;
-                        }
-                    }
+                        backDelegate = StopClientClbk;
                 }
                 else
                 {
@@ -139,7 +132,6 @@ namespace Prototype.NetworkLobby
             {
                 backButton.gameObject.SetActive(false);
                 SetServerInfo("Offline", "None");
-                _isMatchmaking = false;
             }
         }
 
@@ -168,7 +160,8 @@ namespace Prototype.NetworkLobby
 
         public void AddLocalPlayer()
         {
-            TryToAddPlayer();
+            // Mirror supports only a single player per connection; multiple local players
+            // are no longer available, so this is intentionally a no-op.
         }
 
         public void RemovePlayer(LobbyPlayer player)
@@ -180,32 +173,16 @@ namespace Prototype.NetworkLobby
         {
             ChangeTo(mainMenuPanel);
         }
-                 
+
         public void StopHostClbk()
         {
-            if (_isMatchmaking)
-            {
-				matchMaker.DestroyMatch((NetworkID)_currentMatchID, 0, OnDestroyMatch);
-				_disconnectServer = true;
-            }
-            else
-            {
-                StopHost();
-            }
-
-            
+            StopHost();
             ChangeTo(mainMenuPanel);
         }
 
         public void StopClientClbk()
         {
             StopClient();
-
-            if (_isMatchmaking)
-            {
-                StopMatchMaker();
-            }
-
             ChangeTo(mainMenuPanel);
         }
 
@@ -215,46 +192,44 @@ namespace Prototype.NetworkLobby
             ChangeTo(mainMenuPanel);
         }
 
-        class KickMsg : MessageBase { }
-        public void KickPlayer(NetworkConnection conn)
+        public void KickPlayer(NetworkConnectionToClient conn)
         {
-            conn.Send(MsgKicked, new KickMsg());
+            conn.Send(new KickMsg());
         }
 
-
-
-
-        public void KickedMessageHandler(NetworkMessage netMsg)
+        public void KickedMessageHandler(KickMsg msg)
         {
             infoPanel.Display("Kicked by Server", "Close", null);
-            netMsg.conn.Disconnect();
+            NetworkClient.Disconnect();
         }
 
         //===================
 
-        public override void OnStartHost()
+        public override void OnRoomStartHost()
         {
-            base.OnStartHost();
+            base.OnRoomStartHost();
 
             ChangeTo(lobbyPanel);
             backDelegate = StopHostClbk;
             SetServerInfo("Hosting", networkAddress);
         }
 
-		public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo)
-		{
-			base.OnMatchCreate(success, extendedInfo, matchInfo);
-            _currentMatchID = (System.UInt64)matchInfo.networkId;
-		}
+        // Start advertising this server to LAN clients (covers both Host and dedicated Server,
+        // since StartHost internally starts the server).
+        public override void OnRoomStartServer()
+        {
+            base.OnRoomStartServer();
 
-		public override void OnDestroyMatch(bool success, string extendedInfo)
-		{
-			base.OnDestroyMatch(success, extendedInfo);
-			if (_disconnectServer)
-            {
-                StopMatchMaker();
-                StopHost();
-            }
+            if (discovery != null)
+                discovery.AdvertiseServer();
+        }
+
+        public override void OnRoomStopServer()
+        {
+            base.OnRoomStopServer();
+
+            if (discovery != null)
+                discovery.StopDiscovery();
         }
 
         //allow to handle the (+) button to add/remove player
@@ -262,28 +237,26 @@ namespace Prototype.NetworkLobby
         {
             _playerNumber += count;
 
-            int localPlayerCount = 0;
-            foreach (PlayerController p in ClientScene.localPlayers)
-                localPlayerCount += (p == null || p.playerControllerId == -1) ? 0 : 1;
-
-            addPlayerButton.SetActive(localPlayerCount < maxPlayersPerConnection && _playerNumber < maxPlayers);
+            // Mirror supports a single player per connection, so the UNet "add local player"
+            // button is obsolete. Keep it hidden.
+            if (addPlayerButton != null)
+                addPlayerButton.SetActive(false);
         }
 
         // ----------------- Server callbacks ------------------
 
         //we want to disable the button JOIN if we don't have enough player
-        //But OnLobbyClientConnect isn't called on hosting player. So we override the lobbyPlayer creation
-        public override GameObject OnLobbyServerCreateLobbyPlayer(NetworkConnection conn, short playerControllerId)
+        //But OnRoomClientConnect isn't called on hosting player. So we override the roomPlayer creation
+        public override GameObject OnRoomServerCreateRoomPlayer(NetworkConnectionToClient conn)
         {
-            GameObject obj = Instantiate(lobbyPlayerPrefab.gameObject) as GameObject;
+            GameObject obj = Instantiate(roomPlayerPrefab.gameObject) as GameObject;
 
             LobbyPlayer newPlayer = obj.GetComponent<LobbyPlayer>();
             newPlayer.ToggleJoinButton(numPlayers + 1 >= minPlayers);
 
-
-            for (int i = 0; i < lobbySlots.Length; ++i)
+            foreach (NetworkRoomPlayer roomSlot in roomSlots)
             {
-                LobbyPlayer p = lobbySlots[i] as LobbyPlayer;
+                LobbyPlayer p = roomSlot as LobbyPlayer;
 
                 if (p != null)
                 {
@@ -295,25 +268,13 @@ namespace Prototype.NetworkLobby
             return obj;
         }
 
-        public override void OnLobbyServerPlayerRemoved(NetworkConnection conn, short playerControllerId)
+        public override void OnRoomServerDisconnect(NetworkConnectionToClient conn)
         {
-            for (int i = 0; i < lobbySlots.Length; ++i)
-            {
-                LobbyPlayer p = lobbySlots[i] as LobbyPlayer;
+            base.OnRoomServerDisconnect(conn);
 
-                if (p != null)
-                {
-                    p.RpcUpdateRemoveButton();
-                    p.ToggleJoinButton(numPlayers + 1 >= minPlayers);
-                }
-            }
-        }
-
-        public override void OnLobbyServerDisconnect(NetworkConnection conn)
-        {
-            for (int i = 0; i < lobbySlots.Length; ++i)
+            foreach (NetworkRoomPlayer roomSlot in roomSlots)
             {
-                LobbyPlayer p = lobbySlots[i] as LobbyPlayer;
+                LobbyPlayer p = roomSlot as LobbyPlayer;
 
                 if (p != null)
                 {
@@ -321,33 +282,46 @@ namespace Prototype.NetworkLobby
                     p.ToggleJoinButton(numPlayers >= minPlayers);
                 }
             }
-
         }
 
-        public override bool OnLobbyServerSceneLoadedForPlayer(GameObject lobbyPlayer, GameObject gamePlayer)
+        public override bool OnRoomServerSceneLoadedForPlayer(NetworkConnectionToClient conn, GameObject roomPlayer, GameObject gamePlayer)
         {
-            //This hook allows you to apply state data from the lobby-player to the game-player
+            //This hook allows you to apply state data from the room-player to the game-player
             //just subclass "LobbyHook" and add it to the lobby object.
 
             if (_lobbyHooks)
-                _lobbyHooks.OnLobbyServerSceneLoadedForPlayer(this, lobbyPlayer, gamePlayer);
+                _lobbyHooks.OnLobbyServerSceneLoadedForPlayer(this, roomPlayer, gamePlayer);
 
             return true;
         }
 
         // --- Countdown management
 
-        public override void OnLobbyServerPlayersReady()
+        public override void OnRoomServerPlayersReady()
         {
-			bool allready = true;
-			for(int i = 0; i < lobbySlots.Length; ++i)
-			{
-				if(lobbySlots[i] != null)
-					allready &= lobbySlots[i].readyToBegin;
-			}
+            // Base Mirror behaviour immediately changes to the GameplayScene; instead we run a
+            // pre-match countdown and only then start the game (see ServerCountdownCoroutine).
+            if (_countdownCoroutine == null)
+                _countdownCoroutine = StartCoroutine(ServerCountdownCoroutine());
+        }
 
-			if(allready)
-				StartCoroutine(ServerCountdownCoroutine());
+        public override void OnRoomServerPlayersNotReady()
+        {
+            base.OnRoomServerPlayersNotReady();
+
+            // A player un-readied while the countdown was running: abort the launch.
+            if (_countdownCoroutine != null)
+            {
+                StopCoroutine(_countdownCoroutine);
+                _countdownCoroutine = null;
+
+                foreach (NetworkRoomPlayer roomSlot in roomSlots)
+                {
+                    LobbyPlayer p = roomSlot as LobbyPlayer;
+                    if (p != null)
+                        p.RpcUpdateCountdown(0);
+                }
+            }
         }
 
         public IEnumerator ServerCountdownCoroutine()
@@ -366,36 +340,42 @@ namespace Prototype.NetworkLobby
                 {//to avoid flooding the network of message, we only send a notice to client when the number of plain seconds change.
                     floorTime = newFloorTime;
 
-                    for (int i = 0; i < lobbySlots.Length; ++i)
+                    foreach (NetworkRoomPlayer roomSlot in roomSlots)
                     {
-                        if (lobbySlots[i] != null)
-                        {//there is maxPlayer slots, so some could be == null, need to test it before accessing!
-                            (lobbySlots[i] as LobbyPlayer).RpcUpdateCountdown(floorTime);
-                        }
+                        LobbyPlayer p = roomSlot as LobbyPlayer;
+                        if (p != null)
+                            p.RpcUpdateCountdown(floorTime);
                     }
                 }
             }
 
-            for (int i = 0; i < lobbySlots.Length; ++i)
+            foreach (NetworkRoomPlayer roomSlot in roomSlots)
             {
-                if (lobbySlots[i] != null)
-                {
-                    (lobbySlots[i] as LobbyPlayer).RpcUpdateCountdown(0);
-                }
+                LobbyPlayer p = roomSlot as LobbyPlayer;
+                if (p != null)
+                    p.RpcUpdateCountdown(0);
             }
 
-            ServerChangeScene(playScene);
+            _countdownCoroutine = null;
+
+            ServerChangeScene(GameplayScene);
         }
 
         // ----------------- Client callbacks ------------------
 
-        public override void OnClientConnect(NetworkConnection conn)
+        public override void OnRoomStartClient()
         {
-            base.OnClientConnect(conn);
+            base.OnRoomStartClient();
+
+            // Mirror replaces UNet's per-connection RegisterHandler with typed client handlers.
+            NetworkClient.RegisterHandler<KickMsg>(KickedMessageHandler, false);
+        }
+
+        public override void OnRoomClientConnect()
+        {
+            base.OnRoomClientConnect();
 
             infoPanel.gameObject.SetActive(false);
-
-            conn.RegisterHandler(MsgKicked, KickedMessageHandler);
 
             if (!NetworkServer.active)
             {//only to do on pure client (not self hosting client)
@@ -405,17 +385,16 @@ namespace Prototype.NetworkLobby
             }
         }
 
-
-        public override void OnClientDisconnect(NetworkConnection conn)
+        public override void OnRoomClientDisconnect()
         {
-            base.OnClientDisconnect(conn);
+            base.OnRoomClientDisconnect();
             ChangeTo(mainMenuPanel);
         }
 
-        public override void OnClientError(NetworkConnection conn, int errorCode)
+        public override void OnClientError(TransportError error, string reason)
         {
             ChangeTo(mainMenuPanel);
-            infoPanel.Display("Cient error : " + (errorCode == 6 ? "timeout" : errorCode.ToString()), "Close", null);
+            infoPanel.Display("Client error : " + error + " (" + reason + ")", "Close", null);
         }
     }
 }

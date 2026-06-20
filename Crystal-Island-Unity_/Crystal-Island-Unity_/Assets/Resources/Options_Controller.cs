@@ -191,7 +191,9 @@ public class Options_Controller : MonoBehaviour
         //Only display open button for server player
         if(!openButton.gameObject.activeInHierarchy)
         {
-            if (GameObject.Find("NetworkManager").GetComponent<NetworkDiscovery>().isServer)
+            // Mirror: "am I the host/server?" is NetworkServer.active (was the UNet
+            // NetworkDiscovery.isServer host-only gate).
+            if (NetworkServer.active)
             {
                 openButton.gameObject.SetActive(true);
             }

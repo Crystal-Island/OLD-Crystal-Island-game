@@ -1,15 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Mirror;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Prototype.NetworkLobby
 {
+    // Migrated from UNet NetworkLobbyPlayer to Mirror NetworkRoomPlayer.
+    // Migration notes:
+    //  - OnClientEnterLobby -> OnClientEnterRoom (invoked by NetworkRoomManager.CallOnClientEnterRoom).
+    //  - The ready state hook OnClientReady(bool) is now the SyncVar hook ReadyStateChanged(old, new).
+    //  - SyncVar hooks must take (oldValue, newValue); Mirror sets the backing field before the hook fires.
+    //  - SendReadyToBeginMessage() -> CmdChangeReadyState(true).
+    //  - Mirror supports a single player per connection, so the multi-local-player logic
+    //    (ClientScene.localPlayers / PlayerController) is gone; the local remove button stays disabled.
     //Player entry in the lobby. Handle selecting color/setting name & getting ready for the game
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
-    public class LobbyPlayer : NetworkLobbyPlayer
+    public class LobbyPlayer : NetworkRoomPlayer
     {
         static Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
         //used on server to avoid assigning the same color to two player
@@ -25,9 +31,9 @@ namespace Prototype.NetworkLobby
         public GameObject remoteIcone;
 
         //OnMyName function will be invoked on clients when server change the value of playerName
-        [SyncVar(hook = "OnMyName")]
+        [SyncVar(hook = nameof(OnMyName))]
         public string playerName = "";
-        [SyncVar(hook = "OnMyColor")]
+        [SyncVar(hook = nameof(OnMyColor))]
         public Color playerColor = Color.white;
 
         public Color OddRowColor = new Color(250.0f / 255.0f, 250.0f / 255.0f, 250.0f / 255.0f, 1.0f);
@@ -42,14 +48,15 @@ namespace Prototype.NetworkLobby
         //static Color EvenRowColor = new Color(180.0f / 255.0f, 180.0f / 255.0f, 180.0f / 255.0f, 1.0f);
 
 
-        public override void OnClientEnterLobby()
+        public override void OnClientEnterRoom()
         {
-            base.OnClientEnterLobby();
+            base.OnClientEnterRoom();
 
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(1);
 
             LobbyPlayerList._instance.AddPlayer(this);
-            LobbyPlayerList._instance.DisplayDirectServerWarning(isServer && LobbyManager.s_Singleton.matchMaker == null);
+            // UNet matchmaking is gone, so hosting is always a direct server.
+            LobbyPlayerList._instance.DisplayDirectServerWarning(isServer);
 
             if (isLocalPlayer)
             {
@@ -62,8 +69,8 @@ namespace Prototype.NetworkLobby
 
             //setup the player data on UI. The value are SyncVar so the player
             //will be created with the right value currently on server
-            OnMyName(playerName);
-            OnMyColor(playerColor);
+            OnMyName(playerName, playerName);
+            OnMyColor(playerColor, playerColor);
         }
 
         public override void OnStartAuthority()
@@ -96,7 +103,7 @@ namespace Prototype.NetworkLobby
             readyButton.transform.GetChild(0).GetComponent<Text>().text = "...";
             readyButton.interactable = false;
 
-            OnClientReady(false);
+            RefreshReadyUI(false);
         }
 
         void SetupLocalPlayer()
@@ -132,25 +139,27 @@ namespace Prototype.NetworkLobby
             readyButton.onClick.RemoveAllListeners();
             readyButton.onClick.AddListener(OnReadyClicked);
 
-            //when OnClientEnterLobby is called, the loval PlayerController is not yet created, so we need to redo that here to disable
-            //the add button if we reach maxLocalPlayer. We pass 0, as it was already counted on OnClientEnterLobby
+            //when OnClientEnterRoom is called, the local player object may not be fully ready, so we redo that here
             if (LobbyManager.s_Singleton != null) LobbyManager.s_Singleton.OnPlayersNumberModified(0);
         }
 
-        //This enable/disable the remove button depending on if that is the only local player or not
+        //This enable/disable the remove button. Mirror only allows one player per connection, so a local
+        //player can no longer remove an "extra" local player; the button is only meaningful for the server kick path.
         public void CheckRemoveButton()
         {
             if (!isLocalPlayer)
                 return;
 
-            int localPlayerCount = 0;
-            foreach (PlayerController p in ClientScene.localPlayers)
-                localPlayerCount += (p == null || p.playerControllerId == -1) ? 0 : 1;
-
-            removePlayerButton.interactable = localPlayerCount > 1;
+            removePlayerButton.interactable = false;
         }
 
-        public override void OnClientReady(bool readyState)
+        public override void ReadyStateChanged(bool oldReadyState, bool newReadyState)
+        {
+            base.ReadyStateChanged(oldReadyState, newReadyState);
+            RefreshReadyUI(newReadyState);
+        }
+
+        void RefreshReadyUI(bool readyState)
         {
             if (readyState)
             {
@@ -177,21 +186,19 @@ namespace Prototype.NetworkLobby
         }
 
         public void OnPlayerListChanged(int idx)
-        { 
+        {
             GetComponent<Image>().color = (idx % 2 == 0) ? EvenRowColor : OddRowColor;
         }
 
         ///===== callback from sync var
 
-        public void OnMyName(string newName)
+        public void OnMyName(string oldName, string newName)
         {
-            playerName = newName;
-            nameInput.text = playerName;
+            nameInput.text = newName;
         }
 
-        public void OnMyColor(Color newColor)
+        public void OnMyColor(Color oldColor, Color newColor)
         {
-            playerColor = newColor;
             colorButton.GetComponent<Image>().color = newColor;
         }
 
@@ -206,7 +213,7 @@ namespace Prototype.NetworkLobby
 
         public void OnReadyClicked()
         {
-            SendReadyToBeginMessage();
+            CmdChangeReadyState(true);
         }
 
         public void OnNameChanged(string str)
@@ -222,7 +229,17 @@ namespace Prototype.NetworkLobby
             }
             else if (isServer)
                 LobbyManager.s_Singleton.KickPlayer(connectionToClient);
-                
+
+        }
+
+        //Mirror has no NetworkLobbyPlayer.RemovePlayer; leaving the room means disconnecting the
+        //owning connection. The server uses this to kick, the local player to leave.
+        public void RemovePlayer()
+        {
+            if (isServer)
+                connectionToClient.Disconnect();
+            else if (isLocalPlayer)
+                NetworkClient.Disconnect();
         }
 
         public void ToggleJoinButton(bool enabled)

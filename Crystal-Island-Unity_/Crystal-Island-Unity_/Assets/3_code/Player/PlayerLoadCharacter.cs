@@ -48,7 +48,7 @@ namespace Polymoney
                     this.character.transform.localPosition = Vector3.zero;
                     SkinnedMeshRenderer renderer = this.character.GetComponentInChildren<SkinnedMeshRenderer>();
 
-                    List<Player> sortedPlayerList = Level.instance.allPlayers.OrderBy(e => e.netId.Value).ToList();
+                    List<Player> sortedPlayerList = Level.instance.allPlayers.OrderBy(e => e.netId).ToList();
                     long playerId = sortedPlayerList.FindIndex(e => e.Equals(this.model));
 
                     int matIdx = Array.FindIndex(renderer.materials, e => e.name.Contains("lizard_crystals"));

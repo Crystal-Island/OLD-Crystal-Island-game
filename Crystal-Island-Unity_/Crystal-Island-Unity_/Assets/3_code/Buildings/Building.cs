@@ -14,10 +14,10 @@ namespace Polymoney
     {
         [ContextMenuItem("Repair Building", "ServerRepairBuilding")]
         [ContextMenuItem("Break Building", "ServerBreakBuilding")]
-        [SyncVar(hook = "onStateSynced")]
+        [SyncVar(hook = nameof(onStateSynced))]
         public float State = 1.0f;
         [ContextMenuItem("Increase Luminance", "IncrementLuminance")]
-        [SyncVar(hook = "onLuminanceSynced")]
+        [SyncVar(hook = nameof(onLuminanceSynced))]
         public float Luminance = 0.0f;
         public float BaseLuminance = 0.1f;
         public Marketplace Marketplace;
@@ -161,15 +161,15 @@ namespace Polymoney
             OnBuildingRepair.Invoke();
         }
 
-        private void onStateSynced(float value)
+        private void onStateSynced(float oldValue, float newValue)
         {
-            if (value > 1.0f)
+            if (newValue > 1.0f)
             {
                 this.State = 1.0f;
             }
             else
             {
-                this.State = value;
+                this.State = newValue;
             }
 
 
@@ -185,22 +185,22 @@ namespace Polymoney
             this.OnBuildingStateChanged.Invoke();
         }
 
-        private void onLuminanceSynced(float value)
+        private void onLuminanceSynced(float oldValue, float newValue)
         {
             // Update the luminance value.
             if (Math.Abs(this.State) > float.Epsilon)
             {
-                if (value > 1.0f)
+                if (newValue > 1.0f)
                 {
                     this.Luminance = 1.0f;
                 }
-                else if (value < 0.0f)
+                else if (newValue < 0.0f)
                 {
                     this.Luminance = 0.0f;
                 }
                 else
                 {
-                    this.Luminance = value;
+                    this.Luminance = newValue;
                 }
             }
             else

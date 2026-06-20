@@ -1,12 +1,13 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
-using Mirror;
-using UnityEngine.Networking.Match;
-using System.Collections;
+using UnityEngine;
+using Mirror.Discovery;
 using System.Collections.Generic;
 
 namespace Prototype.NetworkLobby
 {
+    // Migrated from UNet relay matchmaking (matchMaker.ListMatches) to Mirror's LAN NetworkDiscovery.
+    // Servers advertise themselves (LobbyManager.OnRoomStartServer -> discovery.AdvertiseServer);
+    // this panel broadcasts discovery requests and lists every server that replies.
+    // Discovery is event-driven (no pages); for internet matchmaking use Edgegap lobby / a list-server.
     public class LobbyServerList : MonoBehaviour
     {
         public LobbyManager lobbyManager;
@@ -15,69 +16,75 @@ namespace Prototype.NetworkLobby
         public GameObject serverEntryPrefab;
         public GameObject noServerFound;
 
-        protected int currentPage = 0;
-        protected int previousPage = 0;
-
         static Color OddServerColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         static Color EvenServerColor = new Color(.94f, .94f, .94f, 1.0f);
 
+        // Keyed by ServerResponse.serverId so the same host (possibly seen on multiple NICs) shows once.
+        readonly Dictionary<long, GameObject> _discovered = new Dictionary<long, GameObject>();
+
         void OnEnable()
         {
-            currentPage = 0;
-            previousPage = 0;
+            ClearList();
+            noServerFound.SetActive(true);
 
-            foreach (Transform t in serverListRect)
-                Destroy(t.gameObject);
-
-            noServerFound.SetActive(false);
-
-            RequestPage(0);
-        }
-
-		public void OnGUIMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> matches)
-		{
-			if (matches.Count == 0)
-			{
-                if (currentPage == 0)
-                {
-                    noServerFound.SetActive(true);
-                }
-
-                currentPage = previousPage;
-               
+            if (lobbyManager.discovery == null)
+            {
+                Debug.LogWarning("LobbyServerList: no NetworkDiscovery assigned on the LobbyManager; LAN browsing is disabled.");
                 return;
             }
 
+            lobbyManager.discovery.OnServerFound.AddListener(OnDiscoveredServer);
+            lobbyManager.discovery.StartDiscovery();
+        }
+
+        void OnDisable()
+        {
+            if (lobbyManager.discovery != null)
+            {
+                lobbyManager.discovery.OnServerFound.RemoveListener(OnDiscoveredServer);
+                lobbyManager.discovery.StopDiscovery();
+            }
+
+            ClearList();
+        }
+
+        void OnDiscoveredServer(ServerResponse info)
+        {
+            // Already listed: nothing to do (could refresh a "last seen" timestamp here later).
+            if (_discovered.ContainsKey(info.serverId))
+                return;
+
             noServerFound.SetActive(false);
+
+            GameObject o = Instantiate(serverEntryPrefab) as GameObject;
+            Color c = (_discovered.Count % 2 == 0) ? OddServerColor : EvenServerColor;
+            o.GetComponent<LobbyServerEntry>().Populate(info, lobbyManager, c);
+            o.transform.SetParent(serverListRect, false);
+
+            _discovered.Add(info.serverId, o);
+        }
+
+        // Re-scan the LAN. Wired to the existing refresh / page buttons (direction is ignored now).
+        public void ChangePage(int dir)
+        {
+            Refresh();
+        }
+
+        public void Refresh()
+        {
+            ClearList();
+            noServerFound.SetActive(true);
+
+            if (lobbyManager.discovery != null)
+                lobbyManager.discovery.StartDiscovery();
+        }
+
+        void ClearList()
+        {
             foreach (Transform t in serverListRect)
                 Destroy(t.gameObject);
 
-			for (int i = 0; i < matches.Count; ++i)
-			{
-                GameObject o = Instantiate(serverEntryPrefab) as GameObject;
-
-				o.GetComponent<LobbyServerEntry>().Populate(matches[i], lobbyManager, (i % 2 == 0) ? OddServerColor : EvenServerColor);
-
-				o.transform.SetParent(serverListRect, false);
-            }
+            _discovered.Clear();
         }
-
-        public void ChangePage(int dir)
-        {
-            int newPage = Mathf.Max(0, currentPage + dir);
-
-            //if we have no server currently displayed, need we need to refresh page0 first instead of trying to fetch any other page
-            if (noServerFound.activeSelf)
-                newPage = 0;
-
-            RequestPage(newPage);
-        }
-
-        public void RequestPage(int page)
-        {
-            previousPage = currentPage;
-            currentPage = page;
-			lobbyManager.matchMaker.ListMatches(page, 6, "", true, 0, 0, OnGUIMatchList);
-		}
     }
 }

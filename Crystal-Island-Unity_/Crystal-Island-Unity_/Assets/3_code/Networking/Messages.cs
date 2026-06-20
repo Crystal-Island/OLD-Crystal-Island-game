@@ -1,12 +1,11 @@
-﻿using System;
+using System;
 using Mirror;
-using UnityEngine.Networking.NetworkSystem;
 
 namespace Polymoney {
-    public class PolymoneyMsgType {
-        public static short NetworkStatus = MsgType.Highest + 1;
-        public static short ClientAvailable = MsgType.Highest + 2;
-    }
+    // Migrated from UNet to Mirror.
+    //  - PolymoneyMsgType (MsgType.Highest + N numeric ids) is gone: Mirror identifies messages by
+    //    their type, registered via NetworkServer/NetworkClient.RegisterHandler<T>.
+    //  - UNet MessageBase / EmptyMessage -> structs implementing Mirror's NetworkMessage interface.
 
     [Serializable]
     public enum NetworkRole : ushort {
@@ -22,22 +21,20 @@ namespace Polymoney {
         BLOCK_SCREEN = 4,
     }
 
-    public class ClientAvailableMessage : EmptyMessage {}
+    // Was: class ClientAvailableMessage : EmptyMessage {}
+    public struct ClientAvailableMessage : NetworkMessage {}
 
     /// <summary>
     /// This message relays client and server status messages.
     /// </summary>
-    public class NetworkStatusMessage : MessageBase {
+    public struct NetworkStatusMessage : NetworkMessage {
         public NetworkRole Source;
         public NetworkStatusEvent Event;
         public bool Status;
 
-        public NetworkStatusMessage() {
-            this.Source = NetworkRole.CLIENT;
-            this.Event = NetworkStatusEvent.PAUSE;
-            this.Status = false;
-        }
-
+        // Note: structs cannot declare a parameterless constructor. Mirror creates message instances
+        // via default(T) during deserialization and fills the fields from the wire, so the old
+        // default-value constructor (Source=CLIENT, Event=PAUSE, Status=false) is unnecessary.
         public NetworkStatusMessage(NetworkRole source, NetworkStatusEvent signal, bool status) {
             this.Source = source;
             this.Event = signal;
@@ -80,7 +77,7 @@ namespace Polymoney {
                     }
                 }
             }
-            
+
             return this.ToString();
         }
 
